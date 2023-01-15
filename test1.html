@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>3D Model Viewer</title>
-    <script src="https://cdn.rawgit.com/x3dom/x3dom/master/x3dom.js"></script>
-    <script>
-      var arjsUrl = "https://htmlpreview.github.io/?https://raw.githubusercontent.com/evobiomed/xredum/b1f0e429b4215aaf9ccdc5374b2666c4380775e1/arjs.html";
+<head>
+  <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script src="https://unpkg.com/@google/model-viewer-ar/dist/model-viewer-ar.js"></script>
+</head>
+<body>
+  <model-viewer id="model" ar ar-scale="auto" ar-debug="true"></model-viewer>
+  
+  <script>
+    var model = document.getElementById("model");
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var isAndroid = /(android)/i.test(navigator.userAgent);
 
-      // Check if the device supports ARCore or ARKit
-      if (navigator.xr) {
-        navigator.xr.isSessionSupported('immersive-ar').then(function (supported) {
-          if (supported) {
-            // Create a WebXR session
-            navigator.xr.requestSession('immersive-ar').then(function (session) {
-              // Create an anchor at the center of the screen
-              session.createAnchor(new Float32Array([0, 0, 0])).then(function (anchor) {
-                // Load the 3D model
-                var model = new X3D.Model();
-                model.load("https://www.web3d.org/x3d/content/examples/Basic/CAD/CadTeapot.x3d");
-                model.scale = new X3D.SFVec3f(1, 1, 1);
-                model.rotation = new X3D.SFRotation(new X3D.SFVec3f(0, 1, 0), 0);
-                model.translation = new X3D.SFVec3f(0, 0, 0);
-                model.render(session, anchor);
-              });
-            });
-          } else {
-            // Device doesn't support ARCore or ARKit
-            // Redirect to AR.js HTML file
-            window.location.href = arjsUrl;
-          }
-        });
-      } else {
-        // Device doesn't support WebXR
-        // Redirect to AR.js HTML file
-        window.location.href = arjsUrl;
-      }
-    </script>
-  </head>
-  <body>
-    <h1>3D Model Viewer</h1>
-    <p>This is a 3D model viewer that uses ARCore or ARKit to display the model in an augmented reality environment. If your device does not support ARCore or ARKit, you will be redirected to an AR.js HTML file for a similar experience.</p>
-    <div id="ar-view"></div>
-  </body>
+    if (isIOS) {
+      model.setAttribute("ios-src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-iOS/Duck.gltf");
+    } else if (isAndroid) {
+      model.setAttribute("android-src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Android/Duck.gltf");
+    } else {
+      model.setAttribute("src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf");
+    }
+  </script>
+</body>
 </html>
