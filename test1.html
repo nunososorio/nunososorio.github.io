@@ -1,24 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
-  <script src="https://unpkg.com/@google/model-viewer-ar/dist/model-viewer-ar.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Hello WebXR!</title>
+
+  <!-- three.js -->
+  <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
 </head>
 <body>
-  <model-viewer id="model" ar ar-scale="auto" ar-debug="true"></model-viewer>
-  
-  <script>
-    var model = document.getElementById("model");
-    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    var isAndroid = /(android)/i.test(navigator.userAgent);
 
-    if (isIOS) {
-      model.setAttribute("ios-src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-iOS/Duck.gltf");
-    } else if (isAndroid) {
-      model.setAttribute("android-src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Android/Duck.gltf");
-    } else {
-      model.setAttribute("src", "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf");
-    }
-  </script>
+<button onclick="activateXR()">Start Hello WebXR</button>
+<script>
+async function activateXR() {
+  // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
+  const canvas = document.createElement("canvas");
+  document.body.appendChild(canvas);
+  const gl = canvas.getContext("webgl", {xrCompatible: true});
+
+  // Create a new THREE.Scene object and set the background to be transparent
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color( 0x000000 );
+
+  // Create a new THREE.WebGLRenderer object, and set the clear color to be transparent
+  const renderer = new THREE.WebGLRenderer({ canvas: canvas, context: gl });
+  renderer.setClearColor( 0x000000, 0 );
+
+  // Create a new THREE.XRDevice object, and use it to create an XR session
+  const device = await navigator.xr.requestDevice();
+  const session = await device.requestSession({ immersive: true });
+
+  // Add the XRSession object to the renderer's setSession method
+  renderer.xr.setSession(session);
+
+  // Create a new THREE.XRController object and add it to the scene
+  const controller = renderer.xr.getController(0);
+  controller.addEventListener( 'select', onSelect );
+  controller.addEventListener( 'squeeze', onSqueeze );
+  scene.add(controller);
+  
+  // Use the THREE.ObjectLoader to load the 3D model into the scene, and add it to the XRController object
+  const loader = new THREE.ObjectLoader();
+  loader.load( 'media/gltf/sunflower/sunflower.gltf', function ( object ) {
+    controller.add( object );
+  });
+
+  // In the render loop, use the renderer's render method to render the scene, passing in the scene and the camera as arguments
+  const camera = new THREE.PerspectiveCamera();
+  renderer.setAnimationLoop( () => {
+    renderer.render( scene, camera );
+  });
+}
+
+function onSelect(event) {
+    // Code to handle select event
+}
+function onSqueeze(event) {
+    // Code to handle squeeze event
+}
+</script>
 </body>
 </html>
