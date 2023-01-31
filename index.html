@@ -1,13 +1,179 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <title id="title" data-i18n="macromolecules.proteinDNA.title"></title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js@3.1.1/aframe/build/aframe-ar.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://molecularweb.epfl.ch/styles/base.css" />
+    <link rel="stylesheet" href="https://molecularweb.epfl.ch/modules/styles/style.css" />
+
+    <!-- 3D Libraries -->
+    <script src="https://molecularweb.epfl.ch/lib/aframe.min.js"></script>
+    <script src="https://molecularweb.epfl.ch/lib/aframe-ar.js"></script>
+
+    <!-- Translation Libraries -->
+    <script src="https://molecularweb.epfl.ch/lib/i18n/i18next.min.js"></script>
+    <script src="https://molecularweb.epfl.ch/lib/i18n/i18next-wc.js"></script>
+    <script src="https://molecularweb.epfl.ch/lib/i18n/loc-i18next.min.js"></script>
+    <script src="https://molecularweb.epfl.ch/lib/i18n/i18nextBrowserLanguageDetector.js"></script>
+    <script src="https://molecularweb.epfl.ch/lib/i18n/i18nextHttpBackend.min.js"></script>
+
+    <!-- Web Components -->
+    <script src="https://molecularweb.epfl.ch/components/back-anchor/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/icons/molecule/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/icons/tubes/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/loader/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/flip-video/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/flip-graphics/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/overlay/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/toggle-instructions/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/toggle-description/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/toggle-menu/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/reset-activity/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/scale-graphics/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/enable-gestures/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/rotation-controls/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/feedback-prompt/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/zoom-icon/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/swap-camera/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/components/camera-icon/index.js"></script>
+
+    <!-- Utils & A-Frame Components -->
+    <script src="https://molecularweb.epfl.ch/modules/atomic-structures/protein-dna/index.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/flip.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/scale.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/gesture-detector.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/gesture-handler.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/loader.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/rotation.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/handleTranslation.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/utils.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/colormaps.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/aframe/selectCamera.js"></script>
   </head>
-  <body style="margin: 0; overflow: hidden;">
-<a-scene
+
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="row">
+        <figure>
+          <tubes-icon></tubes-icon>
+        </figure>
+        <h1
+          class="activity-title"
+          data-i18n="macromolecules.proteinDNA.title"
+        ></h1>
+      </div>
+    </header>
+
+    <!-- UI Components 
+    <back-anchor></back-anchor>
+    <loader-component></loader-component>-->
+
+    <!-- Feedback Modal 
+    <feedback-prompt></feedback-prompt>-->
+
+    <!-- camera controls
+    <div id="cam-container" class="camera-container small-menu hide column">
+      <div class="triangle-temp"></div>
+      <flip-video class="icon-margin"></flip-video>
+      <swap-camera class="hide icon-margin"></swap-camera>
+      <flip-graphics class="icon-margin"></flip-graphics>
+    </div>-->
+
+    <!-- Zoom controls
+    <div id="zoom-container" class="zoom-container small-menu hide column">
+      <div class="triangle-temp"></div>
+      <scale-graphics
+        class="small-icon-margin"
+        id="scale-up"
+        type="up"
+      ></scale-graphics>
+      <div class="line horizontal"></div>
+      <scale-graphics
+        class="small-icon-margin"
+        id="scale-down"
+        type="down"
+      ></scale-graphics>
+    </div>-->
+
+    <!-- Side buttons
+    <div class="side-menu column">
+      <camera-icon class="icon-margin"></camera-icon>
+      <reset-activity class="icon-margin"></reset-activity>
+      <zoom-icon class="icon-margin"></zoom-icon>
+      <toggle-menu class="icon-margin"></toggle-menu>
+    </div>
+-->
+
+    <!-- Bottom Menu 
+    <div class="selection-menu">
+      <div class="marker">
+        <img
+          class="marker-sample"
+          src="https://molecularweb.epfl.ch//assets/img/0.png"
+          alt="sample marker"
+          id="marker-image-1"
+        />
+        <rotation-controls
+          id="rotation-marker-1"
+          marker="1"
+          type="embedded"
+        ></rotation-controls>
+        <div class="options" id="marker-options-1">
+          <div class="triangle"></div>
+          <enable-gestures class="gesture-icon" id="marker1"></enable-gestures>
+        </div>
+      </div>
+      <span class="line"></span>
+      <div class="marker">
+        <img
+          class="marker-sample left-margin"
+          src="https://molecularweb.epfl.ch/assets/img/2.png"
+          alt="sample marker"
+          id="marker-image-2"
+        />
+        <rotation-controls
+          id="rotation-marker-2"
+          marker="2"
+          type="embedded"
+        ></rotation-controls>
+        <div class="options" id="marker-options-2">
+          <div class="triangle"></div>
+          <enable-gestures class="gesture-icon" id="marker2"></enable-gestures>
+        </div>
+      </div>
+      <div class="extra-info">
+        <toggle-instructions class="extra-info-icon"></toggle-instructions>
+        <toggle-description class="extra-info-icon"></toggle-description>
+      </div>
+    </div>
+    -->
+
+    <!-- Overlays 
+    <activity-overlay id="instructions" default="open" type="instructions">
+      <span slot="title" data-i18n="macromolecules.proteinDNA.title"></span>
+      <span
+        slot="instructions"
+        data-i18n="macromolecules.proteinDNA.instructions"
+      ></span>
+    </activity-overlay>
+
+    <activity-overlay id="description" default="hidden" type="description">
+      <span slot="title" data-i18n="macromolecules.proteinDNA.title"></span>
+      <span
+        slot="description"
+        data-i18n="macromolecules.proteinDNA.description"
+      ></span>
+    </activity-overlay>
+
+    <activity-overlay id="menu" default="hidden" type="menu">
+      <span slot="title">MoleculARweb</span>
+    </activity-overlay>
+    -->
+
+    <a-scene
       embedded
       arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3_HAMMING63;"
       id="scene"
@@ -377,31 +543,9 @@
 
       <a-entity camera></a-entity>
     </a-scene>
-    <script>
-    const scene = document.querySelector("a-scene");
-    scene.addEventListener("markerFound", function(event) {
-      let markerId = event.detail.marker.id;
-      let prot = document.querySelector(`#${markerId} #prot${markerId[markerId.length-1]}`);
-      let protDna = document.querySelector(`#${markerId} #prot-dna${markerId[markerId.length-1]}`);
-      let spheres = document.querySelectorAll(`#${markerId} [id^="sp"]`);
-
-      prot.setAttribute("visible", false);
-      protDna.setAttribute("visible", true);
-      spheres.forEach((sphere) => sphere.setAttribute("visible", true));
-    });
-    scene.addEventListener("markerLost", function(event) {
-      let markerId = event.detail.marker.id;
-      let prot = document.querySelector(`#${markerId} #prot${markerId[markerId.length-1]}`);
-      let protDna = document.querySelector(`#${markerId} #prot-dna${markerId[markerId.length-1]}`);
-      let spheres = document.querySelectorAll(`#${markerId} [id^="sp"]`);
-
-      prot.setAttribute("visible", true);
-      protDna.setAttribute("visible", false);
-      spheres.forEach((sphere) => sphere.setAttribute("visible", false));
-    });
-</script>
-</body>
+    <script src="https://molecularweb.epfl.ch/modules/utils/handleFlips.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/handleOverlays.js"></script>
+    <script src="https://molecularweb.epfl.ch/modules/utils/handleGestures.js"></script>
+    <script src="https://molecularweb.epfl.ch/js/handleSession.js"></script>
+  </body>
 </html>
-
-
-
