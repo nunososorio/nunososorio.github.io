@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Embedded Video Player with IPTV Link Testing</title>
+  </head>
+  <body>
+    <h1>Embedded Video Player with IPTV Link Testing</h1>
+    <p>Enter an IPTV link below:</p>
+    <input type="text" id="iptv-link">
+    <button id="test-link">Test Link</button>
+    <br><br>
+    <div id="player-container">
+      <!-- Video player will be embedded here -->
+    </div>
+    
+    <!-- Script to handle IPTV link testing and video player embedding -->
+    <script>
+      const testLinkBtn = document.getElementById("test-link");
+      const iptvLinkInput = document.getElementById("iptv-link");
+      const playerContainer = document.getElementById("player-container");
+      
+      testLinkBtn.addEventListener("click", function() {
+        const iptvLink = iptvLinkInput.value;
+        
+        // Embed the video player using the IPTV link
+        playerContainer.innerHTML = `
+          <iframe src="${iptvLink}" frameborder="0" allowfullscreen></iframe>
+        `;
+      });
+    </script>
+  </body>
+</html>
