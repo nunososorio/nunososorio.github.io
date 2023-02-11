@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Embedded Video Player with IPTV Link Testing</title>
-  </head>
-  <body>
-    <h1>Embedded Video Player with IPTV Link Testing</h1>
-    <p>Enter an IPTV link below:</p>
-    <input type="text" id="iptv-link">
-    <button id="test-link">Test Link</button>
-    <br><br>
-    <div id="player-container">
-      <!-- Video player will be embedded here -->
-    </div>
-    
-    <!-- Script to handle IPTV link testing and video player embedding -->
+<head>
+    <title>Embedded Video Player</title>
+    <!-- Scripts to include -->
+    <script src="http://player.streamingtvguides.com/canvas.js"></script>
+    <script src="http://player.streamingtvguides.com/metrics.js"></script>
+    <script src="http://player.streamingtvguides.com/jsonpack.js"></script>
+</head>
+<body>
+    <h1>Embedded Video Player</h1>
+    <p>Enter a video link below to view its content:</p>
+
+    <!-- Input form to enter video link -->
+    <form>
+        <input type="text" id="video-link">
+        <button type="button" id="submit-button">Submit</button>
+    </form>
+
+    <!-- Div to display the video player -->
+    <div id="video-player"></div>
+
+    <!-- Script to handle the form submission -->
     <script>
-      const testLinkBtn = document.getElementById("test-link");
-      const iptvLinkInput = document.getElementById("iptv-link");
-      const playerContainer = document.getElementById("player-container");
-      
-      testLinkBtn.addEventListener("click", function() {
-        const iptvLink = iptvLinkInput.value;
-        
-        // Embed the video player using the IPTV link
-        playerContainer.innerHTML = `
-          <iframe src="${iptvLink}" frameborder="0" allowfullscreen></iframe>
-        `;
-      });
+        document.querySelector("#submit-button").addEventListener("click", function() {
+            // Get the value of the input field
+            var videoLink = document.querySelector("#video-link").value;
+
+            // Create an iframe element to display the video
+            var iframe = document.createElement("iframe");
+            iframe.src = videoLink;
+            iframe.width = "600";
+            iframe.height = "400";
+
+            // Replace the contents of the video player div with the iframe
+            document.querySelector("#video-player").innerHTML = "";
+            document.querySelector("#video-player").appendChild(iframe);
+        });
     </script>
-  </body>
+</body>
 </html>
