@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="UTF-8">
     <title>Embedded Video Player</title>
-    <!-- Scripts to include -->
-    <script src="http://player.streamingtvguides.com/canvas.js"></script>
-    <script src="http://player.streamingtvguides.com/metrics.js"></script>
-    <script src="http://player.streamingtvguides.com/jsonpack.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Embedded Video Player</h1>
-    <p>Enter a video link below to view its content:</p>
-
-    <!-- Input form to enter video link -->
-    <form>
-        <input type="text" id="video-link">
-        <button type="button" id="submit-button">Submit</button>
-    </form>
-
-    <!-- Div to display the video player -->
-    <div id="video-player"></div>
-
-    <!-- Script to handle the form submission -->
+    <p>Enter the video URL:</p>
+    <input id="video-url" type="text" value="https://video-auth7.iol.pt/live_cnn/live_cnn/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi8xMC8yMDIzIDU6MTc6NiBQTSZoYXNoX3ZhbHVlPUpFcGdDakNsai9DM29pRFBpMEprL0E9PSZ2YWxpZG1pbnV0ZXM9MTQ0MCZpZD1lOWExOTEzZC04MzQwLTQyNWItYWVjNC0wNGMxMzYxM2E1NjE=/" size="100">
+    <button id="load-button">Load Video</button>
+    <br><br>
+    <iframe id="video-player" width="640" height="360" style="display:none;"></iframe>
+    
     <script>
-        document.querySelector("#submit-button").addEventListener("click", function() {
-            // Get the value of the input field
-            var videoLink = document.querySelector("#video-link").value;
-
-            // Create an iframe element to display the video
-            var iframe = document.createElement("iframe");
-            iframe.src = videoLink;
-            iframe.width = "600";
-            iframe.height = "400";
-
-            // Replace the contents of the video player div with the iframe
-            document.querySelector("#video-player").innerHTML = "";
-            document.querySelector("#video-player").appendChild(iframe);
-        });
+      const videoUrlInput = document.getElementById("video-url");
+      const loadButton = document.getElementById("load-button");
+      const videoPlayer = document.getElementById("video-player");
+      
+      loadButton.addEventListener("click", function() {
+        videoPlayer.src = videoUrlInput.value;
+        videoPlayer.style.display = "block";
+      });
     </script>
-</body>
+  </body>
 </html>
