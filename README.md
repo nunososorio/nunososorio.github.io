@@ -32,9 +32,9 @@ DocuMatch can be used in a variety of scenarios where it is necessary to compare
 ## Advantages
 
 DocuMatch advantages include:
--Simplicity: DocuMatch is easy to use, with a simple and intuitive interface that allows you to quickly upload and compare multiple Word files.
--Speed: DocuMatch is fast, using efficient algorithms to quickly analyze and compare large batches of files.
--Accuracy: DocuMatch uses advanced algorithms such as TF-IDF and cosine similarity to accurately measure the similarity between different files.
+- Simplicity: DocuMatch is easy to use, with a simple and intuitive interface that allows you to quickly upload and compare multiple Word files.
+- Speed: DocuMatch is fast, using efficient algorithms to quickly analyze and compare large batches of files.
+- Accuracy: DocuMatch uses advanced algorithms such as TF-IDF and cosine similarity to accurately measure the similarity between different files.
 
 ## Additional Information
 When using the live tool, the uploaded files are temporarily stored on the server while the app is processing them. Once the analysis is complete and the results are displayed, the files are removed from the server.
