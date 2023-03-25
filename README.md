@@ -39,8 +39,8 @@ DocuMatch advantages include:
 ## Additional Information
 When using the live tool, the uploaded files are temporarily stored on the server while the app is processing them. Once the analysis is complete and the results are displayed, the files are removed from the server.
 The speed of the tool in comparing large batches of files is due to the efficient algorithms used by the app:
--The TF-IDF algorithm assigns a weight to each word in the document based on its importance, allowing the app to accurately measure the similarity between different files without having to compare every single word.
--The cosine similarity metric used by the app is a fast and effective way to compare the similarity between pairs of documents.
+- The TF-IDF algorithm assigns a weight to each word in the document based on its importance, allowing the app to accurately measure the similarity between different files without having to compare every single word.
+- The cosine similarity metric used by the app is a fast and effective way to compare the similarity between pairs of documents.
 
 ## License
 Copyright (c) 2023 Nuno S. Osório
