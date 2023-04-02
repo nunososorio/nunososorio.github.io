@@ -19,15 +19,15 @@
       <a-camera position="0 0 0" look-controls="enabled: false">
         <a-cursor></a-cursor>
       </a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="0 0 0 " position="0 0 0" scale="0.05 0.05 0.05" src="#model1" animation-mixer id="myModel"></a-gltf-model>
+      </a-entity></a-scene>
       <script>
           var model = document.querySelector('#myModel');
           model.addEventListener('click', function () {
             model.setAttribute('scale', '10 10 10');
           });
       </script>
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model rotation="0 0 0 " position="0 0 0" scale="0.05 0.05 0.05" src="#model1" animation-mixer id="myModel"></a-gltf-model>
-      </a-entity></a-scene>  
     </body>
   </html>
 
