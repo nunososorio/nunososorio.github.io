@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene
+      renderer="logarithmicDepthBuffer: true;"
+      embedded
+      loading-screen="enabled: false;"
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+    >
+      <a-assets>
+        <a-asset-item id="animated-asset" src="https://cdn.glitch.global/4a9fca13-d5a0-4c02-b3d6-fbe85301941a/residential_building_with_parking_lot.glb?v=1687933866423"></a-asset-item>
+      </a-assets>
+
+      
+
+      <a-entity
+        look-at="[gps-camera]"
+        gltf-model="#animated-asset"
+        scale="0.01 0.01 0.01"
+        gps-projected-entity-place="latitude: 41.539096; longitude: -8.402365;"
+        ar-nft="smoothThreshold: 0.5; smoothCount: 10; smoothTolerance: 0.01; smoothTransformDuration: 1000; maxFidelity: 10; groundNormal: true;"
+        position="0 0 0"
+      ></a-entity>
+      
+      <a-camera gps-projected-camera  rotation-reader="0 0 0"></a-camera>
+
+    </a-scene>
+  </body>
+</html>
