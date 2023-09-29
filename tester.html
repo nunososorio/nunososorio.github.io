@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@0.15.0"></script>
+</head>
+<body>
+  <video id="video" controls></video>
+  <script>
+    var video = document.getElementById('video');
+    if(Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource('https://video-auth7.iol.pt/live_cnn/live_cnn/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi8xMC8yMDIzIDU6MTc6NiBQTSZoYXNoX3ZhbHVlPUpFcGdDakNsai9DM29pRFBpMEprL0E9PSZ2YWxpZG1pbnV0ZXM9MTQ0MCZpZD1lOWExOTEzZC04MzQwLTQyNWItYWVjNC0wNGMxMzYxM2E1NjE=');
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        video.play();
+      });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = 'https://video-auth7.iol.pt/live_cnn/live_cnn/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9Mi8xMC8yMDIzIDU6MTc6NiBQTSZoYXNoX3ZhbHVlPUpFcGdDakNsai9DM29pRFBpMEprL0E9PSZ2YWxpZG1pbnV0ZXM9MTQ0MCZpZD1lOWExOTEzZC04MzQwLTQyNWItYWVjNC0wNGMxMzYxM2E1NjE=';
+      video.addEventListener('loadedmetadata',function() {
+        video.play();
+      });
+    }
+  </script>
+</body>
+</html>
