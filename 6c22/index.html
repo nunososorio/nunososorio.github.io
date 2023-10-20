@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ARcore Compatibility Test</title>
+        <title>Checking your phone AR capabilities</title>
     </head>
     <body>
         <script>
@@ -12,51 +12,15 @@
             }
 
             // Function to test if the device supports ARcore
-            function isARcoreSupported() {
-                // List of ARcore supported devices
-                var supportedDevices = [
-                    "Google Pixel", 
-                    "Google Pixel XL", 
-                    "Google Pixel 2", 
-                    "Google Pixel 2 XL", 
-                    "Google Pixel 3", 
-                    "Google Pixel 3 XL", 
-                    "Google Pixel 4", 
-                    "Google Pixel 4 XL", 
-                    "Google Pixel 4a", 
-                    "Google Pixel 5", 
-                    "Samsung Galaxy S8", 
-                    "Samsung Galaxy S9", 
-                    "Samsung Galaxy S10", 
-                    "Samsung Galaxy S20",
-                    "Samsung Galaxy S21",
-                    "Samsung Galaxy S22",
-                    // Additional devices
-                    "HTC Desire 21 Pro 5G",
-                    "Motorola moto g power 2021",
-                    "OnePlus OnePlus N10",
-                    "Oppo A93 5G",
-                    "Oppo A94",
-                    "Oppo F19 Pro+",
-                    "Oppo Find X3 Pro",
-                    "Oppo Reno 4 SE 5G",
-                    // Tablets
-                    "Acer Chromebook Tab 10",
-                    "LG G Pad 5 10.1 FHD",
-                    "Samsung Galaxy Tab S3",
-                    "Samsung Galaxy Tab S4",
-                    "Samsung Galaxy Tab S5e",
-                    "Samsung Galaxy Tab S6",
-                    "Samsung Galaxy Tab S7",
-                    "Samsung Galaxy Tab S8",
-                    "Samsung Galaxy Tab S9",
-                ];
-                
-                var userAgent = navigator.userAgent || navigator.vendor;
-
-                for (var i = 0; i < supportedDevices.length; i++) {
-                    if (userAgent.indexOf(supportedDevices[i]) > -1) {
-                        return true;
+            async function isARcoreSupported() {
+                // Check if WebXR is supported
+                if ('xr' in navigator) {
+                    try {
+                        // Check if the device supports 'immersive-ar' sessions
+                        const supported = await navigator.xr.isSessionSupported('immersive-ar');
+                        return supported;
+                    } catch (err) {
+                        console.error('AR check failed:', err);
                     }
                 }
                 
@@ -64,11 +28,13 @@
             }
 
             // Redirect the user based on their device
-            if (isAndroid() && isARcoreSupported()) {
-                window.location.href = 'intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/nunososorio/nunososorio.github.io/main/6c22/models/model1/scene.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://nunososorio.github.io/6c22/index_js.html;end;';
-            } else {
-                window.location.href = 'https://nunososorio.github.io/6c22/index_js.html';
-            }
+            isARcoreSupported().then((supported) => {
+                if (isAndroid() && supported) {
+                    window.location.href = 'intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/nunososorio/nunososorio.github.io/main/6c22/models/model1/scene.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://nunososorio.github.io/6c22/index_js.html;end;';
+                } else {
+                    window.location.href = 'https://nunososorio.github.io/6c22/index_js.html';
+                }
+            });
         </script>
     </body>
 </html>
