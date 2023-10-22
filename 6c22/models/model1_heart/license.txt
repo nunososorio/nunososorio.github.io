@@ -1,0 +1,11 @@
+Model Information:
+* title:	Common Arterial Trunk / Truncus Arteriosus
+* source:	https://sketchfab.com/3d-models/common-arterial-trunk-truncus-arteriosus-8547abf2bbd941b28ab630a62e21955b
+* author:	E-learning UMCG (https://sketchfab.com/eLearningUMCG)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Common Arterial Trunk / Truncus Arteriosus" (https://sketchfab.com/3d-models/common-arterial-trunk-truncus-arteriosus-8547abf2bbd941b28ab630a62e21955b) by E-learning UMCG (https://sketchfab.com/eLearningUMCG) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
