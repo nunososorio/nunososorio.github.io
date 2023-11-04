@@ -1,0 +1,5 @@
+This folder contains the files and assets for the xR-EDUM website, a project that aims to revolutionize learning through the power of Extended Reality (xR).
+
+The website showcases the vision, events, and gallery of the xR-EDUM community, which is composed of educators from different areas who share a passion for xR technologies and their potential to transform education.
+
+The website is built using HTML, CSS, and JavaScript, and uses the A-Frame framework to create Web-based Augmented Reality (WebAR) experiences. The website is hosted on GitHub Pages and can be accessed at https://nunososorio.github.io/xredum/
