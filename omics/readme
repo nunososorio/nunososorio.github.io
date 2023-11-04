@@ -1,0 +1,11 @@
+This folder contains the website for an interactive figure (Figure 1) created in Shiny and deployed to a static server using Shinylive. The figure is a line plot of the number of articles published in PubMed for the keywords mentioned from 1990 to 2022.
+
+The website is built using HTML, CSS, and JavaScript, and uses various libraries and frameworks to create Web-based interactive applications. The website is hosted on GitHub Pages and can be accessed at https://nunososorio.github.io/omics/
+
+The folder structure is as follows:
+
+- index.html: The main HTML file that contains the content and layout of the website.
+- style.css: The CSS file that defines the style and appearance of the website.
+- script.js: The JavaScript file that handles the logic and interactivity of the website.
+- assets: A subfolder that contains the images, data files, and other resources used by the website.
+- README.txt: This file that provides a brief description of the website and the folder contents.
