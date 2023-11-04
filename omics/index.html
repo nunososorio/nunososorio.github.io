@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shiny App</title>
+    <title>Omics Article Trends in PubMed</title>
     <script
       src="./shinylive/load-shinylive-sw.js"
       type="module"
@@ -18,11 +18,26 @@
 
       const appRoot = document.getElementById("root");
       runApp(appRoot, "viewer", {startFiles: appFiles}, "r");
+
+      // Add this code to update the footer text every second
+      let timeLeft = 30;
+      const footer = document.querySelector('footer small');
+      const intervalId = setInterval(() => {
+        timeLeft--;
+        footer.textContent = `The app will load in ${timeLeft} sec`;
+        if (timeLeft <= 0) {
+          clearInterval(intervalId);
+          footer.style.display = 'none';
+        }
+      }, 1000);  // 1000 milliseconds = 1 second
     </script>
     <link rel="stylesheet" href="./shinylive/style-resets.css" />
     <link rel="stylesheet" href="./shinylive/shinylive.css" />
   </head>
   <body>
     <div style="height: 100vh; width: 100vw" id="root"></div>
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; text-align: center;">
+      <small>The app will load in 30 sec</small>
+    </footer>
   </body>
 </html>
