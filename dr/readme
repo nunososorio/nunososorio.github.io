@@ -1,0 +1,5 @@
+This folder contains the files and assets for the DR website, a project that aims to demystify dimensionality reduction techniques in the 'omics' era. Dimensionality reduction is a process of transforming high-dimensional data into lower-dimensional representations that preserve the essential information and structure of the original data. Dimensionality reduction can help to visualize, analyze, and interpret complex 'omics' data, such as genomics, transcriptomics, proteomics, and metabolomics.
+
+The website provides interactive applications, instructions, and Jupyter notebooks on Google Colab for learning about dimensionality reduction techniques using real-world data sets. The website also provides links to the GitHub repositories where the source code and data are available.
+
+The website is built using HTML, CSS, and JavaScript, and uses the Streamlit framework to create Web-based interactive applications. The website is hosted on GitHub Pages and can be accessed at https://nunososorio.github.io/dr/
