@@ -5,11 +5,11 @@ library(readxl)
 library(tidyverse)
 
 # Download the xlsx file from the URL
-temp <- tempfile(fileext = ".xlsx")
-download.file("https://github.com/nunososorio/nunososorio.github.io/raw/main/malariaday/is_endemic.xlsx", temp, mode = "wb")
+# temp <- tempfile(fileext = ".xlsx")
+# download.file("https://github.com/nunososorio/nunososorio.github.io/raw/main/malariaday/is_endemic.xlsx", temp, mode = "wb")
 
 # Load the downloaded xlsx file
-endemic <- read_excel(temp)
+endemic <- read_excel("is_endemic.xlsx")
 
 # Define UI for application
 ui <- fluidPage(
