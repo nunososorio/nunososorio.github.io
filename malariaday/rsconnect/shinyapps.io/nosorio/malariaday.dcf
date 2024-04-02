@@ -1,0 +1,10 @@
+name: malariaday
+title:
+username: nosorio
+account: nosorio
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11623019
+bundleId: 8434990
+url: https://nosorio.shinyapps.io/malariaday/
+version: 1

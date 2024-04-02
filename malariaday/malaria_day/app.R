@@ -4,24 +4,17 @@ library(shinyjs)
 library(readxl)
 library(tidyverse)
 
-# Download the xlsx file from the URL
-# temp <- tempfile(fileext = ".xlsx")
-# download.file("https://github.com/nunososorio/nunososorio.github.io/raw/main/malariaday/is_endemic.xlsx", temp, mode = "wb")
-
-# Load the downloaded xlsx file
 endemic <- read_excel("is_endemic.xlsx")
 
-# Define UI for application
 ui <- fluidPage(
-  titlePanel("Descobre os Países Endémicos de Malária:"),
+  titlePanel("Carrega em locais onde há transmissão de malaria:"),
   leafletOutput("map"),
   useShinyjs(),
-  p("PEvoGEn, ICVS"),
+  p("by AG and NSO from PEvoGEn/ICVS"),
   div(id = "feedback", style = "font-weight: bold; color: green;"),
   div(id = "feedback2", style = "font-weight: bold; color: blue;")
 )
 
-# Define server logic
 server <- function(input, output) {
   # Render Leaflet map
   output$map <- renderLeaflet({
@@ -50,6 +43,17 @@ server <- function(input, output) {
     shinyjs::show("feedback")
     shinyjs::html("feedback2", paste("Clicks corretos:", correct_guesses()))
     shinyjs::show("feedback2")
+    
+    # fim do jogo
+    if (correct_guesses() == 30) {
+      showModal(
+        modalDialog(
+          title = "Parabéns!",
+          "Acertaste 30 vezes! 🎉",
+          img(src = 'https://raw.githubusercontent.com/nunososorio/nunososorio.github.io/main/malariaday/transmissao_malaria.jpg', width = '100%')
+        )
+      )
+    }
   })
 }
 
