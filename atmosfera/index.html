@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checking your phone AR capabilities</title>
+        <style>
+            /* Add some style to the button */
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // Function to detect if the user's device is an Android phone
+            function isAndroid() {
+                var userAgent = navigator.userAgent || navigator.vendor;
+                return /android/i.test(userAgent);
+            }
+
+            // Function to test if the device supports ARcore
+            async function isARcoreSupported() {
+                // Check if WebXR is supported
+                if ('xr' in navigator) {
+                    try {
+                        // Check if the device supports 'immersive-ar' sessions
+                        const supported = await navigator.xr.isSessionSupported('immersive-ar');
+                        return supported;
+                    } catch (err) {
+                        console.error('AR check failed:', err);
+                    }
+                }
+
+                return false;
+            }
+
+            // Function to launch the intent-based URI
+            function launchIntent() {
+                isARcoreSupported().then((supported) => {
+                    if (isAndroid() && supported) {
+                        window.location.href = 'intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/nunososorio/nunososorio.github.io/main/6c22/models/model1/scene.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://nunososorio.github.io/6c22/index_js.html;end;';
+                    } else {
+                        window.location.href = 'https://nunososorio.github.io/6c22/index_js.html';
+                    }
+                });
+            }
+        </script>
+
+        <!-- Add a button element that calls the launchIntent function -->
+        <button class="button" onclick="launchIntent()">View in AR</button>
+    </body>
+</html>
