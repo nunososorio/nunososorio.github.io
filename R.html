@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEvoGEn R Essentials Cheat Sheet</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  h1 { color: #333; }
+  .section { margin-bottom: 20px; }
+  .section h2 { color: #444; }
+  .section pre { background-color: #f8f8f8; padding: 10px; }
+</style>
+</head>
+<body>
+
+<h1>PEvoGEn R Essentials Cheat Sheet</h1>
+
+<div class="section">
+<h2>Directory Management</h2>
+<pre>
+getwd(): Get the current working directory.
+setwd(dir): Set the working directory to dir.
+</pre>
+</div>
+
+<div class="section">
+<h2>Package Management</h2>
+<pre>
+installed.packages(): List installed packages.
+install.packages("package_name"): Install a new package.
+library(package_name): Load an installed package into the session.
+</pre>
+</div>
+
+<div class="section">
+<h2>Help and Documentation</h2>
+<pre>
+?function_name: Access the help page for function_name.
+help(function_name): An alternative way to access the help page.
+args(function_name): View the arguments of a function.
+ls(package = "package_name"): List objects in the namespace of a package.
+</pre>
+</div>
+
+<div class="section">
+<h2>Data Manipulation</h2>
+<pre>
+data$column_name <- NULL: Delete column column_name from data.
+data <- data[-c(row_index), ]: Delete rows by index from data.
+colnames(data) <- c("new_name1", "new_name2", ...): Change column names of data.
+</pre>
+</div>
+
+<div class="section">
+<h2>Data Import/Export</h2>
+<pre>
+read.csv("file.csv"): Read a CSV file into a data frame.
+write.csv(data, "file.csv"): Write a data frame to a CSV file.
+read.table("file.txt"): Read a general flat file into a data frame.
+write.table(data, "file.txt"): Write a data frame to a general flat file.
+</pre>
+</div>
+
+<div class="section">
+<h2>Data Exploration</h2>
+<pre>
+str(data): Display the structure of the data frame data.
+summary(data): Provide a summary of the data frame data.
+head(data): Show the first few rows of the data frame data.
+tail(data): Show the last few rows of the data frame data.
+</pre>
+</div>
+
+<div class="section">
+<h2>Data Transformation</h2>
+<pre>
+transform(data, new_column = expression): Add a new column to data with values calculated from expression.
+subset(data, condition): Extract subsets of rows from data based on condition.
+merge(data1, data2): Merge two data frames by common columns or row names.
+</pre>
+</div>
+
+<div class="section">
+<h2>Statistical Functions</h2>
+<pre>
+mean(x): Calculate the mean of x.
+median(x): Calculate the median of x.
+sd(x): Calculate the standard deviation of x.
+cor(x, y): Calculate the correlation between x and y.
+</pre>
+</div>
+
+<div class="section">
+<h2>Plotting</h2>
+<pre>
+plot(x, y): Create a scatter plot with x and y.
+hist(x): Create a histogram of x.
+boxplot(x): Create a boxplot of x.
+barplot(height): Create a bar plot with heights defined by height.
+</pre>
+</div>
+
+<div class="section">
+<h2>Control Structures</h2>
+<pre>
+if (condition) { ... }: Execute code if condition is true.
+for (variable in sequence) { ... }: Execute a loop over a sequence.
+while (condition) { ... }: Execute code while condition is true.
+repeat { ... }: Execute an infinite loop (use break to exit).
+</pre>
+</div>
+
+<div class="section">
+<h2>Function Definition</h2>
+<pre>
+function(arg1, arg2, ...) { ... }: Define a new function with arguments.
+</pre>
+</div>
+
+<div class="section">
+<h2>Miscellaneous</h2>
+<pre>
+seq(from, to): Generate a sequence of numbers from from to to.
+rep(x, times): Repeat x a number of times.
+sample(x, size): Take a sample of size size from x.
+</pre>
+</div>
+
+</body>
+</html>
