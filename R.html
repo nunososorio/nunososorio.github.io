@@ -20,7 +20,10 @@
 <h2>Directory Management</h2>
 <pre>
 getwd(): Get the current working directory.
+# Example: current_dir <- getwd()
+
 setwd(dir): Set the working directory to dir.
+# Example: setwd("C:/Data/R")
 </pre>
 </div>
 
@@ -28,8 +31,13 @@ setwd(dir): Set the working directory to dir.
 <h2>Package Management</h2>
 <pre>
 installed.packages(): List installed packages.
+# Example: packages <- installed.packages()
+
 install.packages("package_name"): Install a new package.
+# Example: install.packages("dplyr")
+
 library(package_name): Load an installed package into the session.
+# Example: library(dplyr)
 </pre>
 </div>
 
@@ -37,10 +45,16 @@ library(package_name): Load an installed package into the session.
 <h2>Help and Documentation</h2>
 <pre>
 ?function_name: Access the help page for function_name.
+# Example: ?mean
+
 help(function_name): An alternative way to access the help page.
+# Example: help(mean)
+
 args(function_name): View the arguments of a function.
-lsf.str("package:package_name")
-: List all functions in a package.
+# Example: args(mean)
+
+lsf.str("package:package_name"): List all functions in a package.
+# Example: lsf.str("package:stats")
 </pre>
 </div>
 
@@ -48,8 +62,13 @@ lsf.str("package:package_name")
 <h2>Data Manipulation</h2>
 <pre>
 data$column_name <- NULL: Delete column column_name from data.
+# Example: data$unnecessary_column <- NULL
+
 data <- data[-c(row_index), ]: Delete rows by index from data.
+# Example: data <- data[-c(1,2), ]
+
 colnames(data) <- c("new_name1", "new_name2", ...): Change column names of data.
+# Example: colnames(data) <- c("ID", "Age", "Gender")
 </pre>
 </div>
 
@@ -57,9 +76,16 @@ colnames(data) <- c("new_name1", "new_name2", ...): Change column names of data.
 <h2>Data Import/Export</h2>
 <pre>
 read.csv("file.csv"): Read a CSV file into a data frame.
+# Example: my_data <- read.csv("data.csv")
+
 write.csv(data, "file.csv"): Write a data frame to a CSV file.
+# Example: write.csv(my_data, "new_data.csv")
+
 read.table("file.txt"): Read a general flat file into a data frame.
+# Example: my_table <- read.table("table.txt")
+
 write.table(data, "file.txt"): Write a data frame to a general flat file.
+# Example: write.table(my_table, "new_table.txt")
 </pre>
 </div>
 
@@ -67,9 +93,16 @@ write.table(data, "file.txt"): Write a data frame to a general flat file.
 <h2>Data Exploration</h2>
 <pre>
 str(data): Display the structure of the data frame data.
+# Example: str(my_data)
+
 summary(data): Provide a summary of the data frame data.
+# Example: summary(my_data)
+
 head(data): Show the first few rows of the data frame data.
+# Example: head(my_data)
+
 tail(data): Show the last few rows of the data frame data.
+# Example: tail(my_data)
 </pre>
 </div>
 
@@ -77,8 +110,13 @@ tail(data): Show the last few rows of the data frame data.
 <h2>Data Transformation</h2>
 <pre>
 transform(data, new_column = expression): Add a new column to data with values calculated from expression.
+# Example: data <- transform(data, log_income = log(Income))
+
 subset(data, condition): Extract subsets of rows from data based on condition.
+# Example: high_income <- subset(data, Income > 50000)
+
 merge(data1, data2): Merge two data frames by common columns or row names.
+# Example: merged_data <- merge(data1, data2)
 </pre>
 </div>
 
@@ -86,9 +124,16 @@ merge(data1, data2): Merge two data frames by common columns or row names.
 <h2>Statistical Functions</h2>
 <pre>
 mean(x): Calculate the mean of x.
+# Example: average_age <- mean(data$Age)
+
 median(x): Calculate the median of x.
+# Example: median_income <- median(data$Income)
+
 sd(x): Calculate the standard deviation of x.
+# Example: sd_age <- sd(data$Age)
+
 cor(x, y): Calculate the correlation between x and y.
+# Example: correlation <- cor(data$Age, data$Income)
 </pre>
 </div>
 
@@ -96,9 +141,16 @@ cor(x, y): Calculate the correlation between x and y.
 <h2>Plotting</h2>
 <pre>
 plot(x, y): Create a scatter plot with x and y.
+# Example: plot(data$Age, data$Income)
+
 hist(x): Create a histogram of x.
+# Example: hist(data$Age)
+
 boxplot(x): Create a boxplot of x.
+# Example: boxplot(data$Income)
+
 barplot(height): Create a bar plot with heights defined by height.
+# Example: barplot(height = c(10, 20, 30))
 </pre>
 </div>
 
@@ -106,9 +158,16 @@ barplot(height): Create a bar plot with heights defined by height.
 <h2>Control Structures</h2>
 <pre>
 if (condition) { ... }: Execute code if condition is true.
+# Example: if (mean(data$Age) > 30) { print("Average age is greater than 30") }
+
 for (variable in sequence) { ... }: Execute a loop over a sequence.
+# Example: for (i in 1:10) { print(i) }
+
 while (condition) { ... }: Execute code while condition is true.
+# Example: count <- 0; while (count < 10) { print(count); count <- count + 1 }
+
 repeat { ... }: Execute an infinite loop (use break to exit).
+# Example: repeat { print("This will print once"); break }
 </pre>
 </div>
 
@@ -116,15 +175,7 @@ repeat { ... }: Execute an infinite loop (use break to exit).
 <h2>Function Definition</h2>
 <pre>
 function(arg1, arg2, ...) { ... }: Define a new function with arguments.
-</pre>
-</div>
-
-<div class="section">
-<h2>Miscellaneous</h2>
-<pre>
-seq(from, to): Generate a sequence of numbers from from to to.
-rep(x, times): Repeat x a number of times.
-sample(x, size): Take a sample of size size from x.
+# Example: add <- function(x, y) { return(x + y) }
 </pre>
 </div>
 
