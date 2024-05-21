@@ -1,0 +1,11 @@
+Model Information:
+* title:	Trees of Paris
+* source:	https://sketchfab.com/3d-models/trees-of-paris-18b6147712854200bdbc5c5424e3c0dd
+* author:	Loïc Norgeot (https://sketchfab.com/norgeotloic)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Trees of Paris" (https://sketchfab.com/3d-models/trees-of-paris-18b6147712854200bdbc5c5424e3c0dd) by Loïc Norgeot (https://sketchfab.com/norgeotloic) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
