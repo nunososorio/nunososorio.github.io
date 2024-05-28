@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas Cheat Sheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2C3E50;
+        }
+        code {
+            background-color: #F3F4F6;
+            padding: 2px 4px;
+            border-radius: 4px;
+            color: #2C3E50;
+        }
+        pre {
+            background-color: #F3F4F6;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pandas Cheat Sheet for Beginners</h1>
+
+    <h2>Pandas Functions</h2>
+    <h3>1. <code>pd.read_csv()</code></h3>
+    <p>Reads a CSV file into a DataFrame.</p>
+    <pre><code>import pandas as pd
+df = pd.read_csv('file.csv')
+print(df.head())</code></pre>
+
+    <h3>2. <code>pd.concat()</code></h3>
+    <p>Concatenates pandas objects along a particular axis.</p>
+    <pre><code>df1 = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})
+df2 = pd.DataFrame({'A': [5, 6], 'B': [7, 8]})
+df = pd.concat([df1, df2], axis=0)
+print(df)</code></pre>
+
+    <h3>3. <code>pd.merge()</code></h3>
+    <p>Merges DataFrames based on keys or indexes.</p>
+    <pre><code>df1 = pd.DataFrame({'key': ['A', 'B', 'C'], 'value1': [1, 2, 3]})
+df2 = pd.DataFrame({'key': ['A', 'B', 'D'], 'value2': [4, 5, 6]})
+df = pd.merge(df1, df2, on='key')
+print(df)</code></pre>
+
+    <h2>Pandas Methods</h2>
+    <h3>1. <code>df.head()</code></h3>
+    <p>Displays the first n rows of the DataFrame.</p>
+    <pre><code>print(df.head(10))</code></pre>
+
+    <h3>2. <code>df.drop()</code></h3>
+    <p>Drops specified labels from rows or columns.</p>
+    <pre><code>df = df.drop('column_name', axis=1)
+print(df)</code></pre>
+
+    <h3>3. <code>df.groupby()</code></h3>
+    <p>Groups the DataFrame using a mapper or by a Series of columns.</p>
+    <pre><code>grouped_df = df.groupby('column_name').mean()
+print(grouped_df)</code></pre>
+
+    <h3>4. <code>df.describe()</code></h3>
+    <p>Generates descriptive statistics for numeric columns.</p>
+    <pre><code>print(df.describe())</code></pre>
+
+    <h3>5. <code>df.info()</code></h3>
+    <p>Provides a concise summary of the DataFrame, including the data types and non-null values.</p>
+    <pre><code>print(df.info())</code></pre>
+
+    <h3>6. <code>df.fillna()</code></h3>
+    <p>Fills NA/NaN values using the specified method.</p>
+    <pre><code>df = df.fillna(0)
+print(df)</code></pre>
+
+    <h3>7. <code>df.dropna()</code></h3>
+    <p>Removes missing values.</p>
+    <pre><code>df = df.dropna()
+print(df)</code></pre>
+
+    <h3>8. <code>df.astype()</code></h3>
+    <p>Casts a Series to a specified dtype.</p>
+    <pre><code>df['column_name'] = df['column_name'].astype(float)
+print(df)</code></pre>
+
+    <h3>9. <code>df.sort_values()</code></h3>
+    <p>Sorts a DataFrame by the values along either axis.</p>
+    <pre><code>df = df.sort_values(by='column_name')
+print(df)</code></pre>
+
+    <h3>10. <code>df.rename()</code></h3>
+    <p>Renames the labels in the DataFrame.</p>
+    <pre><code>df = df.rename(columns={'old_name': 'new_name'})
+print(df)</code></pre>
+</body>
+</html>
