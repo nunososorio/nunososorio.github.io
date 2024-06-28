@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Learning App</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="question" class="active">
+            <h2>Question</h2>
+            <p>What is the correct diagnosis for the presented symptoms?</p>
+            <button onclick="checkAnswer(true)" class="btn btn-success">Correct Answer</button>
+            <button onclick="checkAnswer(false)" class="btn btn-danger">Wrong Answer</button>
+        </div>
+        <div id="feedback">
+            <h2>Feedback</h2>
+            <div id="chatbot">
+                <p><strong>AI Chatbot:</strong> Let's review the case again.</p>
+            </div>
+            <div id="threeD-container" class="threeD-container"></div>
+            <button onclick="nextQuestion()" class="btn btn-primary mt-3">Next Question</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
