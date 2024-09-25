@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sons Pulmonares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #2C3E50;
+        }
+        .sound-section {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980B9;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sons Pulmonares</h1>
+    <p>Os sons pulmonares são sons que os médicos ouvem ao usar um estetoscópio para auscultar os pulmões. Eles ajudam a diagnosticar várias condições respiratórias. Aqui estão alguns dos sons mais comuns que podem ser ouvidos:</p>
+
+    <div class="sound-section">
+        <h2>Pulmões Normais</h2>
+        <p>Um som respiratório normal é claro e suave, sem ruídos adicionais.</p>
+        <button onclick="document.getElementById('normal-sound').play()">Ouvir Som Normal</button>
+        <audio id="normal-sound" src="normal_lungs.mp3"></audio>
+    </div>
+
+    <div class="sound-section">
+        <h2>Estridor Inspiratório</h2>
+        <p>O estridor inspiratório é um som agudo que ocorre durante a inspiração, geralmente causado por uma obstrução das vias aéreas superiores.</p>
+        <button onclick="document.getElementById('stridor-sound').play()">Ouvir Estridor Inspiratório</button>
+        <audio id="stridor-sound" src="inspiratory_stridor.mp3"></audio>
+    </div>
+
+    <div class="sound-section">
+        <h2>Estertores Finos</h2>
+        <p>Os estertores finos são sons crepitantes e breves, que ocorrem no final da inspiração, associados a doenças como fibrose pulmonar.</p>
+        <button onclick="document.getElementById('fine-crackles-sound').play()">Ouvir Estertores Finos</button>
+        <audio id="fine-crackles-sound" src="fine_crackles.mp3"></audio>
+    </div>
+
+    <div class="sound-section">
+        <h2>Estertores Grossos</h2>
+        <p>Os estertores grossos são sons crepitantes mais profundos e prolongados, associados a condições como bronquite.</p>
+        <button onclick="document.getElementById('coarse-crackles-sound').play()">Ouvir Estertores Grossos</button>
+        <audio id="coarse-crackles-sound" src="coarse_crackles.mp3"></audio>
+    </div>
+
+    <div class="sound-section">
+        <h2>Sibilo</h2>
+        <p>O sibilo é um som assobiado que ocorre geralmente durante a expiração, comum em condições como a asma.</p>
+        <button onclick="document.getElementById('wheeze-sound').play()">Ouvir Sibilo</button>
+        <audio id="wheeze-sound" src="wheeze.mp3"></audio>
+    </div>
+
+</body>
+</html>
