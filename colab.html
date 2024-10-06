@@ -1,0 +1,3107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a134327eafbb823c4c91032609cabae6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a134327eafbb823c4c91032609cabae6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a134327eafbb823c4c91032609cabae6 = L.map(
+                "map_a134327eafbb823c4c91032609cabae6",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_13754883306486b149cabb02b964601d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_13754883306486b149cabb02b964601d.addTo(map_a134327eafbb823c4c91032609cabae6);
+        
+    
+            var marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_a479a29a88943846e14e8321d0dd2add = L.marker(
+                [41.501, 2.1147],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_def9dbfbd862e4bc6ea950f9367f4fad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a479a29a88943846e14e8321d0dd2add.setIcon(icon_def9dbfbd862e4bc6ea950f9367f4fad);
+        
+    
+        var popup_608dd8f815ba16aa766b590e9c7bbfcc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a266ec6d44a3f4215ef79414616e4382 = $(`<div id="html_a266ec6d44a3f4215ef79414616e4382" style="width: 100.0%; height: 100.0%;">Universitat Autonoma Barcelona, Spain</div>`)[0];
+                popup_608dd8f815ba16aa766b590e9c7bbfcc.setContent(html_a266ec6d44a3f4215ef79414616e4382);
+            
+        
+
+        marker_a479a29a88943846e14e8321d0dd2add.bindPopup(popup_608dd8f815ba16aa766b590e9c7bbfcc)
+        ;
+
+        
+    
+    
+            var marker_3faa280647bc0e257732932ee68eade1 = L.marker(
+                [1.3483, 103.6831],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_20312dd7d0f8d6d3705d0de6198fda8a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3faa280647bc0e257732932ee68eade1.setIcon(icon_20312dd7d0f8d6d3705d0de6198fda8a);
+        
+    
+        var popup_de326b9f4d4a938ec41fd6f7984be37a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_537af05eeb120a84f6815382ad71a761 = $(`<div id="html_537af05eeb120a84f6815382ad71a761" style="width: 100.0%; height: 100.0%;">Nanyang Technological University, Singapore</div>`)[0];
+                popup_de326b9f4d4a938ec41fd6f7984be37a.setContent(html_537af05eeb120a84f6815382ad71a761);
+            
+        
+
+        marker_3faa280647bc0e257732932ee68eade1.bindPopup(popup_de326b9f4d4a938ec41fd6f7984be37a)
+        ;
+
+        
+    
+    
+            var marker_e70d0a5849d33b1baac58e6c32155f5b = L.marker(
+                [36.1447, -86.8027],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6be301d3312154f05154b25f9c971926 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e70d0a5849d33b1baac58e6c32155f5b.setIcon(icon_6be301d3312154f05154b25f9c971926);
+        
+    
+        var popup_a01bf9f70f28b4a22591a4d7007171c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e6d8ca9017e84910f58c45505c04949d = $(`<div id="html_e6d8ca9017e84910f58c45505c04949d" style="width: 100.0%; height: 100.0%;">Vanderbilt University, USA</div>`)[0];
+                popup_a01bf9f70f28b4a22591a4d7007171c8.setContent(html_e6d8ca9017e84910f58c45505c04949d);
+            
+        
+
+        marker_e70d0a5849d33b1baac58e6c32155f5b.bindPopup(popup_a01bf9f70f28b4a22591a4d7007171c8)
+        ;
+
+        
+    
+    
+            var marker_226426810086d50bfcf3ad275227b372 = L.marker(
+                [33.7925, -84.3238],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_a8e05f73a42d6b2bc2beab036372a959 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_226426810086d50bfcf3ad275227b372.setIcon(icon_a8e05f73a42d6b2bc2beab036372a959);
+        
+    
+        var popup_0a61a8b313be3070425de79c42d046ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f611aac136bf85bd5249c08b0f13e00c = $(`<div id="html_f611aac136bf85bd5249c08b0f13e00c" style="width: 100.0%; height: 100.0%;">Emory University, USA</div>`)[0];
+                popup_0a61a8b313be3070425de79c42d046ed.setContent(html_f611aac136bf85bd5249c08b0f13e00c);
+            
+        
+
+        marker_226426810086d50bfcf3ad275227b372.bindPopup(popup_0a61a8b313be3070425de79c42d046ed)
+        ;
+
+        
+    
+    
+            var marker_d541ed6231f10e3b9dd4f4bed5b5d2b5 = L.marker(
+                [39.9487, -75.158],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d97df69883b8b4e34550b80c0ceabde0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d541ed6231f10e3b9dd4f4bed5b5d2b5.setIcon(icon_d97df69883b8b4e34550b80c0ceabde0);
+        
+    
+        var popup_35dc4f39ea4a0f4d028fcaeb9a6aa078 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f8fba30e184900a060816eac6b1ec31 = $(`<div id="html_4f8fba30e184900a060816eac6b1ec31" style="width: 100.0%; height: 100.0%;">Thomas Jefferson University, USA</div>`)[0];
+                popup_35dc4f39ea4a0f4d028fcaeb9a6aa078.setContent(html_4f8fba30e184900a060816eac6b1ec31);
+            
+        
+
+        marker_d541ed6231f10e3b9dd4f4bed5b5d2b5.bindPopup(popup_35dc4f39ea4a0f4d028fcaeb9a6aa078)
+        ;
+
+        
+    
+    
+            var marker_b6dc5910c807dfc18c6bd51f95c484fa = L.marker(
+                [51.0504, 13.7373],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_de748a0ecd12186306bf39dfdc99f1c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b6dc5910c807dfc18c6bd51f95c484fa.setIcon(icon_de748a0ecd12186306bf39dfdc99f1c3);
+        
+    
+        var popup_899cb52311061b8c89dab2ee816a8a48 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1822d49d0b00a472d7b36f4ca9ca5009 = $(`<div id="html_1822d49d0b00a472d7b36f4ca9ca5009" style="width: 100.0%; height: 100.0%;">Leibniz Institute of Polymer Research Dresden, Germany</div>`)[0];
+                popup_899cb52311061b8c89dab2ee816a8a48.setContent(html_1822d49d0b00a472d7b36f4ca9ca5009);
+            
+        
+
+        marker_b6dc5910c807dfc18c6bd51f95c484fa.bindPopup(popup_899cb52311061b8c89dab2ee816a8a48)
+        ;
+
+        
+    
+    
+            var marker_2db3de474c9c95e64838c8aad09e86d5 = L.marker(
+                [53.8013, -1.5486],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_181e0f9c23b555f4e7d9368b38deacb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2db3de474c9c95e64838c8aad09e86d5.setIcon(icon_181e0f9c23b555f4e7d9368b38deacb7);
+        
+    
+        var popup_6d78f8b8d5bf2c3b61ceb4e419f98123 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5fca6901ba64f617eb7d2593cbb3de1 = $(`<div id="html_d5fca6901ba64f617eb7d2593cbb3de1" style="width: 100.0%; height: 100.0%;">Leeds University, UK</div>`)[0];
+                popup_6d78f8b8d5bf2c3b61ceb4e419f98123.setContent(html_d5fca6901ba64f617eb7d2593cbb3de1);
+            
+        
+
+        marker_2db3de474c9c95e64838c8aad09e86d5.bindPopup(popup_6d78f8b8d5bf2c3b61ceb4e419f98123)
+        ;
+
+        
+    
+    
+            var marker_58246c551f1ed56f14350851669b2e9d = L.marker(
+                [53.2794, -9.057],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_027844a7a7242775aaf905e259d5fcda = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_58246c551f1ed56f14350851669b2e9d.setIcon(icon_027844a7a7242775aaf905e259d5fcda);
+        
+    
+        var popup_453f3b09d70fc101c2f84aae4ccd6395 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dcdee2a5b9e2ee0af1671bdd2e981cc = $(`<div id="html_4dcdee2a5b9e2ee0af1671bdd2e981cc" style="width: 100.0%; height: 100.0%;">National University Ireland - Galway, Ireland</div>`)[0];
+                popup_453f3b09d70fc101c2f84aae4ccd6395.setContent(html_4dcdee2a5b9e2ee0af1671bdd2e981cc);
+            
+        
+
+        marker_58246c551f1ed56f14350851669b2e9d.bindPopup(popup_453f3b09d70fc101c2f84aae4ccd6395)
+        ;
+
+        
+    
+    
+            var marker_17c0eea782e8564fb154192e212692de = L.marker(
+                [49.505, 6.133],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_86b29e236e716ed439b32d330dc23eb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_17c0eea782e8564fb154192e212692de.setIcon(icon_86b29e236e716ed439b32d330dc23eb7);
+        
+    
+        var popup_201427d893d5f5d42cc2595fa92c990a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72899fe3ada6547b62c6cc4c5c6773ac = $(`<div id="html_72899fe3ada6547b62c6cc4c5c6773ac" style="width: 100.0%; height: 100.0%;">University of Luxembourg, Luxembourg</div>`)[0];
+                popup_201427d893d5f5d42cc2595fa92c990a.setContent(html_72899fe3ada6547b62c6cc4c5c6773ac);
+            
+        
+
+        marker_17c0eea782e8564fb154192e212692de.bindPopup(popup_201427d893d5f5d42cc2595fa92c990a)
+        ;
+
+        
+    
+    
+            var marker_9599ca540dfa371212bc6ac8e3b788ca = L.marker(
+                [42.8782, -8.5448],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0a0103d6db1b47f025c0f1c670e9cc9d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9599ca540dfa371212bc6ac8e3b788ca.setIcon(icon_0a0103d6db1b47f025c0f1c670e9cc9d);
+        
+    
+        var popup_d8c75e1558b3032f4c0a7b5a9be8fb13 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cb9e094faf124ec000d0881eb967768f = $(`<div id="html_cb9e094faf124ec000d0881eb967768f" style="width: 100.0%; height: 100.0%;">University of Santiago Compostela, Spain</div>`)[0];
+                popup_d8c75e1558b3032f4c0a7b5a9be8fb13.setContent(html_cb9e094faf124ec000d0881eb967768f);
+            
+        
+
+        marker_9599ca540dfa371212bc6ac8e3b788ca.bindPopup(popup_d8c75e1558b3032f4c0a7b5a9be8fb13)
+        ;
+
+        
+    
+    
+            var marker_c369bf684d1fc244a17250f7e93dd4e3 = L.marker(
+                [41.3874, 2.1139],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_635951af11ad6ca39a8f98dde1397a48 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c369bf684d1fc244a17250f7e93dd4e3.setIcon(icon_635951af11ad6ca39a8f98dde1397a48);
+        
+    
+        var popup_8817c4a441a21e9d679744bbf6592192 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_196d16185243f6899f08fda2f72a5bf1 = $(`<div id="html_196d16185243f6899f08fda2f72a5bf1" style="width: 100.0%; height: 100.0%;">Universitat Politecnica Barcelona, Spain</div>`)[0];
+                popup_8817c4a441a21e9d679744bbf6592192.setContent(html_196d16185243f6899f08fda2f72a5bf1);
+            
+        
+
+        marker_c369bf684d1fc244a17250f7e93dd4e3.bindPopup(popup_8817c4a441a21e9d679744bbf6592192)
+        ;
+
+        
+    
+    
+            var marker_b40b44ff15d16c387f07fc6393448dcd = L.marker(
+                [48.210033, 16.363449],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e69ba77c3f55735b5811bb7dd8efffe7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b40b44ff15d16c387f07fc6393448dcd.setIcon(icon_e69ba77c3f55735b5811bb7dd8efffe7);
+        
+    
+        var popup_87dfeae1650ea58fa88b5bcef14b3495 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a13db313f169f784d393a2b4130baee4 = $(`<div id="html_a13db313f169f784d393a2b4130baee4" style="width: 100.0%; height: 100.0%;">Ludwig Boltzmann Institute for Experimental and Clinical Traumatology, Austria</div>`)[0];
+                popup_87dfeae1650ea58fa88b5bcef14b3495.setContent(html_a13db313f169f784d393a2b4130baee4);
+            
+        
+
+        marker_b40b44ff15d16c387f07fc6393448dcd.bindPopup(popup_87dfeae1650ea58fa88b5bcef14b3495)
+        ;
+
+        
+    
+    
+            var marker_a2dcd99b57bf245118368f7c00394365 = L.marker(
+                [41.0845, 29.051],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_5f4cc8bff189e26d8ceac6e9d05878a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2dcd99b57bf245118368f7c00394365.setIcon(icon_5f4cc8bff189e26d8ceac6e9d05878a1);
+        
+    
+        var popup_5b86e9a4305300788bf576023aaa378c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3204786e85035170353a22ae09e5f8f1 = $(`<div id="html_3204786e85035170353a22ae09e5f8f1" style="width: 100.0%; height: 100.0%;">Bogaziçi University, Turkey</div>`)[0];
+                popup_5b86e9a4305300788bf576023aaa378c.setContent(html_3204786e85035170353a22ae09e5f8f1);
+            
+        
+
+        marker_a2dcd99b57bf245118368f7c00394365.bindPopup(popup_5b86e9a4305300788bf576023aaa378c)
+        ;
+
+        
+    
+    
+            var marker_0fad107db021664617783001c38cd828 = L.marker(
+                [42.9634, -85.6681],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_14f834f4bdd40e657a32e45c896ac89b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0fad107db021664617783001c38cd828.setIcon(icon_14f834f4bdd40e657a32e45c896ac89b);
+        
+    
+        var popup_91c634b955cc47214dc5f1d2ade72dde = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b57d1cd0651fe90b353c8f7bd467288 = $(`<div id="html_1b57d1cd0651fe90b353c8f7bd467288" style="width: 100.0%; height: 100.0%;">VAN ANDEL INSTITUTE, USA</div>`)[0];
+                popup_91c634b955cc47214dc5f1d2ade72dde.setContent(html_1b57d1cd0651fe90b353c8f7bd467288);
+            
+        
+
+        marker_0fad107db021664617783001c38cd828.bindPopup(popup_91c634b955cc47214dc5f1d2ade72dde)
+        ;
+
+        
+    
+    
+            var marker_5ba09d654921573516761570d26cf9ee = L.marker(
+                [43.6629, -79.3957],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_8f75978132841008b4a817fe8e03ddbb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5ba09d654921573516761570d26cf9ee.setIcon(icon_8f75978132841008b4a817fe8e03ddbb);
+        
+    
+        var popup_45578e7ce110471f2ef89332be007778 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_af51f391c94e8cb5ac8f82544950fa33 = $(`<div id="html_af51f391c94e8cb5ac8f82544950fa33" style="width: 100.0%; height: 100.0%;">University of Toronto, Canada</div>`)[0];
+                popup_45578e7ce110471f2ef89332be007778.setContent(html_af51f391c94e8cb5ac8f82544950fa33);
+            
+        
+
+        marker_5ba09d654921573516761570d26cf9ee.bindPopup(popup_45578e7ce110471f2ef89332be007778)
+        ;
+
+        
+    
+    
+            var marker_b019ccfc6ba06565ab1c973afdd0eabd = L.marker(
+                [52.9386, -1.1952],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_da89d5b51db337d16dba0acf974f9fd4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b019ccfc6ba06565ab1c973afdd0eabd.setIcon(icon_da89d5b51db337d16dba0acf974f9fd4);
+        
+    
+        var popup_0af5ed9b703174e8e8d65788b66fe3a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_941f325d8f8402633fcd87f321287a39 = $(`<div id="html_941f325d8f8402633fcd87f321287a39" style="width: 100.0%; height: 100.0%;">University of Nottingham, UK</div>`)[0];
+                popup_0af5ed9b703174e8e8d65788b66fe3a7.setContent(html_941f325d8f8402633fcd87f321287a39);
+            
+        
+
+        marker_b019ccfc6ba06565ab1c973afdd0eabd.bindPopup(popup_0af5ed9b703174e8e8d65788b66fe3a7)
+        ;
+
+        
+    
+    
+            var marker_c1e624a20993bcb2abf78754e0b24000 = L.marker(
+                [51.5246, -0.134],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_003ebf6474b7bf2a16aade588fc25c53 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c1e624a20993bcb2abf78754e0b24000.setIcon(icon_003ebf6474b7bf2a16aade588fc25c53);
+        
+    
+        var popup_4c3ba322bb2b219b1a23626556d2fcd5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb2a055dd2624704f204eb94805829c1 = $(`<div id="html_fb2a055dd2624704f204eb94805829c1" style="width: 100.0%; height: 100.0%;">University College of London, UK</div>`)[0];
+                popup_4c3ba322bb2b219b1a23626556d2fcd5.setContent(html_fb2a055dd2624704f204eb94805829c1);
+            
+        
+
+        marker_c1e624a20993bcb2abf78754e0b24000.bindPopup(popup_4c3ba322bb2b219b1a23626556d2fcd5)
+        ;
+
+        
+    
+    
+            var marker_85f8599c11cc5f0883e22aebdc00dfd5 = L.marker(
+                [45.462, 9.1603],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_1829531b269b4f63e90b90bbc5ca41e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_85f8599c11cc5f0883e22aebdc00dfd5.setIcon(icon_1829531b269b4f63e90b90bbc5ca41e6);
+        
+    
+        var popup_1291ce46773bc4fe1191c43b031954f8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_302ae3fdb70eddc97d9cd28efd380e91 = $(`<div id="html_302ae3fdb70eddc97d9cd28efd380e91" style="width: 100.0%; height: 100.0%;">Mario Negri Institute for Pharmacological Research, Italy</div>`)[0];
+                popup_1291ce46773bc4fe1191c43b031954f8.setContent(html_302ae3fdb70eddc97d9cd28efd380e91);
+            
+        
+
+        marker_85f8599c11cc5f0883e22aebdc00dfd5.bindPopup(popup_1291ce46773bc4fe1191c43b031954f8)
+        ;
+
+        
+    
+    
+            var marker_f478e38dc80d6117d96b605f0899e8d5 = L.marker(
+                [45.185, 9.1617],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_4c213f3344e28f2a9b2c00d40935b6af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f478e38dc80d6117d96b605f0899e8d5.setIcon(icon_4c213f3344e28f2a9b2c00d40935b6af);
+        
+    
+        var popup_55ac4b33a687d1fe2d9180298e507608 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ecb8a76b658fe13d12b9eeecdf835810 = $(`<div id="html_ecb8a76b658fe13d12b9eeecdf835810" style="width: 100.0%; height: 100.0%;">University of Pavia, Italy</div>`)[0];
+                popup_55ac4b33a687d1fe2d9180298e507608.setContent(html_ecb8a76b658fe13d12b9eeecdf835810);
+            
+        
+
+        marker_f478e38dc80d6117d96b605f0899e8d5.bindPopup(popup_55ac4b33a687d1fe2d9180298e507608)
+        ;
+
+        
+    
+    
+            var marker_34a74d3d10ab6ca161c04fe6fbe341ef = L.marker(
+                [41.5454, -8.4201],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e023947cdb9843a80fee92cb762e0d0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_34a74d3d10ab6ca161c04fe6fbe341ef.setIcon(icon_e023947cdb9843a80fee92cb762e0d0b);
+        
+    
+        var popup_696881600266d79e785cdbac30f39e3f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a8c608e87b8935e52cb120a8c9ffbe4f = $(`<div id="html_a8c608e87b8935e52cb120a8c9ffbe4f" style="width: 100.0%; height: 100.0%;">International Iberian Institute for Nanotechnology, Portugal</div>`)[0];
+                popup_696881600266d79e785cdbac30f39e3f.setContent(html_a8c608e87b8935e52cb120a8c9ffbe4f);
+            
+        
+
+        marker_34a74d3d10ab6ca161c04fe6fbe341ef.bindPopup(popup_696881600266d79e785cdbac30f39e3f)
+        ;
+
+        
+    
+    
+            var marker_f8357929f103de1c9a072101fc2736f0 = L.marker(
+                [47.4321, 8.5684],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_8b49e88b9394beb2da2c2d003b4bd3cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f8357929f103de1c9a072101fc2736f0.setIcon(icon_8b49e88b9394beb2da2c2d003b4bd3cb);
+        
+    
+        var popup_200ba57e88e1570a7303f8fead8e9d40 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02769b93324fed602a75010cf8f10edc = $(`<div id="html_02769b93324fed602a75010cf8f10edc" style="width: 100.0%; height: 100.0%;">EMPA - Materials Science and Technology, Switzerland</div>`)[0];
+                popup_200ba57e88e1570a7303f8fead8e9d40.setContent(html_02769b93324fed602a75010cf8f10edc);
+            
+        
+
+        marker_f8357929f103de1c9a072101fc2736f0.bindPopup(popup_200ba57e88e1570a7303f8fead8e9d40)
+        ;
+
+        
+    
+    
+            var marker_d31b9f11f82e3aea7aee1d71dcf6e06a = L.marker(
+                [41.3818, 2.1685],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_286b68f0c3e179b59184fffa2f4d46fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d31b9f11f82e3aea7aee1d71dcf6e06a.setIcon(icon_286b68f0c3e179b59184fffa2f4d46fd);
+        
+    
+        var popup_2ee5e26459106a368c9600b0bb123bbc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_20aa731cb88dec740f18b74e8317c6a3 = $(`<div id="html_20aa731cb88dec740f18b74e8317c6a3" style="width: 100.0%; height: 100.0%;">BCBiomaterials, Spain</div>`)[0];
+                popup_2ee5e26459106a368c9600b0bb123bbc.setContent(html_20aa731cb88dec740f18b74e8317c6a3);
+            
+        
+
+        marker_d31b9f11f82e3aea7aee1d71dcf6e06a.bindPopup(popup_2ee5e26459106a368c9600b0bb123bbc)
+        ;
+
+        
+    
+    
+            var marker_453b31bffe2a7d2f75974ee32d980058 = L.marker(
+                [52.382, 9.803],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_97f71ad83b638aea6526cbda2f1916dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_453b31bffe2a7d2f75974ee32d980058.setIcon(icon_97f71ad83b638aea6526cbda2f1916dd);
+        
+    
+        var popup_0c561a28ec00ea88880b4b5771fc57cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3eac5c733a884a9e2f81d415f5d5cbea = $(`<div id="html_3eac5c733a884a9e2f81d415f5d5cbea" style="width: 100.0%; height: 100.0%;">Medical School Hannover, Germany</div>`)[0];
+                popup_0c561a28ec00ea88880b4b5771fc57cb.setContent(html_3eac5c733a884a9e2f81d415f5d5cbea);
+            
+        
+
+        marker_453b31bffe2a7d2f75974ee32d980058.bindPopup(popup_0c561a28ec00ea88880b4b5771fc57cb)
+        ;
+
+        
+    
+    
+            var marker_2ff1b69c6b07047790ac5e04f6ed5f7e = L.marker(
+                [59.3498, 18.0696],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_f842a77bb3a9dfeb2a7c18a7b50b8d24 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2ff1b69c6b07047790ac5e04f6ed5f7e.setIcon(icon_f842a77bb3a9dfeb2a7c18a7b50b8d24);
+        
+    
+        var popup_4237cb04d4b22f00a4f75160eb63c395 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a05ec3d6130c07de66d59467bf538e3 = $(`<div id="html_9a05ec3d6130c07de66d59467bf538e3" style="width: 100.0%; height: 100.0%;">Karolinska Institute, Sweden</div>`)[0];
+                popup_4237cb04d4b22f00a4f75160eb63c395.setContent(html_9a05ec3d6130c07de66d59467bf538e3);
+            
+        
+
+        marker_2ff1b69c6b07047790ac5e04f6ed5f7e.bindPopup(popup_4237cb04d4b22f00a4f75160eb63c395)
+        ;
+
+        
+    
+    
+            var marker_a2ad1cc84e0ec2d155bc6e371eb7f297 = L.marker(
+                [51.4508, 7.0131],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_cfb21fa56a2f78b2b3da4a8e3fec7cdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a2ad1cc84e0ec2d155bc6e371eb7f297.setIcon(icon_cfb21fa56a2f78b2b3da4a8e3fec7cdb);
+        
+    
+        var popup_30d23dd844eab1109103d7788c1ecfbf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4592af56712e8d1d7c9bc0c336ba1295 = $(`<div id="html_4592af56712e8d1d7c9bc0c336ba1295" style="width: 100.0%; height: 100.0%;">Institute of Experimental Immunology & Imaging, University of Duisberg-Essen, Germany</div>`)[0];
+                popup_30d23dd844eab1109103d7788c1ecfbf.setContent(html_4592af56712e8d1d7c9bc0c336ba1295);
+            
+        
+
+        marker_a2ad1cc84e0ec2d155bc6e371eb7f297.bindPopup(popup_30d23dd844eab1109103d7788c1ecfbf)
+        ;
+
+        
+    
+    
+            var marker_7e2730a3355f731e31d4604d8e8e7010 = L.marker(
+                [37.8079, -122.2706],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_db3467899ced8f34ab1b533b3782797c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7e2730a3355f731e31d4604d8e8e7010.setIcon(icon_db3467899ced8f34ab1b533b3782797c);
+        
+    
+        var popup_694e49ab557b122976470ff46a4b8efd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c56c0c19c7838e1d9a387f276a59e9ff = $(`<div id="html_c56c0c19c7838e1d9a387f276a59e9ff" style="width: 100.0%; height: 100.0%;">NGM Biopharmaceuticals, Inc, USA</div>`)[0];
+                popup_694e49ab557b122976470ff46a4b8efd.setContent(html_c56c0c19c7838e1d9a387f276a59e9ff);
+            
+        
+
+        marker_7e2730a3355f731e31d4604d8e8e7010.bindPopup(popup_694e49ab557b122976470ff46a4b8efd)
+        ;
+
+        
+    
+    
+            var marker_fba5e331ed71b6b6df565dccbe018f34 = L.marker(
+                [55.7047, 13.191],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0b6b32893637b57a0a3920158de82e2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fba5e331ed71b6b6df565dccbe018f34.setIcon(icon_0b6b32893637b57a0a3920158de82e2a);
+        
+    
+        var popup_68b369494df0dc63106f0528281371cd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0201a6e1a64af7cd79b24e9d893e8a95 = $(`<div id="html_0201a6e1a64af7cd79b24e9d893e8a95" style="width: 100.0%; height: 100.0%;">Lund University, Sweden</div>`)[0];
+                popup_68b369494df0dc63106f0528281371cd.setContent(html_0201a6e1a64af7cd79b24e9d893e8a95);
+            
+        
+
+        marker_fba5e331ed71b6b6df565dccbe018f34.bindPopup(popup_68b369494df0dc63106f0528281371cd)
+        ;
+
+        
+    
+    
+            var marker_cfb38784eafc221d6d2efec1f5032909 = L.marker(
+                [51.9244, 4.4777],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_a9d35a3f39b84b9b36a064f07737e05e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cfb38784eafc221d6d2efec1f5032909.setIcon(icon_a9d35a3f39b84b9b36a064f07737e05e);
+        
+    
+        var popup_cea2f5920fd429bf3f33007af382f728 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c889ec3f61fa633df2bb394b68dc4e63 = $(`<div id="html_c889ec3f61fa633df2bb394b68dc4e63" style="width: 100.0%; height: 100.0%;">Asphalion Erasmus University Rotterdam, Netherlands</div>`)[0];
+                popup_cea2f5920fd429bf3f33007af382f728.setContent(html_c889ec3f61fa633df2bb394b68dc4e63);
+            
+        
+
+        marker_cfb38784eafc221d6d2efec1f5032909.bindPopup(popup_cea2f5920fd429bf3f33007af382f728)
+        ;
+
+        
+    
+    
+            var marker_830b49df7fbe68c7f3a086a67feb09e9 = L.marker(
+                [51.2425, -0.5905],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_890bb426b78df426ebe615afc2b760dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_830b49df7fbe68c7f3a086a67feb09e9.setIcon(icon_890bb426b78df426ebe615afc2b760dd);
+        
+    
+        var popup_7da1af8d47d9683408813fc80c694007 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc2161e491cee96c7603ecdb660dabe0 = $(`<div id="html_bc2161e491cee96c7603ecdb660dabe0" style="width: 100.0%; height: 100.0%;">University of Surrey, UK</div>`)[0];
+                popup_7da1af8d47d9683408813fc80c694007.setContent(html_bc2161e491cee96c7603ecdb660dabe0);
+            
+        
+
+        marker_830b49df7fbe68c7f3a086a67feb09e9.bindPopup(popup_7da1af8d47d9683408813fc80c694007)
+        ;
+
+        
+    
+    
+            var marker_b86496380877c6a8945e498588b0ac09 = L.marker(
+                [47.3769, 8.5417],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_a2f299bb882732c8476c017af653bede = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b86496380877c6a8945e498588b0ac09.setIcon(icon_a2f299bb882732c8476c017af653bede);
+        
+    
+        var popup_0750567155f6070c92e5ba51668ee8f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ccccec4de794179c757c2acc4ed6f50b = $(`<div id="html_ccccec4de794179c757c2acc4ed6f50b" style="width: 100.0%; height: 100.0%;">ETH Zurich, Switzerland</div>`)[0];
+                popup_0750567155f6070c92e5ba51668ee8f7.setContent(html_ccccec4de794179c757c2acc4ed6f50b);
+            
+        
+
+        marker_b86496380877c6a8945e498588b0ac09.bindPopup(popup_0750567155f6070c92e5ba51668ee8f7)
+        ;
+
+        
+    
+    
+            var marker_44de40c1511d5f6ca35a54393ddabad6 = L.marker(
+                [50.812, 4.3843],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_294742159481e2ee71f9b25b6afc3c8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_44de40c1511d5f6ca35a54393ddabad6.setIcon(icon_294742159481e2ee71f9b25b6afc3c8c);
+        
+    
+        var popup_c79f92123eda8d614b909b728a2e3bc5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c6433ea8bf135a36c887be269daed93 = $(`<div id="html_6c6433ea8bf135a36c887be269daed93" style="width: 100.0%; height: 100.0%;">Université Libre de Bruxelles, Belgium</div>`)[0];
+                popup_c79f92123eda8d614b909b728a2e3bc5.setContent(html_6c6433ea8bf135a36c887be269daed93);
+            
+        
+
+        marker_44de40c1511d5f6ca35a54393ddabad6.bindPopup(popup_c79f92123eda8d614b909b728a2e3bc5)
+        ;
+
+        
+    
+    
+            var marker_5bca897ea3f9fadc78900388734d6480 = L.marker(
+                [55.7069, 12.5376],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_23ceab7885e82076e36dae8855bdde13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5bca897ea3f9fadc78900388734d6480.setIcon(icon_23ceab7885e82076e36dae8855bdde13);
+        
+    
+        var popup_c69b664e277b306d883659d9605ee356 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ced27662fdbe25194156e3be8b8efc9c = $(`<div id="html_ced27662fdbe25194156e3be8b8efc9c" style="width: 100.0%; height: 100.0%;">Bispebjerg/Frederiksberg Hospital, Denmark</div>`)[0];
+                popup_c69b664e277b306d883659d9605ee356.setContent(html_ced27662fdbe25194156e3be8b8efc9c);
+            
+        
+
+        marker_5bca897ea3f9fadc78900388734d6480.bindPopup(popup_c69b664e277b306d883659d9605ee356)
+        ;
+
+        
+    
+    
+            var marker_572a1442ed8a708454608d8b215d5bdd = L.marker(
+                [54.0865, 13.3923],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e7bf5e91ff21047408106b966a6cae2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_572a1442ed8a708454608d8b215d5bdd.setIcon(icon_e7bf5e91ff21047408106b966a6cae2f);
+        
+    
+        var popup_6b12d3ed1e967e84a3149f0096a01819 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_131ab03134f25617d3b44f88cc7f616f = $(`<div id="html_131ab03134f25617d3b44f88cc7f616f" style="width: 100.0%; height: 100.0%;">University Medicine Greifswald, Germany</div>`)[0];
+                popup_6b12d3ed1e967e84a3149f0096a01819.setContent(html_131ab03134f25617d3b44f88cc7f616f);
+            
+        
+
+        marker_572a1442ed8a708454608d8b215d5bdd.bindPopup(popup_6b12d3ed1e967e84a3149f0096a01819)
+        ;
+
+        
+    
+    
+            var marker_a75def57800d0e534b045a19388e55e7 = L.marker(
+                [59.9139, 10.7522],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e2b9d33005905f9d845c3231e1e0dfe5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a75def57800d0e534b045a19388e55e7.setIcon(icon_e2b9d33005905f9d845c3231e1e0dfe5);
+        
+    
+        var popup_ce0ad0c3f28cdbe496e948d9aec50db3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64cdb5962f058588b7a06183d2d813e2 = $(`<div id="html_64cdb5962f058588b7a06183d2d813e2" style="width: 100.0%; height: 100.0%;">Norwegian Institute of Public Health, Norway</div>`)[0];
+                popup_ce0ad0c3f28cdbe496e948d9aec50db3.setContent(html_64cdb5962f058588b7a06183d2d813e2);
+            
+        
+
+        marker_a75def57800d0e534b045a19388e55e7.bindPopup(popup_ce0ad0c3f28cdbe496e948d9aec50db3)
+        ;
+
+        
+    
+    
+            var marker_f991de71d53a94f47df5d74e8aa5a692 = L.marker(
+                [59.3498, 18.0696],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_af4e61daaf5a85d67d94a3f5e58ad9e1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f991de71d53a94f47df5d74e8aa5a692.setIcon(icon_af4e61daaf5a85d67d94a3f5e58ad9e1);
+        
+    
+        var popup_1fe387a79ae998afad5e5f49f534584a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_48f5d30b15de1a14da7bec3ad24f9ba0 = $(`<div id="html_48f5d30b15de1a14da7bec3ad24f9ba0" style="width: 100.0%; height: 100.0%;">Karolinska Institutet, Sweden</div>`)[0];
+                popup_1fe387a79ae998afad5e5f49f534584a.setContent(html_48f5d30b15de1a14da7bec3ad24f9ba0);
+            
+        
+
+        marker_f991de71d53a94f47df5d74e8aa5a692.bindPopup(popup_1fe387a79ae998afad5e5f49f534584a)
+        ;
+
+        
+    
+    
+            var marker_6472fc37c8dd47d30012d03c740ba81f = L.marker(
+                [-25.9667, 32.5833],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_676e4ba82b6e576a75de0a3ad1077382 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6472fc37c8dd47d30012d03c740ba81f.setIcon(icon_676e4ba82b6e576a75de0a3ad1077382);
+        
+    
+        var popup_eed45c68ceba1391164ea7b817ed4c46 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc961d519a371e696a9f79a5a32723bd = $(`<div id="html_dc961d519a371e696a9f79a5a32723bd" style="width: 100.0%; height: 100.0%;">Universidade Eduardo Mondlane, Maputo, Mozambique</div>`)[0];
+                popup_eed45c68ceba1391164ea7b817ed4c46.setContent(html_dc961d519a371e696a9f79a5a32723bd);
+            
+        
+
+        marker_6472fc37c8dd47d30012d03c740ba81f.bindPopup(popup_eed45c68ceba1391164ea7b817ed4c46)
+        ;
+
+        
+    
+    
+            var marker_e0f28c60af994c3c19c6f831c0be55d0 = L.marker(
+                [-25.9667, 32.5833],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d9a2bacc5942acd9eb2dfa02442ab787 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e0f28c60af994c3c19c6f831c0be55d0.setIcon(icon_d9a2bacc5942acd9eb2dfa02442ab787);
+        
+    
+        var popup_9870642d478c183ebc22874b99bb1096 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b8b851d9f346dd1eddd9709ad72c3f63 = $(`<div id="html_b8b851d9f346dd1eddd9709ad72c3f63" style="width: 100.0%; height: 100.0%;">Instituto Nacional de Saude, Mozambique</div>`)[0];
+                popup_9870642d478c183ebc22874b99bb1096.setContent(html_b8b851d9f346dd1eddd9709ad72c3f63);
+            
+        
+
+        marker_e0f28c60af994c3c19c6f831c0be55d0.bindPopup(popup_9870642d478c183ebc22874b99bb1096)
+        ;
+
+        
+    
+    
+            var marker_f521eb499cfb519f68826e1b798ecbdb = L.marker(
+                [52.517, 13.3889],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_641e62fd0a360600da4cd193e1d8782b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f521eb499cfb519f68826e1b798ecbdb.setIcon(icon_641e62fd0a360600da4cd193e1d8782b);
+        
+    
+        var popup_78a080f2795709ff9408fb453d502953 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9900dd327177a3c120074f002903b822 = $(`<div id="html_9900dd327177a3c120074f002903b822" style="width: 100.0%; height: 100.0%;">Helmholtz Institute, Germany</div>`)[0];
+                popup_78a080f2795709ff9408fb453d502953.setContent(html_9900dd327177a3c120074f002903b822);
+            
+        
+
+        marker_f521eb499cfb519f68826e1b798ecbdb.bindPopup(popup_78a080f2795709ff9408fb453d502953)
+        ;
+
+        
+    
+    
+            var marker_e7af0c6bb5943303d0d10c8573a9b0b5 = L.marker(
+                [44.8378, -0.5792],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_15fa3b089736ed2be72e32d12f21301f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e7af0c6bb5943303d0d10c8573a9b0b5.setIcon(icon_15fa3b089736ed2be72e32d12f21301f);
+        
+    
+        var popup_9ad8aae530bfaf534981e6a25ed98f35 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_71d9bee240a3a81797a661fc7406fcaa = $(`<div id="html_71d9bee240a3a81797a661fc7406fcaa" style="width: 100.0%; height: 100.0%;">University of Bordeaux, France</div>`)[0];
+                popup_9ad8aae530bfaf534981e6a25ed98f35.setContent(html_71d9bee240a3a81797a661fc7406fcaa);
+            
+        
+
+        marker_e7af0c6bb5943303d0d10c8573a9b0b5.bindPopup(popup_9ad8aae530bfaf534981e6a25ed98f35)
+        ;
+
+        
+    
+    
+            var marker_2108e8a89e2bb5af041836d1d073e61f = L.marker(
+                [37.9838, 23.7275],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_f619de68821506bc349165f0a65b20ce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2108e8a89e2bb5af041836d1d073e61f.setIcon(icon_f619de68821506bc349165f0a65b20ce);
+        
+    
+        var popup_5437046e49a64a388fadc93441a27935 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_040b2e4ec7b1e93d7311e68d13f57310 = $(`<div id="html_040b2e4ec7b1e93d7311e68d13f57310" style="width: 100.0%; height: 100.0%;">Protein Chemistry Facility, Biomedical Sciences Research Center 'Alexander Fleming', Greece</div>`)[0];
+                popup_5437046e49a64a388fadc93441a27935.setContent(html_040b2e4ec7b1e93d7311e68d13f57310);
+            
+        
+
+        marker_2108e8a89e2bb5af041836d1d073e61f.bindPopup(popup_5437046e49a64a388fadc93441a27935)
+        ;
+
+        
+    
+    
+            var marker_d58f105f302bc3463f4f81f92d5f1503 = L.marker(
+                [48.7139, 2.2046],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2e5bbb415f89a2115b5f10dc447d5f22 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d58f105f302bc3463f4f81f92d5f1503.setIcon(icon_2e5bbb415f89a2115b5f10dc447d5f22);
+        
+    
+        var popup_c6ee54eee49ee1a34306441a0913a22d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e2ce389ca4f170332b455e5093269392 = $(`<div id="html_e2ce389ca4f170332b455e5093269392" style="width: 100.0%; height: 100.0%;">NeuroSpin (Institut Joliot, CEA Saclay), France</div>`)[0];
+                popup_c6ee54eee49ee1a34306441a0913a22d.setContent(html_e2ce389ca4f170332b455e5093269392);
+            
+        
+
+        marker_d58f105f302bc3463f4f81f92d5f1503.bindPopup(popup_c6ee54eee49ee1a34306441a0913a22d)
+        ;
+
+        
+    
+    
+            var marker_6b1ab0d40b8751f4a058bffe575d8eae = L.marker(
+                [48.1351, 11.582],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d0854908a7c8b53d0a99a25669872115 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6b1ab0d40b8751f4a058bffe575d8eae.setIcon(icon_d0854908a7c8b53d0a99a25669872115);
+        
+    
+        var popup_4a54937a7bf8474116bd6c3b00dbe60a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0f3b4459c04ce3c1d12fd338104a84d9 = $(`<div id="html_0f3b4459c04ce3c1d12fd338104a84d9" style="width: 100.0%; height: 100.0%;">Biomedical Center Munich, Germany</div>`)[0];
+                popup_4a54937a7bf8474116bd6c3b00dbe60a.setContent(html_0f3b4459c04ce3c1d12fd338104a84d9);
+            
+        
+
+        marker_6b1ab0d40b8751f4a058bffe575d8eae.bindPopup(popup_4a54937a7bf8474116bd6c3b00dbe60a)
+        ;
+
+        
+    
+    
+            var marker_e9fc9568d50b787537df71e1e9886156 = L.marker(
+                [51.893, -8.493],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_ef559d1a8431c5eab04918850bb44e59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e9fc9568d50b787537df71e1e9886156.setIcon(icon_ef559d1a8431c5eab04918850bb44e59);
+        
+    
+        var popup_9e33ef6fbcc3263292fd4af9e8927696 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_23eac8bd6c8c0f9b38f214e5d53c3c07 = $(`<div id="html_23eac8bd6c8c0f9b38f214e5d53c3c07" style="width: 100.0%; height: 100.0%;">University College Cork, Ireland</div>`)[0];
+                popup_9e33ef6fbcc3263292fd4af9e8927696.setContent(html_23eac8bd6c8c0f9b38f214e5d53c3c07);
+            
+        
+
+        marker_e9fc9568d50b787537df71e1e9886156.bindPopup(popup_9e33ef6fbcc3263292fd4af9e8927696)
+        ;
+
+        
+    
+    
+            var marker_6921e386910e19b4f64a6c99860489a0 = L.marker(
+                [41.1851, 29.0595],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_5ef84c8b8e9275e9d6149ad031a70ce4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6921e386910e19b4f64a6c99860489a0.setIcon(icon_5ef84c8b8e9275e9d6149ad031a70ce4);
+        
+    
+        var popup_43d464809e9743a72f8a82393d6211bf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c0f6043ab296eafb0cbb96201c347e2b = $(`<div id="html_c0f6043ab296eafb0cbb96201c347e2b" style="width: 100.0%; height: 100.0%;">Koc University Research Center for Translational Medicine, Istanbul, Turkey</div>`)[0];
+                popup_43d464809e9743a72f8a82393d6211bf.setContent(html_c0f6043ab296eafb0cbb96201c347e2b);
+            
+        
+
+        marker_6921e386910e19b4f64a6c99860489a0.bindPopup(popup_43d464809e9743a72f8a82393d6211bf)
+        ;
+
+        
+    
+    
+            var marker_6800de8dfb400a66e41ecaf6b209d4d9 = L.marker(
+                [44.97399, -93.2277],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_11573a8dc52e2b646643b2cd6525ea26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6800de8dfb400a66e41ecaf6b209d4d9.setIcon(icon_11573a8dc52e2b646643b2cd6525ea26);
+        
+    
+        var popup_e772616ba55a033ed756c05ef6b2250a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4e46df24914863ccd333c8f222562f7f = $(`<div id="html_4e46df24914863ccd333c8f222562f7f" style="width: 100.0%; height: 100.0%;">University of Minnesota, USA</div>`)[0];
+                popup_e772616ba55a033ed756c05ef6b2250a.setContent(html_4e46df24914863ccd333c8f222562f7f);
+            
+        
+
+        marker_6800de8dfb400a66e41ecaf6b209d4d9.bindPopup(popup_e772616ba55a033ed756c05ef6b2250a)
+        ;
+
+        
+    
+    
+            var marker_06173830286a078dce64fe11a71083dc = L.marker(
+                [40.4168, -3.7038],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_ec95035a8dc1925533db4679d3b636ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_06173830286a078dce64fe11a71083dc.setIcon(icon_ec95035a8dc1925533db4679d3b636ac);
+        
+    
+        var popup_5c6dca6d0a45027adfa6f9d5f7b5bc91 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_82ee43250fb01ac76a1ac051485f12ef = $(`<div id="html_82ee43250fb01ac76a1ac051485f12ef" style="width: 100.0%; height: 100.0%;">Cajal Institute, Madrid, Spain</div>`)[0];
+                popup_5c6dca6d0a45027adfa6f9d5f7b5bc91.setContent(html_82ee43250fb01ac76a1ac051485f12ef);
+            
+        
+
+        marker_06173830286a078dce64fe11a71083dc.bindPopup(popup_5c6dca6d0a45027adfa6f9d5f7b5bc91)
+        ;
+
+        
+    
+    
+            var marker_1b4c6348685453f5af6070708a4b60d9 = L.marker(
+                [47.6553, -122.3035],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_1652070e59f9e2719bf6ad9ed9b07fb7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b4c6348685453f5af6070708a4b60d9.setIcon(icon_1652070e59f9e2719bf6ad9ed9b07fb7);
+        
+    
+        var popup_801182e33b3b347a967d935bf7a44b19 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2c49b36853273d78de53f0dfa81fd19c = $(`<div id="html_2c49b36853273d78de53f0dfa81fd19c" style="width: 100.0%; height: 100.0%;">University of Washington, USA</div>`)[0];
+                popup_801182e33b3b347a967d935bf7a44b19.setContent(html_2c49b36853273d78de53f0dfa81fd19c);
+            
+        
+
+        marker_1b4c6348685453f5af6070708a4b60d9.bindPopup(popup_801182e33b3b347a967d935bf7a44b19)
+        ;
+
+        
+    
+    
+            var marker_360c447ef4d46ba3dd9fc398bad3e58a = L.marker(
+                [26.4709, -80.1034],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_8e892b713efabfe3fb883a19261c1519 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_360c447ef4d46ba3dd9fc398bad3e58a.setIcon(icon_8e892b713efabfe3fb883a19261c1519);
+        
+    
+        var popup_ff6329a3fe630dc884ca3fe8845662cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a1b4cf1f708d2d4d72711d6414b6c638 = $(`<div id="html_a1b4cf1f708d2d4d72711d6414b6c638" style="width: 100.0%; height: 100.0%;">Max Planck Florida Institute for Neuroscience, USA</div>`)[0];
+                popup_ff6329a3fe630dc884ca3fe8845662cb.setContent(html_a1b4cf1f708d2d4d72711d6414b6c638);
+            
+        
+
+        marker_360c447ef4d46ba3dd9fc398bad3e58a.bindPopup(popup_ff6329a3fe630dc884ca3fe8845662cb)
+        ;
+
+        
+    
+    
+            var marker_28feb94213ae3c47e5b8a7d4697c64cd = L.marker(
+                [48.8566, 2.3522],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_7f2cb10dcbc79ec4e8ff182cf0f39b56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_28feb94213ae3c47e5b8a7d4697c64cd.setIcon(icon_7f2cb10dcbc79ec4e8ff182cf0f39b56);
+        
+    
+        var popup_6e53d1d0812d86e923151bb96b5a4fea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9112255e9e9f540f6a88c3cc41b8f63b = $(`<div id="html_9112255e9e9f540f6a88c3cc41b8f63b" style="width: 100.0%; height: 100.0%;">Centre national de la recherche scientifique (CNRS), France</div>`)[0];
+                popup_6e53d1d0812d86e923151bb96b5a4fea.setContent(html_9112255e9e9f540f6a88c3cc41b8f63b);
+            
+        
+
+        marker_28feb94213ae3c47e5b8a7d4697c64cd.bindPopup(popup_6e53d1d0812d86e923151bb96b5a4fea)
+        ;
+
+        
+    
+    
+            var marker_a00041da15ac9a8e196b8328b18231fd = L.marker(
+                [47.6205, -122.3493],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e2eabe2395cfa416a58d0d42b0fd605c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a00041da15ac9a8e196b8328b18231fd.setIcon(icon_e2eabe2395cfa416a58d0d42b0fd605c);
+        
+    
+        var popup_800ea60125109d9e37049acc2c5eead1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_60cdf08cf75197bab4dd76751cb1ebbf = $(`<div id="html_60cdf08cf75197bab4dd76751cb1ebbf" style="width: 100.0%; height: 100.0%;">Allen Institute, USA</div>`)[0];
+                popup_800ea60125109d9e37049acc2c5eead1.setContent(html_60cdf08cf75197bab4dd76751cb1ebbf);
+            
+        
+
+        marker_a00041da15ac9a8e196b8328b18231fd.bindPopup(popup_800ea60125109d9e37049acc2c5eead1)
+        ;
+
+        
+    
+    
+            var marker_1c123d13dafabcfd0142492c09d7f343 = L.marker(
+                [1.3521, 103.8198],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2627a58784965e9a232214cfd1b2bfed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1c123d13dafabcfd0142492c09d7f343.setIcon(icon_2627a58784965e9a232214cfd1b2bfed);
+        
+    
+        var popup_19762a4d8aab2c6a4987a9cee929280d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f5264497c9c0ca6979c850a19ad3e628 = $(`<div id="html_f5264497c9c0ca6979c850a19ad3e628" style="width: 100.0%; height: 100.0%;">A*STAR, Singapore</div>`)[0];
+                popup_19762a4d8aab2c6a4987a9cee929280d.setContent(html_f5264497c9c0ca6979c850a19ad3e628);
+            
+        
+
+        marker_1c123d13dafabcfd0142492c09d7f343.bindPopup(popup_19762a4d8aab2c6a4987a9cee929280d)
+        ;
+
+        
+    
+    
+            var marker_f321e9aecf1ab6a3b79a0ad9deff68bd = L.marker(
+                [40.7899, -73.9531],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_ae277238ed10424ca943e6399f919f69 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f321e9aecf1ab6a3b79a0ad9deff68bd.setIcon(icon_ae277238ed10424ca943e6399f919f69);
+        
+    
+        var popup_985dbfbf243a67dc9d98170ef3306da5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8cc15cefc22d90cb4f47331d94f629aa = $(`<div id="html_8cc15cefc22d90cb4f47331d94f629aa" style="width: 100.0%; height: 100.0%;">Mount Sinai, New York, USA</div>`)[0];
+                popup_985dbfbf243a67dc9d98170ef3306da5.setContent(html_8cc15cefc22d90cb4f47331d94f629aa);
+            
+        
+
+        marker_f321e9aecf1ab6a3b79a0ad9deff68bd.bindPopup(popup_985dbfbf243a67dc9d98170ef3306da5)
+        ;
+
+        
+    
+    
+            var marker_d341eb15dc6aa0610a73d1c2e7e03a51 = L.marker(
+                [50.7335, 7.101],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_1088fd29bb24d4b7b46366e18e4c4567 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d341eb15dc6aa0610a73d1c2e7e03a51.setIcon(icon_1088fd29bb24d4b7b46366e18e4c4567);
+        
+    
+        var popup_268647c1f43dacf8b412f748b0bfa7fb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_83a2772d4c432ee1e78deba14293e055 = $(`<div id="html_83a2772d4c432ee1e78deba14293e055" style="width: 100.0%; height: 100.0%;">University of Bonn, Germany</div>`)[0];
+                popup_268647c1f43dacf8b412f748b0bfa7fb.setContent(html_83a2772d4c432ee1e78deba14293e055);
+            
+        
+
+        marker_d341eb15dc6aa0610a73d1c2e7e03a51.bindPopup(popup_268647c1f43dacf8b412f748b0bfa7fb)
+        ;
+
+        
+    
+    
+            var marker_6f5629f5b339fe67c639c611fcaba60e = L.marker(
+                [52.2043, 0.1218],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_700e2477e57ccdfeefd4bae166ce988b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6f5629f5b339fe67c639c611fcaba60e.setIcon(icon_700e2477e57ccdfeefd4bae166ce988b);
+        
+    
+        var popup_4f6e80c76aa928f30b1736999e821da6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_81205e261316971ab9eb78ef520ad957 = $(`<div id="html_81205e261316971ab9eb78ef520ad957" style="width: 100.0%; height: 100.0%;">University of Cambridge, UK</div>`)[0];
+                popup_4f6e80c76aa928f30b1736999e821da6.setContent(html_81205e261316971ab9eb78ef520ad957);
+            
+        
+
+        marker_6f5629f5b339fe67c639c611fcaba60e.bindPopup(popup_4f6e80c76aa928f30b1736999e821da6)
+        ;
+
+        
+    
+    
+            var marker_4b9270e0ed904a364df779147f85b5a0 = L.marker(
+                [59.939, 10.7191],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_78e8bf79580e9b13b24f2fd1d0dacbb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4b9270e0ed904a364df779147f85b5a0.setIcon(icon_78e8bf79580e9b13b24f2fd1d0dacbb0);
+        
+    
+        var popup_484f41834b8c5a21687638ddc37d43d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4a411eab89006c49bed6ad73d254653c = $(`<div id="html_4a411eab89006c49bed6ad73d254653c" style="width: 100.0%; height: 100.0%;">University of Oslo, Norway</div>`)[0];
+                popup_484f41834b8c5a21687638ddc37d43d6.setContent(html_4a411eab89006c49bed6ad73d254653c);
+            
+        
+
+        marker_4b9270e0ed904a364df779147f85b5a0.bindPopup(popup_484f41834b8c5a21687638ddc37d43d6)
+        ;
+
+        
+    
+    
+            var marker_f1c2dde4c4b9015fe20a5e8726b2cbb3 = L.marker(
+                [40.8075, -73.9626],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d0c20fd8fb4fc4221989ad242be5618a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f1c2dde4c4b9015fe20a5e8726b2cbb3.setIcon(icon_d0c20fd8fb4fc4221989ad242be5618a);
+        
+    
+        var popup_5425e1b7d7f27e7613932eb9b2f11fef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5777eb8c5e72556ce8f0795ca28e3306 = $(`<div id="html_5777eb8c5e72556ce8f0795ca28e3306" style="width: 100.0%; height: 100.0%;">Columbia University, New York, USA</div>`)[0];
+                popup_5425e1b7d7f27e7613932eb9b2f11fef.setContent(html_5777eb8c5e72556ce8f0795ca28e3306);
+            
+        
+
+        marker_f1c2dde4c4b9015fe20a5e8726b2cbb3.bindPopup(popup_5425e1b7d7f27e7613932eb9b2f11fef)
+        ;
+
+        
+    
+    
+            var marker_822c90654ba41ac21583db3dce18b3a4 = L.marker(
+                [42.3505, -71.1054],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6aef1ce2b044e413b95250105fc3d917 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_822c90654ba41ac21583db3dce18b3a4.setIcon(icon_6aef1ce2b044e413b95250105fc3d917);
+        
+    
+        var popup_0465a9ab9d9a591f55751cf16b71b3f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5b60bb3fdc6643a3c8d9f30f70386551 = $(`<div id="html_5b60bb3fdc6643a3c8d9f30f70386551" style="width: 100.0%; height: 100.0%;">Boston University, USA</div>`)[0];
+                popup_0465a9ab9d9a591f55751cf16b71b3f4.setContent(html_5b60bb3fdc6643a3c8d9f30f70386551);
+            
+        
+
+        marker_822c90654ba41ac21583db3dce18b3a4.bindPopup(popup_0465a9ab9d9a591f55751cf16b71b3f4)
+        ;
+
+        
+    
+    
+            var marker_dc647b6c3a15c30a1d9bff0455ca90ff = L.marker(
+                [38.0336, -78.508],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0247bc307ea110bc4195c278436e4a9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dc647b6c3a15c30a1d9bff0455ca90ff.setIcon(icon_0247bc307ea110bc4195c278436e4a9a);
+        
+    
+        var popup_dcbf80fda968ee18ea79e9d41313a371 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d9be0f63b6f8a1f3907b548d12cd3a4c = $(`<div id="html_d9be0f63b6f8a1f3907b548d12cd3a4c" style="width: 100.0%; height: 100.0%;">University of Virginia, USA</div>`)[0];
+                popup_dcbf80fda968ee18ea79e9d41313a371.setContent(html_d9be0f63b6f8a1f3907b548d12cd3a4c);
+            
+        
+
+        marker_dc647b6c3a15c30a1d9bff0455ca90ff.bindPopup(popup_dcbf80fda968ee18ea79e9d41313a371)
+        ;
+
+        
+    
+    
+            var marker_735db404ff324f41c252d0d0537f6400 = L.marker(
+                [37.9666, 23.7267],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e09b53f44a29d4442f3cd55da8e75cf2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_735db404ff324f41c252d0d0537f6400.setIcon(icon_e09b53f44a29d4442f3cd55da8e75cf2);
+        
+    
+        var popup_235de9cd4d7427c9e7312ec61ae0b07b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_92adb29355bae8db52c3995f56bf26f3 = $(`<div id="html_92adb29355bae8db52c3995f56bf26f3" style="width: 100.0%; height: 100.0%;">National and Kapodistrian University of Athens, Greece</div>`)[0];
+                popup_235de9cd4d7427c9e7312ec61ae0b07b.setContent(html_92adb29355bae8db52c3995f56bf26f3);
+            
+        
+
+        marker_735db404ff324f41c252d0d0537f6400.bindPopup(popup_235de9cd4d7427c9e7312ec61ae0b07b)
+        ;
+
+        
+    
+    
+            var marker_6e6dbfe21e4b9112ba53bb05ae0c90df = L.marker(
+                [-21.9877, -47.8946],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2e6fd89a80335ce8005bb8210a6232d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6e6dbfe21e4b9112ba53bb05ae0c90df.setIcon(icon_2e6fd89a80335ce8005bb8210a6232d3);
+        
+    
+        var popup_8aed9fa585ac349bdbc5dca0dece15d0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_89b9d46bb78e1e5345cc0b5d64797808 = $(`<div id="html_89b9d46bb78e1e5345cc0b5d64797808" style="width: 100.0%; height: 100.0%;">Universidade Federal de São Carlos, Brazil</div>`)[0];
+                popup_8aed9fa585ac349bdbc5dca0dece15d0.setContent(html_89b9d46bb78e1e5345cc0b5d64797808);
+            
+        
+
+        marker_6e6dbfe21e4b9112ba53bb05ae0c90df.bindPopup(popup_8aed9fa585ac349bdbc5dca0dece15d0)
+        ;
+
+        
+    
+    
+            var marker_eabfa5e90eb5f805a7418b452bf48e3c = L.marker(
+                [52.517, 13.3889],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_77457658223e6bd0a8223ca97577b212 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eabfa5e90eb5f805a7418b452bf48e3c.setIcon(icon_77457658223e6bd0a8223ca97577b212);
+        
+    
+        var popup_62db136c7fe2f9b1c49ce515860be8ec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1089eb7b967de44e235bd326682cd0b8 = $(`<div id="html_1089eb7b967de44e235bd326682cd0b8" style="width: 100.0%; height: 100.0%;">Max Planck Institute for Infection Biology, Germany</div>`)[0];
+                popup_62db136c7fe2f9b1c49ce515860be8ec.setContent(html_1089eb7b967de44e235bd326682cd0b8);
+            
+        
+
+        marker_eabfa5e90eb5f805a7418b452bf48e3c.bindPopup(popup_62db136c7fe2f9b1c49ce515860be8ec)
+        ;
+
+        
+    
+    
+            var marker_0a9dc1d3a22940b4c6facd85394c8ea0 = L.marker(
+                [39.9334, 32.8597],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e94ce8dbf1d8395f3e26cb2eec063508 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0a9dc1d3a22940b4c6facd85394c8ea0.setIcon(icon_e94ce8dbf1d8395f3e26cb2eec063508);
+        
+    
+        var popup_265c89d9a3019f216ea05b90cf6b3df1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0aec6767e09c1b4b6b2ef1d1b623c4d3 = $(`<div id="html_0aec6767e09c1b4b6b2ef1d1b623c4d3" style="width: 100.0%; height: 100.0%;">University of Economics & Technology, Turkey</div>`)[0];
+                popup_265c89d9a3019f216ea05b90cf6b3df1.setContent(html_0aec6767e09c1b4b6b2ef1d1b623c4d3);
+            
+        
+
+        marker_0a9dc1d3a22940b4c6facd85394c8ea0.bindPopup(popup_265c89d9a3019f216ea05b90cf6b3df1)
+        ;
+
+        
+    
+    
+            var marker_ba06dfa7f2a5fd0079f623c68b49e5bb = L.marker(
+                [18.4719, -69.9391],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_4fec0f9d7d93339152820b70c1cecac8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_ba06dfa7f2a5fd0079f623c68b49e5bb.setIcon(icon_4fec0f9d7d93339152820b70c1cecac8);
+        
+    
+        var popup_917faeb78a186abc0b3377f191d14513 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_67bdfb4bdb53223719f8112936ffe841 = $(`<div id="html_67bdfb4bdb53223719f8112936ffe841" style="width: 100.0%; height: 100.0%;">Universidad Autónoma de Santo Domingo, Dominican Republic</div>`)[0];
+                popup_917faeb78a186abc0b3377f191d14513.setContent(html_67bdfb4bdb53223719f8112936ffe841);
+            
+        
+
+        marker_ba06dfa7f2a5fd0079f623c68b49e5bb.bindPopup(popup_917faeb78a186abc0b3377f191d14513)
+        ;
+
+        
+    
+    
+            var marker_fabd73ead5b0ace0c199334cf60ab688 = L.marker(
+                [0.1864, 6.6131],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0ecd107f070fe60b78f667d03dce2cde = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fabd73ead5b0ace0c199334cf60ab688.setIcon(icon_0ecd107f070fe60b78f667d03dce2cde);
+        
+    
+        var popup_864b592da9b5e987657fd0bebc361f1d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fba1e4e478426f86908960b515efde39 = $(`<div id="html_fba1e4e478426f86908960b515efde39" style="width: 100.0%; height: 100.0%;">Centro Nacional de Endemias, São Tomé and Príncipe</div>`)[0];
+                popup_864b592da9b5e987657fd0bebc361f1d.setContent(html_fba1e4e478426f86908960b515efde39);
+            
+        
+
+        marker_fabd73ead5b0ace0c199334cf60ab688.bindPopup(popup_864b592da9b5e987657fd0bebc361f1d)
+        ;
+
+        
+    
+    
+            var marker_42382a981eef2264c9fc4457be8f9bf3 = L.marker(
+                [48.8423, 2.3548],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_f37fcfce85137418cdf1708034f88072 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_42382a981eef2264c9fc4457be8f9bf3.setIcon(icon_f37fcfce85137418cdf1708034f88072);
+        
+    
+        var popup_dadaa856309884cc5b9105f53a8d76ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29af42621106411620ddc6affbfc83df = $(`<div id="html_29af42621106411620ddc6affbfc83df" style="width: 100.0%; height: 100.0%;">Pasteur Institute, Paris, France</div>`)[0];
+                popup_dadaa856309884cc5b9105f53a8d76ed.setContent(html_29af42621106411620ddc6affbfc83df);
+            
+        
+
+        marker_42382a981eef2264c9fc4457be8f9bf3.bindPopup(popup_dadaa856309884cc5b9105f53a8d76ed)
+        ;
+
+        
+    
+    
+            var marker_8eded1073481af6695f34bb9bacca600 = L.marker(
+                [43.3709, -8.3958],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d8c8c884c1b36e16e81e5e6a870a6015 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8eded1073481af6695f34bb9bacca600.setIcon(icon_d8c8c884c1b36e16e81e5e6a870a6015);
+        
+    
+        var popup_ded6ee985c3233d79e692f26b0fbd793 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12435b8b23582a8429581a44840d880c = $(`<div id="html_12435b8b23582a8429581a44840d880c" style="width: 100.0%; height: 100.0%;">University of Coruna, Spain</div>`)[0];
+                popup_ded6ee985c3233d79e692f26b0fbd793.setContent(html_12435b8b23582a8429581a44840d880c);
+            
+        
+
+        marker_8eded1073481af6695f34bb9bacca600.bindPopup(popup_ded6ee985c3233d79e692f26b0fbd793)
+        ;
+
+        
+    
+    
+            var marker_7d1cc382bc8a145cce46719ac1bc54dc = L.marker(
+                [33.4705, -81.9885],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_5feda90c5243f200804a3aaa40a0d8b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7d1cc382bc8a145cce46719ac1bc54dc.setIcon(icon_5feda90c5243f200804a3aaa40a0d8b1);
+        
+    
+        var popup_0823d33bb09fa7f7b7736fe24ee32a53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5c5d6726d2489b49cd2dd92754b6edc4 = $(`<div id="html_5c5d6726d2489b49cd2dd92754b6edc4" style="width: 100.0%; height: 100.0%;">Augusta University, USA</div>`)[0];
+                popup_0823d33bb09fa7f7b7736fe24ee32a53.setContent(html_5c5d6726d2489b49cd2dd92754b6edc4);
+            
+        
+
+        marker_7d1cc382bc8a145cce46719ac1bc54dc.bindPopup(popup_0823d33bb09fa7f7b7736fe24ee32a53)
+        ;
+
+        
+    
+    
+            var marker_3e7fd666dae66c774ee00e4d70fe0435 = L.marker(
+                [23.832, 78.7103],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_fca78d69e9742ef44d84b17254f869a8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3e7fd666dae66c774ee00e4d70fe0435.setIcon(icon_fca78d69e9742ef44d84b17254f869a8);
+        
+    
+        var popup_dc3330de75c5ce8f6e7b873ea4787ef8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35a5eea1a244e72569a9e29f8e1df7be = $(`<div id="html_35a5eea1a244e72569a9e29f8e1df7be" style="width: 100.0%; height: 100.0%;">Indira Gandhi National Tribal University, India</div>`)[0];
+                popup_dc3330de75c5ce8f6e7b873ea4787ef8.setContent(html_35a5eea1a244e72569a9e29f8e1df7be);
+            
+        
+
+        marker_3e7fd666dae66c774ee00e4d70fe0435.bindPopup(popup_dc3330de75c5ce8f6e7b873ea4787ef8)
+        ;
+
+        
+    
+    
+            var marker_d3b7b2534c2a2af2a09da90079332f1e = L.marker(
+                [35.2469, -80.8592],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2c6c812b0f8f41568e52d5808842c25e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d3b7b2534c2a2af2a09da90079332f1e.setIcon(icon_2c6c812b0f8f41568e52d5808842c25e);
+        
+    
+        var popup_47c50103f453b0dd4be9f584942f28a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f4920126615b537b324a9d0ab0fffcfb = $(`<div id="html_f4920126615b537b324a9d0ab0fffcfb" style="width: 100.0%; height: 100.0%;">Johnson C. Smith University, USA</div>`)[0];
+                popup_47c50103f453b0dd4be9f584942f28a4.setContent(html_f4920126615b537b324a9d0ab0fffcfb);
+            
+        
+
+        marker_d3b7b2534c2a2af2a09da90079332f1e.bindPopup(popup_47c50103f453b0dd4be9f584942f28a4)
+        ;
+
+        
+    
+    
+            var marker_8dbdae86aee69ae37c3cee6938f55966 = L.marker(
+                [-8.839, 13.2909],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_40d5d4a7012217ae6847444290e06ad5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_8dbdae86aee69ae37c3cee6938f55966.setIcon(icon_40d5d4a7012217ae6847444290e06ad5);
+        
+    
+        var popup_225bdc1d95d6cf5bd06357f0adfb5347 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9264d422c0c43a4cfd1a28e035a9b3f = $(`<div id="html_b9264d422c0c43a4cfd1a28e035a9b3f" style="width: 100.0%; height: 100.0%;">Centro de Investigação em Saude de Angola, Angola</div>`)[0];
+                popup_225bdc1d95d6cf5bd06357f0adfb5347.setContent(html_b9264d422c0c43a4cfd1a28e035a9b3f);
+            
+        
+
+        marker_8dbdae86aee69ae37c3cee6938f55966.bindPopup(popup_225bdc1d95d6cf5bd06357f0adfb5347)
+        ;
+
+        
+    
+    
+            var marker_f5e4ae04499d84d825f31227dfb66213 = L.marker(
+                [59.8586, 17.6389],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_c1bdcad4e78453580aa8868a9b5301f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f5e4ae04499d84d825f31227dfb66213.setIcon(icon_c1bdcad4e78453580aa8868a9b5301f5);
+        
+    
+        var popup_da5f323e7dc46de0c7e380e894542f65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6acb338ddb46abd1f6d4fa186e20d78c = $(`<div id="html_6acb338ddb46abd1f6d4fa186e20d78c" style="width: 100.0%; height: 100.0%;">Uppsala University, Sweden</div>`)[0];
+                popup_da5f323e7dc46de0c7e380e894542f65.setContent(html_6acb338ddb46abd1f6d4fa186e20d78c);
+            
+        
+
+        marker_f5e4ae04499d84d825f31227dfb66213.bindPopup(popup_da5f323e7dc46de0c7e380e894542f65)
+        ;
+
+        
+    
+    
+            var marker_e1316740425da67de8da038ad59a19f4 = L.marker(
+                [-6.7971, 39.2808],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_746a7cfa6781a2b1b3c260cd3a0dedb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e1316740425da67de8da038ad59a19f4.setIcon(icon_746a7cfa6781a2b1b3c260cd3a0dedb5);
+        
+    
+        var popup_59ffe93f095bf857973a3aa310f6ed97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8153e99832c5e1a4bacaa29cd29f2c76 = $(`<div id="html_8153e99832c5e1a4bacaa29cd29f2c76" style="width: 100.0%; height: 100.0%;">Muhimbili University of Health and Allied Sciences, Tanzania</div>`)[0];
+                popup_59ffe93f095bf857973a3aa310f6ed97.setContent(html_8153e99832c5e1a4bacaa29cd29f2c76);
+            
+        
+
+        marker_e1316740425da67de8da038ad59a19f4.bindPopup(popup_59ffe93f095bf857973a3aa310f6ed97)
+        ;
+
+        
+    
+    
+            var marker_9af61bd8c2fae0fb86e9c01aa1eaa5b8 = L.marker(
+                [12.6392, -8.0028],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_faf63e271c62e94285c28f0ba87a7d45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9af61bd8c2fae0fb86e9c01aa1eaa5b8.setIcon(icon_faf63e271c62e94285c28f0ba87a7d45);
+        
+    
+        var popup_8c77e802ae4807a192975266bc16c014 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00201cda435256eda7ff6ffc13ba91ff = $(`<div id="html_00201cda435256eda7ff6ffc13ba91ff" style="width: 100.0%; height: 100.0%;">University of Bamako, Mali</div>`)[0];
+                popup_8c77e802ae4807a192975266bc16c014.setContent(html_00201cda435256eda7ff6ffc13ba91ff);
+            
+        
+
+        marker_9af61bd8c2fae0fb86e9c01aa1eaa5b8.bindPopup(popup_8c77e802ae4807a192975266bc16c014)
+        ;
+
+        
+    
+    
+            var marker_63fe87a66cb084a9c88c4b64bac39690 = L.marker(
+                [10.1848, -68.0046],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_5dfe3a1c1c7a9e0a466bc2b457fd5392 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_63fe87a66cb084a9c88c4b64bac39690.setIcon(icon_5dfe3a1c1c7a9e0a466bc2b457fd5392);
+        
+    
+        var popup_09428c04fe51d94814c3ee2d83c1bfdf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6d7a923c6d872a684cdbddef7ddf49b8 = $(`<div id="html_6d7a923c6d872a684cdbddef7ddf49b8" style="width: 100.0%; height: 100.0%;">Universidad de Carabobo, Venezuela</div>`)[0];
+                popup_09428c04fe51d94814c3ee2d83c1bfdf.setContent(html_6d7a923c6d872a684cdbddef7ddf49b8);
+            
+        
+
+        marker_63fe87a66cb084a9c88c4b64bac39690.bindPopup(popup_09428c04fe51d94814c3ee2d83c1bfdf)
+        ;
+
+        
+    
+    
+            var marker_bc931bbe3134425263adcc65f37c8ff6 = L.marker(
+                [51.986, 5.6654],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_17fec30d29ccc70103f0fd26348fb164 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bc931bbe3134425263adcc65f37c8ff6.setIcon(icon_17fec30d29ccc70103f0fd26348fb164);
+        
+    
+        var popup_3c0ccc378d00b7159bedb3dc247ffc89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b6c600816bcfcaab2f534c7d7b35d6bd = $(`<div id="html_b6c600816bcfcaab2f534c7d7b35d6bd" style="width: 100.0%; height: 100.0%;">Wageningen University, Netherlands</div>`)[0];
+                popup_3c0ccc378d00b7159bedb3dc247ffc89.setContent(html_b6c600816bcfcaab2f534c7d7b35d6bd);
+            
+        
+
+        marker_bc931bbe3134425263adcc65f37c8ff6.bindPopup(popup_3c0ccc378d00b7159bedb3dc247ffc89)
+        ;
+
+        
+    
+    
+            var marker_4cef407b3f5fe8b0ced6608440cf4f65 = L.marker(
+                [48.227, 16.3567],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_cd9a7a379861515ddbbaf4bd224333ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4cef407b3f5fe8b0ced6608440cf4f65.setIcon(icon_cd9a7a379861515ddbbaf4bd224333ae);
+        
+    
+        var popup_7dac5f8007ef2d9be5031773e77b04a9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e7b8dbc9360e16c3076f9563920df03 = $(`<div id="html_1e7b8dbc9360e16c3076f9563920df03" style="width: 100.0%; height: 100.0%;">Universität für Bodenkultur Wien, Austria</div>`)[0];
+                popup_7dac5f8007ef2d9be5031773e77b04a9.setContent(html_1e7b8dbc9360e16c3076f9563920df03);
+            
+        
+
+        marker_4cef407b3f5fe8b0ced6608440cf4f65.bindPopup(popup_7dac5f8007ef2d9be5031773e77b04a9)
+        ;
+
+        
+    
+    
+            var marker_3e52b4d9483e93cb3fac9cb59910143d = L.marker(
+                [55.7844, 12.5171],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_27990fd25fbe576e1d63f2886b996725 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3e52b4d9483e93cb3fac9cb59910143d.setIcon(icon_27990fd25fbe576e1d63f2886b996725);
+        
+    
+        var popup_f3dce0e97017c5092c32e1977b567643 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_600674fa2f5c04d9635c3990fd2c0035 = $(`<div id="html_600674fa2f5c04d9635c3990fd2c0035" style="width: 100.0%; height: 100.0%;">Danmarks Tekniske Universitet, Denmark</div>`)[0];
+                popup_f3dce0e97017c5092c32e1977b567643.setContent(html_600674fa2f5c04d9635c3990fd2c0035);
+            
+        
+
+        marker_3e52b4d9483e93cb3fac9cb59910143d.bindPopup(popup_f3dce0e97017c5092c32e1977b567643)
+        ;
+
+        
+    
+    
+            var marker_2ca61cd046bbc8f8572e8497c7df4348 = L.marker(
+                [48.6982, 2.1744],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2b2c4b26302daa758e4e025f03d0071f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2ca61cd046bbc8f8572e8497c7df4348.setIcon(icon_2b2c4b26302daa758e4e025f03d0071f);
+        
+    
+        var popup_3fe09422c3b1926f1ef82b1691703ec4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_16e67beebfa9a6609b16b2094f061d7c = $(`<div id="html_16e67beebfa9a6609b16b2094f061d7c" style="width: 100.0%; height: 100.0%;">Paris-Saclay University, France</div>`)[0];
+                popup_3fe09422c3b1926f1ef82b1691703ec4.setContent(html_16e67beebfa9a6609b16b2094f061d7c);
+            
+        
+
+        marker_2ca61cd046bbc8f8572e8497c7df4348.bindPopup(popup_3fe09422c3b1926f1ef82b1691703ec4)
+        ;
+
+        
+    
+    
+            var marker_dc386e1545c0e29b783a0279e8254a9f = L.marker(
+                [31.2622, 34.8013],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_98e0dbff60049b9b056bdfca0b2b47aa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dc386e1545c0e29b783a0279e8254a9f.setIcon(icon_98e0dbff60049b9b056bdfca0b2b47aa);
+        
+    
+        var popup_a23f0116dedcf1263094bc4e2093e374 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7bece2f8e056ece2606c4588e7c09ebe = $(`<div id="html_7bece2f8e056ece2606c4588e7c09ebe" style="width: 100.0%; height: 100.0%;">Ben-Gurion University of the Negev, Israel</div>`)[0];
+                popup_a23f0116dedcf1263094bc4e2093e374.setContent(html_7bece2f8e056ece2606c4588e7c09ebe);
+            
+        
+
+        marker_dc386e1545c0e29b783a0279e8254a9f.bindPopup(popup_a23f0116dedcf1263094bc4e2093e374)
+        ;
+
+        
+    
+    
+            var marker_5b55335303c2950daa1689d4b38bb283 = L.marker(
+                [40.4462, -3.7267],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_f83bb626c947450c5da48084349cf173 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5b55335303c2950daa1689d4b38bb283.setIcon(icon_f83bb626c947450c5da48084349cf173);
+        
+    
+        var popup_6cdfc564a4bd875ed6926a78a494b146 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5f962a7f14d7b95374bbcaf43c945b23 = $(`<div id="html_5f962a7f14d7b95374bbcaf43c945b23" style="width: 100.0%; height: 100.0%;">Universidad Politécnica de Madrid, Spain</div>`)[0];
+                popup_6cdfc564a4bd875ed6926a78a494b146.setContent(html_5f962a7f14d7b95374bbcaf43c945b23);
+            
+        
+
+        marker_5b55335303c2950daa1689d4b38bb283.bindPopup(popup_6cdfc564a4bd875ed6926a78a494b146)
+        ;
+
+        
+    
+    
+            var marker_aeaf216bed54ab35331eb9ca1d8bf981 = L.marker(
+                [47.478, -0.5632],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_186f32de2a11c2a72bc3b519cb62f547 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aeaf216bed54ab35331eb9ca1d8bf981.setIcon(icon_186f32de2a11c2a72bc3b519cb62f547);
+        
+    
+        var popup_50008c493e0556eb39dc7a363af5533c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7aac5a96ff1ff40c440ba05393a37110 = $(`<div id="html_7aac5a96ff1ff40c440ba05393a37110" style="width: 100.0%; height: 100.0%;">Université Angers, France</div>`)[0];
+                popup_50008c493e0556eb39dc7a363af5533c.setContent(html_7aac5a96ff1ff40c440ba05393a37110);
+            
+        
+
+        marker_aeaf216bed54ab35331eb9ca1d8bf981.bindPopup(popup_50008c493e0556eb39dc7a363af5533c)
+        ;
+
+        
+    
+    
+            var marker_b97cf2f042af222a5555b4edf7b46998 = L.marker(
+                [40.4444, -79.9532],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_fb6435221e48a21d7ae53d1ea19bab1b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b97cf2f042af222a5555b4edf7b46998.setIcon(icon_fb6435221e48a21d7ae53d1ea19bab1b);
+        
+    
+        var popup_5ac07a07ef1f4de03e053e7c4ab1cb89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd88531effeb1505a584005505eebaaa = $(`<div id="html_fd88531effeb1505a584005505eebaaa" style="width: 100.0%; height: 100.0%;">University of Pittsburgh, USA</div>`)[0];
+                popup_5ac07a07ef1f4de03e053e7c4ab1cb89.setContent(html_fd88531effeb1505a584005505eebaaa);
+            
+        
+
+        marker_b97cf2f042af222a5555b4edf7b46998.bindPopup(popup_5ac07a07ef1f4de03e053e7c4ab1cb89)
+        ;
+
+        
+    
+    
+            var marker_39584d413cf2c9f11227330bc0fef075 = L.marker(
+                [40.6079, -3.7074],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_4d4962433d7c1829841cb276a08de653 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_39584d413cf2c9f11227330bc0fef075.setIcon(icon_4d4962433d7c1829841cb276a08de653);
+        
+    
+        var popup_052cf194f06e60fdf338b5e52b5e482f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c4608fc5507f8706a6edd42812738cdf = $(`<div id="html_c4608fc5507f8706a6edd42812738cdf" style="width: 100.0%; height: 100.0%;">Tres Cantos Open Lab Foundation - GlaxoSmithKline, Spain</div>`)[0];
+                popup_052cf194f06e60fdf338b5e52b5e482f.setContent(html_c4608fc5507f8706a6edd42812738cdf);
+            
+        
+
+        marker_39584d413cf2c9f11227330bc0fef075.bindPopup(popup_052cf194f06e60fdf338b5e52b5e482f)
+        ;
+
+        
+    
+    
+            var marker_dead40d8ebb467be1dd6e5049f369ee9 = L.marker(
+                [55.368, 10.4274],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_ac689284f2da6976979f5d532bb3911c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dead40d8ebb467be1dd6e5049f369ee9.setIcon(icon_ac689284f2da6976979f5d532bb3911c);
+        
+    
+        var popup_e186bc50db16f651db1acc3e6fa67196 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01b059b53b23b60e810ea4ac23134d3f = $(`<div id="html_01b059b53b23b60e810ea4ac23134d3f" style="width: 100.0%; height: 100.0%;">University of Southern Denmark, Denmark</div>`)[0];
+                popup_e186bc50db16f651db1acc3e6fa67196.setContent(html_01b059b53b23b60e810ea4ac23134d3f);
+            
+        
+
+        marker_dead40d8ebb467be1dd6e5049f369ee9.bindPopup(popup_e186bc50db16f651db1acc3e6fa67196)
+        ;
+
+        
+    
+    
+            var marker_25b06290f48563885dfa6bce0a2dfb75 = L.marker(
+                [60.3721, 5.3374],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_729cca2d8c17728a81412801ad62c1a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_25b06290f48563885dfa6bce0a2dfb75.setIcon(icon_729cca2d8c17728a81412801ad62c1a4);
+        
+    
+        var popup_c489caa4c48dfca1eb012c160d9a80f6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c2dd6aacb2feb97bc62ff149633c9b5 = $(`<div id="html_7c2dd6aacb2feb97bc62ff149633c9b5" style="width: 100.0%; height: 100.0%;">Haukeland University Hospital, Norway</div>`)[0];
+                popup_c489caa4c48dfca1eb012c160d9a80f6.setContent(html_7c2dd6aacb2feb97bc62ff149633c9b5);
+            
+        
+
+        marker_25b06290f48563885dfa6bce0a2dfb75.bindPopup(popup_c489caa4c48dfca1eb012c160d9a80f6)
+        ;
+
+        
+    
+    
+            var marker_12b9967bce6410e9db43a4205bf9e781 = L.marker(
+                [44.407, 8.933],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0836aa7873560a3d37207078ea535729 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_12b9967bce6410e9db43a4205bf9e781.setIcon(icon_0836aa7873560a3d37207078ea535729);
+        
+    
+        var popup_29d2fbbbf882511059963bffb68354ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9ebd1245fa3fa8543a6f1e7c657f37f5 = $(`<div id="html_9ebd1245fa3fa8543a6f1e7c657f37f5" style="width: 100.0%; height: 100.0%;">University of Genova, Italy</div>`)[0];
+                popup_29d2fbbbf882511059963bffb68354ff.setContent(html_9ebd1245fa3fa8543a6f1e7c657f37f5);
+            
+        
+
+        marker_12b9967bce6410e9db43a4205bf9e781.bindPopup(popup_29d2fbbbf882511059963bffb68354ff)
+        ;
+
+        
+    
+    
+            var marker_454fb155014eb354f2963d5f9cb91c9e = L.marker(
+                [51.5116, -0.116],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_0371a831313d734f69c443699e49b0bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_454fb155014eb354f2963d5f9cb91c9e.setIcon(icon_0371a831313d734f69c443699e49b0bd);
+        
+    
+        var popup_4a8b74898823657498c6df14e169c086 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a70dab6e9295b965037547939d23fce5 = $(`<div id="html_a70dab6e9295b965037547939d23fce5" style="width: 100.0%; height: 100.0%;">King's College London, UK</div>`)[0];
+                popup_4a8b74898823657498c6df14e169c086.setContent(html_a70dab6e9295b965037547939d23fce5);
+            
+        
+
+        marker_454fb155014eb354f2963d5f9cb91c9e.bindPopup(popup_4a8b74898823657498c6df14e169c086)
+        ;
+
+        
+    
+    
+            var marker_f1961a1561d45c2ca053172243c46be5 = L.marker(
+                [-22.8166, -47.0647],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_456232aba6380fac944f54957547f728 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f1961a1561d45c2ca053172243c46be5.setIcon(icon_456232aba6380fac944f54957547f728);
+        
+    
+        var popup_6d97b40adb6157a3ca08907d82bb0f41 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_29da1a0f4f14895390a5f874c0e7d899 = $(`<div id="html_29da1a0f4f14895390a5f874c0e7d899" style="width: 100.0%; height: 100.0%;">University of Campinas, Brazil</div>`)[0];
+                popup_6d97b40adb6157a3ca08907d82bb0f41.setContent(html_29da1a0f4f14895390a5f874c0e7d899);
+            
+        
+
+        marker_f1961a1561d45c2ca053172243c46be5.bindPopup(popup_6d97b40adb6157a3ca08907d82bb0f41)
+        ;
+
+        
+    
+    
+            var marker_38af648375c4b0bdf354a1ba37eebf35 = L.marker(
+                [51.4988, -0.1749],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_9d27a84bb86d8e11d32e47cea7829f5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_38af648375c4b0bdf354a1ba37eebf35.setIcon(icon_9d27a84bb86d8e11d32e47cea7829f5e);
+        
+    
+        var popup_f0d0bc8394f869ad3a9aa2a150e640cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a959282f83995a87c0e6304764fb827 = $(`<div id="html_1a959282f83995a87c0e6304764fb827" style="width: 100.0%; height: 100.0%;">Imperial College London, UK</div>`)[0];
+                popup_f0d0bc8394f869ad3a9aa2a150e640cb.setContent(html_1a959282f83995a87c0e6304764fb827);
+            
+        
+
+        marker_38af648375c4b0bdf354a1ba37eebf35.bindPopup(popup_f0d0bc8394f869ad3a9aa2a150e640cb)
+        ;
+
+        
+    
+    
+            var marker_55c7f969c0f0159dcb0e064efa2714a7 = L.marker(
+                [50.8798, 4.7005],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6f09bed84c15433d38889e54f9fd6a08 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_55c7f969c0f0159dcb0e064efa2714a7.setIcon(icon_6f09bed84c15433d38889e54f9fd6a08);
+        
+    
+        var popup_1686bf1feb7d880337a3c276ebe0e793 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_afaf9c9954e122b88f8be4c49d1f1c6c = $(`<div id="html_afaf9c9954e122b88f8be4c49d1f1c6c" style="width: 100.0%; height: 100.0%;">KU Leuven, Belgium</div>`)[0];
+                popup_1686bf1feb7d880337a3c276ebe0e793.setContent(html_afaf9c9954e122b88f8be4c49d1f1c6c);
+            
+        
+
+        marker_55c7f969c0f0159dcb0e064efa2714a7.bindPopup(popup_1686bf1feb7d880337a3c276ebe0e793)
+        ;
+
+        
+    
+    
+            var marker_c255ae40e2a96329f7de5836f363f9e5 = L.marker(
+                [51.8217, 5.8627],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6c3960222c992b9217424e6cccd81621 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c255ae40e2a96329f7de5836f363f9e5.setIcon(icon_6c3960222c992b9217424e6cccd81621);
+        
+    
+        var popup_4bf38ad66757627e3bce9e790b37a9dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e19cd4b24c0bb82afec133864c6daf3 = $(`<div id="html_0e19cd4b24c0bb82afec133864c6daf3" style="width: 100.0%; height: 100.0%;">RadboudUMC, Netherlands</div>`)[0];
+                popup_4bf38ad66757627e3bce9e790b37a9dc.setContent(html_0e19cd4b24c0bb82afec133864c6daf3);
+            
+        
+
+        marker_c255ae40e2a96329f7de5836f363f9e5.bindPopup(popup_4bf38ad66757627e3bce9e790b37a9dc)
+        ;
+
+        
+    
+    
+            var marker_44d41237547ef18cee4b63b99519bef4 = L.marker(
+                [47.0739, 15.4395],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_368a240c3f55dbd0ec4abfe8898a3c86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_44d41237547ef18cee4b63b99519bef4.setIcon(icon_368a240c3f55dbd0ec4abfe8898a3c86);
+        
+    
+        var popup_ccf543d8671cbbb7d7713f4da5cff110 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dedba322acf0f7528df7a0796ce129cd = $(`<div id="html_dedba322acf0f7528df7a0796ce129cd" style="width: 100.0%; height: 100.0%;">Medical University of Graz, Austria</div>`)[0];
+                popup_ccf543d8671cbbb7d7713f4da5cff110.setContent(html_dedba322acf0f7528df7a0796ce129cd);
+            
+        
+
+        marker_44d41237547ef18cee4b63b99519bef4.bindPopup(popup_ccf543d8671cbbb7d7713f4da5cff110)
+        ;
+
+        
+    
+    
+            var marker_3e6588f26a99379c327c0d7348ec6b85 = L.marker(
+                [35.3387, 25.1442],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_a5c1e5ed4e34c2a25cf7cfe79e310939 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3e6588f26a99379c327c0d7348ec6b85.setIcon(icon_a5c1e5ed4e34c2a25cf7cfe79e310939);
+        
+    
+        var popup_7e40a687e8e834011377da197e1945dc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e94535ee2fe9ae12cd11c1757df7ad05 = $(`<div id="html_e94535ee2fe9ae12cd11c1757df7ad05" style="width: 100.0%; height: 100.0%;">University of Crete, Greece</div>`)[0];
+                popup_7e40a687e8e834011377da197e1945dc.setContent(html_e94535ee2fe9ae12cd11c1757df7ad05);
+            
+        
+
+        marker_3e6588f26a99379c327c0d7348ec6b85.bindPopup(popup_7e40a687e8e834011377da197e1945dc)
+        ;
+
+        
+    
+    
+            var marker_f8d2305cc5a414b2695e6bafd69c3e21 = L.marker(
+                [50.928, 11.5899],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_da803db75c0672ec13b2ec7e635c67af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f8d2305cc5a414b2695e6bafd69c3e21.setIcon(icon_da803db75c0672ec13b2ec7e635c67af);
+        
+    
+        var popup_5586edc807284bb8457d385acde5933a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a7ecf94f8d189b9b57b0a678ef7e533f = $(`<div id="html_a7ecf94f8d189b9b57b0a678ef7e533f" style="width: 100.0%; height: 100.0%;">Hans-Knoll Institute, Jena, Germany</div>`)[0];
+                popup_5586edc807284bb8457d385acde5933a.setContent(html_a7ecf94f8d189b9b57b0a678ef7e533f);
+            
+        
+
+        marker_f8d2305cc5a414b2695e6bafd69c3e21.bindPopup(popup_5586edc807284bb8457d385acde5933a)
+        ;
+
+        
+    
+    
+            var marker_162f7c66ab02d2f7485228baa1b4f45a = L.marker(
+                [50.928, 11.5899],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6650a32ba991b63527e15d177ded8bf9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_162f7c66ab02d2f7485228baa1b4f45a.setIcon(icon_6650a32ba991b63527e15d177ded8bf9);
+        
+    
+        var popup_645089b846acde1a8482f6ff48a1fc35 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_343054005c751a6656d3812f6ebbc1f2 = $(`<div id="html_343054005c751a6656d3812f6ebbc1f2" style="width: 100.0%; height: 100.0%;">Jena University Hospital, Germany</div>`)[0];
+                popup_645089b846acde1a8482f6ff48a1fc35.setContent(html_343054005c751a6656d3812f6ebbc1f2);
+            
+        
+
+        marker_162f7c66ab02d2f7485228baa1b4f45a.bindPopup(popup_645089b846acde1a8482f6ff48a1fc35)
+        ;
+
+        
+    
+    
+            var marker_b61e5ab6340d2c706a188748043d217b = L.marker(
+                [40.44, -3.6761],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_e41205586b8d897c4d60a94df2a74dff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b61e5ab6340d2c706a188748043d217b.setIcon(icon_e41205586b8d897c4d60a94df2a74dff);
+        
+    
+        var popup_c2e0f31aca2a6ab1fa066bf8f21f99bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be4e654f7ec885774554d425895eb0ee = $(`<div id="html_be4e654f7ec885774554d425895eb0ee" style="width: 100.0%; height: 100.0%;">Universidad San Pablo CEU, Spain</div>`)[0];
+                popup_c2e0f31aca2a6ab1fa066bf8f21f99bc.setContent(html_be4e654f7ec885774554d425895eb0ee);
+            
+        
+
+        marker_b61e5ab6340d2c706a188748043d217b.bindPopup(popup_c2e0f31aca2a6ab1fa066bf8f21f99bc)
+        ;
+
+        
+    
+    
+            var marker_1d020563639f8019eeea3cd26c2de202 = L.marker(
+                [41.3818, 2.1685],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_5315364370a9d09bf428d2797ebba3cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1d020563639f8019eeea3cd26c2de202.setIcon(icon_5315364370a9d09bf428d2797ebba3cd);
+        
+    
+        var popup_0221af8f4a6589ecf102e080ad492187 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_faab52f2f88a3860b799f5574a82cbe4 = $(`<div id="html_faab52f2f88a3860b799f5574a82cbe4" style="width: 100.0%; height: 100.0%;">Barcelona Supercomputing Center, Spain</div>`)[0];
+                popup_0221af8f4a6589ecf102e080ad492187.setContent(html_faab52f2f88a3860b799f5574a82cbe4);
+            
+        
+
+        marker_1d020563639f8019eeea3cd26c2de202.bindPopup(popup_0221af8f4a6589ecf102e080ad492187)
+        ;
+
+        
+    
+    
+            var marker_12779f3916a2a5e045a8f3641b275c39 = L.marker(
+                [45.4001, 9.159],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6c766c0fa5267546f5d1c64d4032ec78 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_12779f3916a2a5e045a8f3641b275c39.setIcon(icon_6c766c0fa5267546f5d1c64d4032ec78);
+        
+    
+        var popup_6cd0c3c7dfa367ac035ebd7db58d3c34 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e265ec54de31525d10280c8fc331ba9 = $(`<div id="html_7e265ec54de31525d10280c8fc331ba9" style="width: 100.0%; height: 100.0%;">Humanitas University, Italy</div>`)[0];
+                popup_6cd0c3c7dfa367ac035ebd7db58d3c34.setContent(html_7e265ec54de31525d10280c8fc331ba9);
+            
+        
+
+        marker_12779f3916a2a5e045a8f3641b275c39.bindPopup(popup_6cd0c3c7dfa367ac035ebd7db58d3c34)
+        ;
+
+        
+    
+    
+            var marker_5a39463f2cc0da741affe587d0f2b2ac = L.marker(
+                [48.210033, 16.363449],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_33ac7da9ac1b4580daaea7940c4c75e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5a39463f2cc0da741affe587d0f2b2ac.setIcon(icon_33ac7da9ac1b4580daaea7940c4c75e5);
+        
+    
+        var popup_f36e8e49ec6a4731e64d5d96201d34a1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2cf517b272162d785f15da424d8165dd = $(`<div id="html_2cf517b272162d785f15da424d8165dd" style="width: 100.0%; height: 100.0%;">Medical University of Vienna, Austria</div>`)[0];
+                popup_f36e8e49ec6a4731e64d5d96201d34a1.setContent(html_2cf517b272162d785f15da424d8165dd);
+            
+        
+
+        marker_5a39463f2cc0da741affe587d0f2b2ac.bindPopup(popup_f36e8e49ec6a4731e64d5d96201d34a1)
+        ;
+
+        
+    
+    
+            var marker_6a3f70ae95dbb1c9313dc706500b262b = L.marker(
+                [49.7947, 9.932],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_c557c0bfb8c2bb3fc5e9f41bd67d99b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6a3f70ae95dbb1c9313dc706500b262b.setIcon(icon_c557c0bfb8c2bb3fc5e9f41bd67d99b2);
+        
+    
+        var popup_45af34d733b529e3fe9047911c74cad9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be352112fd6b01e765338f2ebf79a566 = $(`<div id="html_be352112fd6b01e765338f2ebf79a566" style="width: 100.0%; height: 100.0%;">University of Wuerzburg, Germany</div>`)[0];
+                popup_45af34d733b529e3fe9047911c74cad9.setContent(html_be352112fd6b01e765338f2ebf79a566);
+            
+        
+
+        marker_6a3f70ae95dbb1c9313dc706500b262b.bindPopup(popup_45af34d733b529e3fe9047911c74cad9)
+        ;
+
+        
+    
+    
+            var marker_b36eb3fe4c0241ec5e8c41a7aa719267 = L.marker(
+                [42.3736, -71.1097],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_6b0cc9049625558bb7a7430d6df9259f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_b36eb3fe4c0241ec5e8c41a7aa719267.setIcon(icon_6b0cc9049625558bb7a7430d6df9259f);
+        
+    
+        var popup_c5ae652ae5dac9ba636c2cd80f5e87ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea73cd255ab010c81c303dbf0e77a9a4 = $(`<div id="html_ea73cd255ab010c81c303dbf0e77a9a4" style="width: 100.0%; height: 100.0%;">Broad Institute of MIT and Harvard, USA</div>`)[0];
+                popup_c5ae652ae5dac9ba636c2cd80f5e87ff.setContent(html_ea73cd255ab010c81c303dbf0e77a9a4);
+            
+        
+
+        marker_b36eb3fe4c0241ec5e8c41a7aa719267.bindPopup(popup_c5ae652ae5dac9ba636c2cd80f5e87ff)
+        ;
+
+        
+    
+    
+            var marker_bc41f650f9956fa56d8a6bea4c50ab17 = L.marker(
+                [42.2314, -8.721],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_4081330ab5ad8c1fed472c74dfcaaa97 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bc41f650f9956fa56d8a6bea4c50ab17.setIcon(icon_4081330ab5ad8c1fed472c74dfcaaa97);
+        
+    
+        var popup_bfa09b8ce7edf1f821fd3e60f1489058 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e4a6ca11de7547da5bbf23b04a81b426 = $(`<div id="html_e4a6ca11de7547da5bbf23b04a81b426" style="width: 100.0%; height: 100.0%;">Universidade de Vigo, Spain</div>`)[0];
+                popup_bfa09b8ce7edf1f821fd3e60f1489058.setContent(html_e4a6ca11de7547da5bbf23b04a81b426);
+            
+        
+
+        marker_bc41f650f9956fa56d8a6bea4c50ab17.bindPopup(popup_bfa09b8ce7edf1f821fd3e60f1489058)
+        ;
+
+        
+    
+    
+            var marker_eaab13b84c6da055103408682a922e20 = L.marker(
+                [59.3498, 18.0696],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_a7740843fa0343eb710ecd62da4ee387 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eaab13b84c6da055103408682a922e20.setIcon(icon_a7740843fa0343eb710ecd62da4ee387);
+        
+    
+        var popup_a6a5da85ec87f21d4a86a47d748f8c9b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b58e7c373c694a94047256269f55b4d3 = $(`<div id="html_b58e7c373c694a94047256269f55b4d3" style="width: 100.0%; height: 100.0%;">Karolinska Institutet, Sweden</div>`)[0];
+                popup_a6a5da85ec87f21d4a86a47d748f8c9b.setContent(html_b58e7c373c694a94047256269f55b4d3);
+            
+        
+
+        marker_eaab13b84c6da055103408682a922e20.bindPopup(popup_a6a5da85ec87f21d4a86a47d748f8c9b)
+        ;
+
+        
+    
+    
+            var marker_326b097d15a8b8f637c52b59c5aa9cd8 = L.marker(
+                [49.3988, 8.6724],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_062bb5247ff5bb0c4db9454dfb504c16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_326b097d15a8b8f637c52b59c5aa9cd8.setIcon(icon_062bb5247ff5bb0c4db9454dfb504c16);
+        
+    
+        var popup_a1d4ea23d61b3db58e7c9b86683fdc4d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e6786ed067182b34744c94d5d606401 = $(`<div id="html_5e6786ed067182b34744c94d5d606401" style="width: 100.0%; height: 100.0%;">Heidelberg University, Germany</div>`)[0];
+                popup_a1d4ea23d61b3db58e7c9b86683fdc4d.setContent(html_5e6786ed067182b34744c94d5d606401);
+            
+        
+
+        marker_326b097d15a8b8f637c52b59c5aa9cd8.bindPopup(popup_a1d4ea23d61b3db58e7c9b86683fdc4d)
+        ;
+
+        
+    
+    
+            var marker_f5bf3b1eb1d136f6c4150236d7fa133c = L.marker(
+                [-33.8889, 151.1902],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_7bcc44bbc6224b9663f98dad3a1ff0a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f5bf3b1eb1d136f6c4150236d7fa133c.setIcon(icon_7bcc44bbc6224b9663f98dad3a1ff0a2);
+        
+    
+        var popup_2e12299667a0149d27f98d45b834c8b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_828a26336fe291dd50ce6e40b181e957 = $(`<div id="html_828a26336fe291dd50ce6e40b181e957" style="width: 100.0%; height: 100.0%;">University of Sydney, Australia</div>`)[0];
+                popup_2e12299667a0149d27f98d45b834c8b8.setContent(html_828a26336fe291dd50ce6e40b181e957);
+            
+        
+
+        marker_f5bf3b1eb1d136f6c4150236d7fa133c.bindPopup(popup_2e12299667a0149d27f98d45b834c8b8)
+        ;
+
+        
+    
+    
+            var marker_35d9f5a48e6eebf7d59903a0d8b20e26 = L.marker(
+                [48.58, 7.7507],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_04ea9cafc0d992ed28227abcf47168c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_35d9f5a48e6eebf7d59903a0d8b20e26.setIcon(icon_04ea9cafc0d992ed28227abcf47168c5);
+        
+    
+        var popup_ad8489dc672b67da5ec4c3af94f9234c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_94733e8990d5f3c0055f81a4d64b04b2 = $(`<div id="html_94733e8990d5f3c0055f81a4d64b04b2" style="width: 100.0%; height: 100.0%;">University of Strasbourg, France</div>`)[0];
+                popup_ad8489dc672b67da5ec4c3af94f9234c.setContent(html_94733e8990d5f3c0055f81a4d64b04b2);
+            
+        
+
+        marker_35d9f5a48e6eebf7d59903a0d8b20e26.bindPopup(popup_ad8489dc672b67da5ec4c3af94f9234c)
+        ;
+
+        
+    
+    
+            var marker_5553855ec5db031e127f8f3634336586 = L.marker(
+                [60.1699, 24.9402],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_2192ed8bd3f56f956f3356f1ae821f23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_5553855ec5db031e127f8f3634336586.setIcon(icon_2192ed8bd3f56f956f3356f1ae821f23);
+        
+    
+        var popup_31bff4b70893d5dbb41898f40ffc663f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19d6952d1496483fbbd0baeed3f70039 = $(`<div id="html_19d6952d1496483fbbd0baeed3f70039" style="width: 100.0%; height: 100.0%;">University of Helsinki, Finland</div>`)[0];
+                popup_31bff4b70893d5dbb41898f40ffc663f.setContent(html_19d6952d1496483fbbd0baeed3f70039);
+            
+        
+
+        marker_5553855ec5db031e127f8f3634336586.bindPopup(popup_31bff4b70893d5dbb41898f40ffc663f)
+        ;
+
+        
+    
+    
+            var marker_58e451ce886160381c742304ac67cb9d = L.marker(
+                [52.6231, -1.1375],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_10f9cfb928a0e0b655dfa02e06d8cd2c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_58e451ce886160381c742304ac67cb9d.setIcon(icon_10f9cfb928a0e0b655dfa02e06d8cd2c);
+        
+    
+        var popup_a3416aa5c2aae9e32f67b71dc70cf50d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73453171a42179414f7293f13fb50140 = $(`<div id="html_73453171a42179414f7293f13fb50140" style="width: 100.0%; height: 100.0%;">University of Leicester, UK</div>`)[0];
+                popup_a3416aa5c2aae9e32f67b71dc70cf50d.setContent(html_73453171a42179414f7293f13fb50140);
+            
+        
+
+        marker_58e451ce886160381c742304ac67cb9d.bindPopup(popup_a3416aa5c2aae9e32f67b71dc70cf50d)
+        ;
+
+        
+    
+    
+            var marker_aab4ff1cd969e6e7d849b183ed4c761f = L.marker(
+                [42.2314, -8.721],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_3c254cada6066a7d93f1cc588706bc21 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aab4ff1cd969e6e7d849b183ed4c761f.setIcon(icon_3c254cada6066a7d93f1cc588706bc21);
+        
+    
+        var popup_eb0b73f88c497dbfb23555f25082ae06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_757f4d5023415319a4f09d44c687ab1e = $(`<div id="html_757f4d5023415319a4f09d44c687ab1e" style="width: 100.0%; height: 100.0%;">Galicia Sur Health Research Institute, Spain</div>`)[0];
+                popup_eb0b73f88c497dbfb23555f25082ae06.setContent(html_757f4d5023415319a4f09d44c687ab1e);
+            
+        
+
+        marker_aab4ff1cd969e6e7d849b183ed4c761f.bindPopup(popup_eb0b73f88c497dbfb23555f25082ae06)
+        ;
+
+        
+    
+    
+            var marker_40233e7f4026bdcfaf6bc06ebcdb3631 = L.marker(
+                [52.517, 13.3889],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_cea4fdded5e01550a2691de83d7eb3c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_40233e7f4026bdcfaf6bc06ebcdb3631.setIcon(icon_cea4fdded5e01550a2691de83d7eb3c9);
+        
+    
+        var popup_87737295a2ba501cdec58115c87badef = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cc06416e4a236972504ed74c7120152 = $(`<div id="html_3cc06416e4a236972504ed74c7120152" style="width: 100.0%; height: 100.0%;">Max Planck Institute for Aging, Germany</div>`)[0];
+                popup_87737295a2ba501cdec58115c87badef.setContent(html_3cc06416e4a236972504ed74c7120152);
+            
+        
+
+        marker_40233e7f4026bdcfaf6bc06ebcdb3631.bindPopup(popup_87737295a2ba501cdec58115c87badef)
+        ;
+
+        
+    
+    
+            var marker_9c604a341b8774e66185019bb02905e2 = L.marker(
+                [51.4257, -0.168],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_d178bb81e27b80253936cbc7f45bd0d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9c604a341b8774e66185019bb02905e2.setIcon(icon_d178bb81e27b80253936cbc7f45bd0d0);
+        
+    
+        var popup_0c774641e25a74b41d2b7c95228ccf89 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58a68f0911cf53499cb6288369e6d00b = $(`<div id="html_58a68f0911cf53499cb6288369e6d00b" style="width: 100.0%; height: 100.0%;">Institute of Cancer Research, UK</div>`)[0];
+                popup_0c774641e25a74b41d2b7c95228ccf89.setContent(html_58a68f0911cf53499cb6288369e6d00b);
+            
+        
+
+        marker_9c604a341b8774e66185019bb02905e2.bindPopup(popup_0c774641e25a74b41d2b7c95228ccf89)
+        ;
+
+        
+    
+    
+            var marker_938fb9cea6d3d8f3644c05cc1dd797bb = L.marker(
+                [49.3988, 8.6724],
+                {}
+            ).addTo(marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1);
+        
+    
+            var icon_62c334d601941ff2a1bfd5a01debbe2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_938fb9cea6d3d8f3644c05cc1dd797bb.setIcon(icon_62c334d601941ff2a1bfd5a01debbe2a);
+        
+    
+        var popup_8e933f3fc2bd79fb80c5b5b2f3913a0a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_93c3f64f6783eeeb6b9d0e8690172aa4 = $(`<div id="html_93c3f64f6783eeeb6b9d0e8690172aa4" style="width: 100.0%; height: 100.0%;">German Cancer Research Center, Germany</div>`)[0];
+                popup_8e933f3fc2bd79fb80c5b5b2f3913a0a.setContent(html_93c3f64f6783eeeb6b9d0e8690172aa4);
+            
+        
+
+        marker_938fb9cea6d3d8f3644c05cc1dd797bb.bindPopup(popup_8e933f3fc2bd79fb80c5b5b2f3913a0a)
+        ;
+
+        
+    
+    
+            marker_cluster_5f0679ea251e5f0dab6693ae20bf96e1.addTo(map_a134327eafbb823c4c91032609cabae6);
+        
+</script>
+</html>
