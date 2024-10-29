@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Análise de variantes de M. tuberculosis para iniciantes</title>
+</head>
+<body>
+<h1>Análise de variantes de <em>M. tuberculosis</em> para iniciantes</h1>
+<p><img alt="Logotipo do phd4moz" class="float-left" style="border-width:0; display: inline-block; margin:0" src="https://raw.githubusercontent.com/nunososorio/PhD4Moz/refs/heads/main/phd4moz.png" width="60" height="60">
+<br> Tutorial adaptado de:<a href="https://training.galaxyproject.org/training-material/topics/variant-analysis/tutorials/tb-variant-analysis/tutorial.html">Link original</a><br>
+Autores: Peter van Heusden, Simon Gladman, Thoba Lose <br>
+Data: 25/07/2020 <br>
+Adaptação: Nuno S. Osório <br>
+Data da adaptação: 28/10/2024 <br>
+
+<h2>Introdução</h2>
+<p>A tuberculose (TB) é uma doença infecciosa causada pela bactéria <em>Mycobacterium tuberculosis</em> (Mtb). A análise de variantes genómicas desta bactéria pode ajudar a identificar mutações que levam à resistência a medicamentos e auxiliar na vigilância de surtos. Neste tutorial, você aprenderá a identificar essas variantes usando ferramentas bioinformáticas no Galaxy.</p>
+
+<h2>Objetivos</h2>
+<ul>
+    <li>Obter e preparar os dados de sequenciação para análise.</li>
+    <li>Realizar controle de qualidade dos dados.</li>
+    <li>Detectar e anotar variantes genómicas.</li>
+    <li>Interpretar os resultados para entender a resistência a medicamentos.</li>
+</ul>
+
+<h2>Requisitos</h2>
+<p>Este tutorial assume que você já possui uma conta no Galaxy e está minimamente familiarizado com o ambiente Galaxy. Caso contrário, veja o <a href="https://galaxyproject.org">Guia de Introdução ao Galaxy</a> antes de começar.</p>
+
+<h2>Passo 1: Obtenção dos Dados</h2>
+<p>Vamos começar obtendo os ficheiros de dados. Para isso, siga as etapas abaixo:</p>
+<ol>
+    <li><strong>Vá até à sua conta Galaxy</strong>. Se não tiver uma conta, crie uma gratuitamente em <a href="https://usegalaxy.org">usegalaxy.org</a>.</li>
+<li>Carregue os seguintes ficheiros de dados para o Galaxy, copiando os links para a ferramenta de importação de dados:</li>
+      <ul>
+        <li>
+          <pre><code>https://zenodo.org/record/3960260/files/004-2_1.fastq.gz</code></pre>
+        </li>
+        <li>
+          <pre><code>https://zenodo.org/record/3960260/files/004-2_2.fastq.gz</code></pre>
+        </li>
+        <li>
+          <pre><code>https://zenodo.org/record/3960260/files/Mycobacterium_tuberculosis_ancestral_reference.gbk</code></pre>
+        </li>
+        <li>
+          <pre><code>https://zenodo.org/record/3960260/files/Mycobacterium_tuberculosis_h37rv.ASM19595v2.45.chromosome.Chromosome.gff3</code></pre>
+        </li>
+      </ul>
+    <li>Na interface do Galaxy, vá para <strong>"Upload Data"</strong> e cole os links acima um a um. Certifique-se de que os ficheiros são importados corretamente.</li>
+</ol>
+
+<h2>Passo 2: Controle de Qualidade dos Dados (FastQC)</h2>
+<p>Antes de proceder à análise, é essencial verificar a qualidade dos dados de sequenciação. Isso ajuda a identificar problemas como baixa qualidade ou adaptadores remanescentes que podem afetar os resultados. Vamos usar o <strong>FastQC</strong> para isso.</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>No Galaxy, pesquise por <strong>FastQC</strong> na barra de ferramentas.</li>
+    <li>Selecione a ferramenta <strong>FastQC Read Quality Reports</strong> nos resultados.</li>
+    <li>No campo <strong>"Short read data from your current history"</strong>, selecione os ficheiros FASTQ que carregou (as suas leituras sequenciadas forward e reverse).</li>
+    <li>Deixe as opções como padrão para o resto dos campos e clique em <strong>Executar</strong>.</li>
+</ol>
+
+<p>Após a execução, o FastQC gerará relatórios visuais para cada ficheiro. Verifique os relatórios para ver se as leituras têm qualidade suficiente para análise. Se houver problemas, como baixa qualidade ou presença de adaptadores, pode ser necessário aplicar ferramentas de limpeza de dados antes de prosseguir.</p>
+
+<img src="https://training.galaxyproject.org/training-material/topics/variant-analysis/images/mt_qc.png" alt="Exemplo de relatório FastQC" width="600">
+
+<h2>Passo 3: Alinhamento das Leituras</h2>
+<p>Depois de verificar a qualidade dos dados, o próximo passo é alinhar as leituras de sequenciação com o genoma de referência. Para isso, usamos o <strong>Snippy</strong>, que detecta variantes ao comparar as suas leituras com o genoma de referência.</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>Pesquise por <strong>Snippy</strong> no Galaxy.</li>
+    <li>Abra a ferramenta <strong>Snippy</strong>.</li>
+    <li>Nas opções:</li>
+    <ul>
+        <li>Selecione as leituras forward e reverse que você verificou no FastQC.</li>
+        <li>Carregue o genoma de referência (ficheiro .gbk) que importou.</li>
+    </ul>
+    <li>Deixe os outros parâmetros como padrão e clique em <strong>Executar</strong>.</li>
+</ol>
+
+<p>O Snippy analisará as suas leituras e retornará uma lista de variantes detectadas (SNPs), que poderão ser exploradas nos próximos passos.</p>
+
+<h2>Passo 4: Filtragem e Anotação de Variantes</h2>
+<p>Agora que temos uma lista de variantes, o próximo passo é filtrá-las e anotá-las. Filtrar significa remover variantes que possam ser ruído, como aquelas com baixa cobertura. A anotação atribui significado às variantes, associando-as a genes e fenótipos específicos (por exemplo, resistência a medicamentos).</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>Pesquise pela ferramenta <strong>SnpEff</strong> no Galaxy.</li>
+    <li>Abra a ferramenta e carregue as variantes geradas pelo Snippy.</li>
+    <li>Carregue o ficheiro de anotação de referência que importou anteriormente (.gff3).</li>
+    <li>Clique em <strong>Executar</strong> para anotar as variantes.</li>
+</ol>
+
+<p>O resultado incluirá uma lista de variantes anotadas com informações sobre genes, impacto, e possível resistência a medicamentos.</p>
+
+<h2>Passo 5: Interpretação dos Resultados</h2>
+<p>Os resultados anotados podem agora ser utilizados para entender melhor a resistência a medicamentos em <em>M. tuberculosis</em>. Variantes associadas a genes conhecidos por conferir resistência podem sugerir fenótipos específicos. Explore os resultados detalhadamente para verificar se as variantes identificadas estão em regiões genómicas associadas à resistência a medicamentos.</p>
+
+<h2>Passo 6: Filtragem Adicional de Variantes e Perfil de Resistência a Medicamentos</h2>
+<p>Para obter uma lista confiável de variantes, é necessário realizar uma filtragem adicional, pois o genoma de <em>M. tuberculosis</em> possui regiões difíceis de mapear, como os genes PE/PPE/PGRS e as sequências de inserção (IS). Inserções e deleções (indels) podem também causar variantes de nucleotídeo único (SNVs) falsas perto das regiões indel. Finalmente, regiões com baixa cobertura devido a deleções ou alta concentração de GC podem ter chamadas de variantes de baixa confiança. A ferramenta TB Variant Filter ajuda a filtrar variantes com base nesses critérios.</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>No Galaxy, pesquise pela ferramenta <strong>TB Variant Filter</strong>.</li>
+    <li>Abra a ferramenta <strong>TB Variant Filter (versão Galaxy 0.4.0+galaxy0)</strong>.</li>
+    <li>Nas opções:
+        <ul>
+            <li>Em “VCF file to be filter”, selecione os ficheiros VCF gerados pelo Snippy (dados XX).</li>
+            <li>Em “Filters to apply”, selecione “Filter variants by region” e “Filter sites by read alignment depth”.</li>
+        </ul>
+    </li>
+    <li>Clique em <strong>Executar</strong> para aplicar os filtros.</li>
+</ol>
+
+<p>Após a execução do filtro, um novo ficheiro VCF será gerado, contendo apenas as variantes de alta confiança. Esse ficheiro poderá ser usado para uma análise mais confiável da resistência a medicamentos.</p>
+
+<h2>Passo 7: Transformação de Texto com sed</h2>
+<p>Em algumas etapas, o VCF anotado pelo SnpEff pode adicionar o prefixo <code>GENE_</code> aos nomes dos genes. Esse prefixo causa problemas em alguns relatórios de resistência a medicamentos. Podemos removê-lo usando a ferramenta <strong>Text transformation with sed</strong> no Galaxy.</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>No Galaxy, pesquise pela ferramenta <strong>Text transformation with sed</strong>.</li>
+    <li>Nas opções:
+        <ul>
+            <li>“File to process”: selecione o ficheiro VCF anotado que deseja editar.</li>
+            <li>“SED Program”: insira o comando <code>s/GENE_//g</code> para remover o prefixo GENE_.</li>
+        </ul>
+    </li>
+    <li>Clique em <strong>Executar</strong> para processar o ficheiro VCF.</li>
+</ol>
+
+<p>Após a transformação, o ficheiro VCF estará pronto para a criação do relatório de resistência a medicamentos.</p>
+
+<h2>Passo 8: Gerar Relatório de Resistência a Medicamentos</h2>
+<p>Agora que temos uma lista de variantes confiáveis, podemos usar a ferramenta <strong>TB Variant Report</strong> para gerar um relatório que inclui o perfil de resistência a medicamentos da amostra.</p>
+
+<h3>Etapas detalhadas:</h3>
+<ol>
+    <li>No Galaxy, pesquise pela ferramenta <strong>TB Variant Report</strong>.</li>
+    <li>Nas opções:
+        <ul>
+            <li>“Input SnpEff annotated M.tuberculosis VCF(s)”: selecione o ficheiro VCF transformado pelo <strong>sed</strong> na etapa anterior.</li>
+            <li>“TBProfiler Drug Resistance Report (Optional)”: selecione o ficheiro de perfil de resistência gerado pelo TB-Profiler.</li>
+        </ul>
+    </li>
+    <li>Clique em <strong>Executar</strong> para gerar o relatório.</li>
+</ol>
+
+<p>O relatório gerado inclui informações sobre a linhagem final da amostra e a presença de resistências a medicamentos.</p>
+
+<h3>Perguntas:</h3>
+<ol>
+    <li>Qual foi a linhagem final da amostra testada?</li>
+    <li>Foram encontradas resistências a medicamentos?</li>
+</ol>
+
+<p><strong>Solução:</strong> A linhagem final foi <em>4 com sublinhagem 4.4.1.1.1</em>. Sim, foram encontradas resistências a isoniazida, rifampicina, etambutol, pirazinamida e estreptomicina, além de fluoroquinolonas (amikacina, capreomicina e canamicina), com mutações nos genes <code>katG</code>, <code>rpoB</code>, <code>embB</code>, <code>pncA</code>, <code>rpsL</code> e <code>rrs</code> (RNA ribossomal), respectivamente.</p>
+
+<h2>Conclusão</h2>
+<p>Este tutorial guiou-o por uma análise de variantes de <em>M. tuberculosis</em>, desde a obtenção de dados, controle de qualidade, até a anotação e interpretação de variantes. Para mais detalhes, explore outras ferramentas no Galaxy ou veja o tutorial completo.</p>
+
+<p><small>Este tutorial foi simplificado e adaptado para iniciantes, para ser concluído em menos de uma hora.</small></p>
+</body>
+</html>
