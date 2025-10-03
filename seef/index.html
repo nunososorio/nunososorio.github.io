@@ -11,7 +11,6 @@
             padding: 0;
             height: 100%;
             overflow: hidden;
-            background-color: #000; /* Cor de fundo caso o vídeo demore a carregar */
         }
 
         /* Estilo para o vídeo */
@@ -19,10 +18,10 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            min-width: 100vw;  /* Ocupa no mínimo 100% da largura do ecrã */
-            min-height: 100vh; /* Ocupa no mínimo 100% da altura do ecrã */
-            transform: translate(-50%, -50%); /* Centra o vídeo na perfeição */
-            object-fit: cover; /* Garante que o vídeo cobre todo o ecrã sem distorcer, cortando o excesso */
+            min-width: 100vw;
+            min-height: 100vh;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
             z-index: -1; /* Coloca o vídeo no fundo */
         }
     </style>
@@ -30,7 +29,6 @@
 <body>
 
     <video id="fullscreen-video" autoplay loop muted playsinline>
-        <!-- IMPORTANTE: Altere o nome do ficheiro aqui! -->
         <source src="video.mp4" type="video/mp4">
         O seu browser não suporta vídeos.
     </video>
