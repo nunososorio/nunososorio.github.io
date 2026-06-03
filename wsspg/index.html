@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLMs e prompt engineering: ABC para ginecologistas</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #334155; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
+            background-color: #f8fafc; 
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3b82f6;
+        }
+        .event-title {
+            color: #64748b;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .event-theme {
+            color: #d946ef; /* Matching the pinkish/purple from the poster */
+            font-size: 16px;
+            font-style: italic;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        h1 { 
+            color: #0f172a; 
+            font-size: 32px; 
+            margin: 10px 0;
+        }
+        .event-meta {
+            color: #f59e0b; /* Matching the yellow text from the slide */
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        h2 { color: #1d4ed8; margin-top: 30px; font-size: 22px; display: flex; align-items: center; gap: 10px; }
+        .step-badge {
+            background-color: #1d4ed8; color: white; border-radius: 50%; width: 30px; height: 30px;
+            display: inline-flex; align-items: center; justify-content: center; font-size: 16px;
+        }
+        .card { 
+            background: #ffffff; border-radius: 8px; padding: 25px; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-bottom: 25px; 
+            border: 1px solid #e2e8f0;
+        }
+        .prompt-container { position: relative; margin: 15px 0; }
+        .prompt-box { 
+            background: #f1f5f9; border-left: 4px solid #3b82f6; padding: 15px 15px 15px 20px; 
+            border-radius: 0 8px 8px 0; font-family: "Courier New", Courier, monospace; 
+            font-size: 15px; color: #0f172a; white-space: pre-wrap;
+        }
+        .btn-copy { 
+            position: absolute; top: 10px; right: 10px;
+            background: #e2e8f0; color: #334155; border: none; padding: 6px 12px; 
+            border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;
+            transition: all 0.2s;
+        }
+        .btn-copy:hover { background: #cbd5e1; }
+        .btn-action { 
+            display: inline-block; background: #059669; color: white; text-decoration: none; 
+            padding: 12px 20px; border-radius: 6px; font-weight: bold; margin: 10px 10px 10px 0; 
+            transition: background 0.2s;
+        }
+        .btn-action:hover { background: #047857; color: white; }
+        .btn-secondary { background: #3b82f6; }
+        .btn-secondary:hover { background: #2563eb; }
+        ul.instructions { padding-left: 20px; margin-top: 10px; }
+        ul.instructions li { margin-bottom: 8px; }
+        .alert { background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px; margin-top: 20px; border-radius: 0 4px 4px 0; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+        }
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <div class="event-title">209ª Reunião da Sociedade Portuguesa de Ginecologia (SPG)</div>
+        <div class="event-theme">A Ginecologia em Tempo de IA</div>
+        <h1>LLMs e prompt engineering: ABC para ginecologistas</h1>
+        <div class="event-meta">Quinta-feira | 4 de junho 2026 | 15h15-16h30</div>
+    </div>
+
+    <p>Siga os passos abaixo para testar a diferença entre dar uma boa instrução à IA e fornecer-lhe as ferramentas corretas para trabalhar com segurança clínica.</p>
+
+    <div class="card">
+        <h2><span class="step-badge">0</span> Preparação</h2>
+        <p>Antes de começarmos o exercício, abra o Google AI Studio num separador e descarregue o PDF da Norma da DGS para o seu computador.</p>
+        <a href="https://aistudio.google.com/" target="_blank" class="btn-action btn-secondary">Abrir Google AI Studio</a>
+        <a href="https://www.mgfamiliar.net/wp-content/uploads/Normal-0082025-VSR.pdf" target="_blank" class="btn-action">Descarregar PDF (Norma 008/2025)</a>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-badge">1</span> Nível 1: O Modelo "Nu" (Sem Contexto)</h2>
+        <ul class="instructions">
+            <li>No Google AI Studio, garanta que a ferramenta <strong>"Grounding with Google Search" está DESLIGADA</strong> (barra lateral direita em Tools).</li>
+            <li>Não coloque nenhum ficheiro em anexo.</li>
+            <li>Copie o prompt abaixo, cole na caixa de texto e clique em gerar (Run).</li>
+        </ul>
+        <div class="prompt-container">
+            <button class="btn-copy" onclick="copyToClipboard('prompt1', this)">Copiar</button>
+            <div class="prompt-box" id="prompt1">Atuando como Ginecologista em Portugal: Tenho uma grávida às 34 semanas. Qual é o número exato e a data da Norma da DGS que regula atualmente a administração da vacina Abrysvo na gravidez? Segundo as regras estritas dessa mesma norma, se eu administrar a vacina à mãe hoje, em que situação excecional o recém-nascido ainda mantém a indicação para receber o nirsevimab (Beyfortus) gratuitamente no SNS?</div>
+        </div>
+        <p><strong>Resultado esperado:</strong> O modelo vai alucinar/inventar uma norma burocrática porque não tem acesso a dados atualizados.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-badge">2</span> Nível 2: RAG Automático (Pesquisa Web)</h2>
+        <ul class="instructions">
+            <li>No painel direito (Tools), <strong>ATIVE a ferramenta "Grounding with Google Search"</strong>.</li>
+            <li>Use exatamente o mesmo prompt do Passo 1 e clique em gerar novamente.</li>
+        </ul>
+        <p><strong>Resultado esperado:</strong> A IA vai pesquisar na internet em tempo real, identificar a norma correta (008/2025) e a exceção clínica para o Nirsevimab. Uma melhoria drástica.</p>
+    </div>
+
+    <div class="card">
+        <h2><span class="step-badge">3</span> Nível 3: RAG Deliberado (O Upload do PDF)</h2>
+        <ul class="instructions">
+            <li><strong>DESLIGUE novamente o "Google Search"</strong>. A IA volta a estar sem internet.</li>
+            <li>No painel esquerdo superior, cole as instruções abaixo na caixa <strong>"System Instructions"</strong>:</li>
+        </ul>
+        
+        <div class="prompt-container">
+            <button class="btn-copy" onclick="copyToClipboard('prompt2', this)">Copiar</button>
+            <div class="prompt-box" id="prompt2">És um ginecologista especialista em Medicina da Reprodução a trabalhar em Portugal. As tuas respostas devem basear-se única e exclusivamente nos documentos fornecidos. Se a informação não estiver no documento, deves dizer 'Não tenho dados para responder a isso'.</div>
+        </div>
+
+        <ul class="instructions">
+            <li>Clique no ícone de <strong>Anexar Ficheiro (+)</strong> ao lado da caixa de mensagens e faça o upload do PDF da Norma que descarregou no Passo 0.</li>
+            <li>Corra de novo o prompt inicial.</li>
+        </ul>
+
+        <div class="alert">
+            <strong>A Grande Conclusão:</strong> O modelo atua agora como um assistente que "lê" o seu documento seguro à velocidade da luz. Ignora as alucinações e os resultados aleatórios do Google. Responde APENAS com base no que você validou.
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Autor:</strong> Nuno S. Osório (<a href="mailto:nosorio@med.uminho.pt">nosorio@med.uminho.pt</a>)</p>
+        <p>Este material está licenciado ao abrigo da <a href="https://creativecommons.org/licenses/by/4.0/deed.pt" target="_blank">Licença Creative Commons Atribuição 4.0 Internacional (CC BY 4.0)</a>.</p>
+    </footer>
+
+    <script>
+        function copyToClipboard(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'Copiado!';
+                btn.style.background = '#10b981';
+                btn.style.color = '#fff';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = '#e2e8f0';
+                    btn.style.color = '#334155';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
