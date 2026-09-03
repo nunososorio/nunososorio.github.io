@@ -62,7 +62,7 @@
 
     <div class="header-section">
         <div class="event-title">Universidade do Minho - Mestrado Integrado em Medicina (HDPP4)</div>
-        <div class="event-theme">Guião Prático </div>
+        <div class="event-theme">Guião Prático</div>
         <h1>Inteligência Artificial na Prática Clínica</h1>
         <div class="event-meta">Sexta-feira | 4 de setembro 2026 | 15h00 - 17h30</div>
     </div>
@@ -124,7 +124,7 @@
 
     <div class="card">
         <h2><span class="step-badge">2</span> LLM-as-a-Judge (Auditoria Cruzada)</h2>
-        <p>Uma possível forma de auditar as falhas da IA é usar um LLM independente (ou uma nova conversa sem o contexto ) para atuar como Juiz.</p>
+        <p>Uma possível forma de auditar as falhas da IA é usar um LLM independente (ou uma nova conversa sem o contexto) para atuar como Juiz.</p>
         
         <div style="background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px dashed #cbd5e1;">
             <p style="margin-top: 0; font-weight: bold; color: #0f172a;">O LLM é Bipolar?:</p>
@@ -150,23 +150,12 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <!-- BLOCO 2: AI Studio e NotebookLM -->
-    <div class="section-title">Bloco Prático 2: Parametros e Ancoragem</div>
+    <div class="section-title">Bloco Prático 2: Parâmetros e Ancoragem</div>
 
     <div class="card">
-        <h2><span class="step-badge">3</span> Filtros de Segurança no AI Studio</h2>
-        <p>Aceda à plataforma de desenvolvimento de IA da Google (AI Studio).</p>
-        <a href="https://aistudio.google.com/" target="_blank" class="btn-action btn-secondary">Abrir Google AI Studio</a>
-        
-        <ul class="instructions">
-            <li>Aceda a <strong>Edit Safety Settings</strong> no painel direito.</li>
-            <li>Experimente diferentes níveis de bloqueio com o <i>prompt</i> da justificação do estrogénio que usámos anteriormente na Tarefa 1.</li>
-            <li>Observe o efeito remoção destas "guardas" estruturais.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-badge">4</span> Temperatura e Origem da Informação</h2>
+        <h2><span class="step-badge">3</span> Temperatura e Origem da Informação</h2>
         <p>Vamos agora testar os limites do conhecimento memorizado da IA (Baked-in) sem pesquisa. Descarregue primeiro esta norma.</p>
+        <a href="https://aistudio.google.com/" target="_blank" class="btn-action btn-secondary">Abrir Google AI Studio</a>
         <a href="https://www.mgfamiliar.net/wp-content/uploads/Normal-0082025-VSR.pdf" target="_blank" class="btn-action">Descarregar PDF (Norma 008/2025)</a>
         
         <ul class="instructions">
@@ -175,14 +164,14 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
             <li>Copie e corra o prompt abaixo sobre a norma clínica que descarregou.</li>
         </ul>
         <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt4', this)">Copiar</button>
-            <div class="prompt-box" id="prompt4">Atuando como Ginecologista em Portugal: Tenho uma grávida às 34 semanas. Qual é o número exato e a data da Norma da DGS que regula atualmente a administração da vacina Abrysvo na gravidez? Segundo as regras estritas dessa mesma norma, se eu administrar a vacina à mãe hoje, em que situação excecional o recém-nascido ainda mantém a indicação para receber o nirsevimab (Beyfortus) gratuitamente no SNS?</div>
+            <button class="btn-copy" onclick="copyToClipboard('prompt3', this)">Copiar</button>
+            <div class="prompt-box" id="prompt3">Atuando como Ginecologista em Portugal: Tenho uma grávida às 34 semanas. Qual é o número exato e a data da Norma da DGS que regula atualmente a administração da vacina Abrysvo na gravidez? Segundo as regras estritas dessa mesma norma, se eu administrar a vacina à mãe hoje, em que situação excecional o recém-nascido ainda mantém a indicação para receber o nirsevimab (Beyfortus) gratuitamente no SNS?</div>
         </div>
         <div class="alert">
             <strong>O Resultado:</strong> O modelo deverá gerar uma resposta articulada, mas contendo erros como normas antigas ou inexistentes.
         </div>
         
-        <h3 style="color: #1d4ed8; margin-top: 25px; font-size: 16px;">Comparação: O Impacto das Opções normalmente ocultas nos chatbots de AI:</h3>
+        <h3 style="color: #1d4ed8; margin-top: 25px; font-size: 16px;">Comparação:</h3>
         <ul class="instructions">
             <li><strong>Ligar o Acesso Web:</strong> Ative a ferramenta <strong>"Grounding with Google Search"</strong>. Corra novamente o prompt e observe se o modelo consegue aceder à informação real online.</li>
             <li><strong>Anexar o Documento:</strong> Desligue o Google Search. Clique no botão de "Upload" (símbolo +) no chat e <strong>anexe o PDF da Norma</strong> que descarregou. Corra o prompt pela última vez. Compare a fiabilidade da resposta.</li>
@@ -190,32 +179,32 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <div class="card">
-        <h2><span class="step-badge">5</span> Outras definições (Permissão para usar Código)</h2>
+        <h2><span class="step-badge">4</span> Outras definições (Permissão para usar Código)</h2>
         <p>Vamos agora testar outro parâmetro. Os LLMs são motores linguísticos e probabilísticos; nativamente, não sabem fazer matemática ou contar palavras com exatidão.</p>
         <ul class="instructions">
             <li>Desligue o acesso a ferramentas de código (<strong>"Code execution" DESLIGADO</strong>).</li>
-            <li>Corra o <strong>Prompt A</strong> abaixo. Verifique o resultado gerado (a IA vai provavelmente errar a contagem).</li>
+            <li>Corra o <strong>Prompt A</strong> abaixo. Copie o texto gerado para a ferramenta de contagem online abaixo e verifique o resultado (a IA vai muito provavelmente errar a contagem).</li>
             <li>Agora, ligue a execução de código (<strong>"Code execution" LIGADO</strong>) no painel direito.</li>
             <li>Corra o <strong>Prompt B</strong>, pedindo explicitamente para contar com código. O modelo vai escrever e executar um script para contar as palavras, acertando em cheio!</li>
         </ul>
         <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt5a', this)">Copiar Prompt A</button>
-            <div class="prompt-box" id="prompt5a">Gera um parágrafo sobre a importância da vacinação na gravidez. Depois de o escreveres, diz-me exatamente quantas palavras tem o parágrafo que acabaste de gerar.</div>
+            <button class="btn-copy" onclick="copyToClipboard('prompt4a', this)">Copiar Prompt A</button>
+            <div class="prompt-box" id="prompt4a">Gera um texto com 10 parágrafos sobre a importância da vacinação na gravidez. Depois de o escreveres, diz-me exatamente quantas palavras tem o texto que acabaste de gerar.</div>
         </div>
         <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt5b', this)">Copiar Prompt B</button>
-            <div class="prompt-box" id="prompt5b">Gera um parágrafo sobre a importância da vacinação na gravidez. Usando código, diz-me exatamente quantas palavras tem o parágrafo que acabaste de gerar.</div>
+            <button class="btn-copy" onclick="copyToClipboard('prompt4b', this)">Copiar Prompt B</button>
+            <div class="prompt-box" id="prompt4b">Gera um texto com 10 parágrafos sobre a importância da vacinação na gravidez. Usando código, diz-me exatamente quantas palavras tem o texto que acabaste de gerar.</div>
         <a href="https://wordcounter.net/pt" target="_blank" class="btn-action btn-secondary" style="margin-bottom: 10px;">Abrir Contador de Palavras para Verificar</a>
         </div>
     </div>
 
     <div class="card">
-        <h2><span class="step-badge">6</span> RAG Deliberado com Referenciação Visual (NotebookLM)</h2>
+        <h2><span class="step-badge">5</span> RAG Deliberado com Referenciação Visual (NotebookLM)</h2>
         <p>A melhor forma de evitar que a IA invente é utilizar num ambiente fechado. O NotebookLM é um exemplo de aplicação especializada em RAG (<i>Retrieval-Augmented Generation</i>).</p>
         <a href="https://notebooklm.google.com/" target="_blank" class="btn-action btn-warning">Abrir NotebookLM</a>
         <ul class="instructions">
             <li>Crie um novo Notebook e faça upload do PDF da Norma 008/2025 que descarregou no início deste bloco.</li>
-            <li>Cole o mesmo <i>prompt da grávida</i> do Passo 4 na barra de chat em baixo.</li>
+            <li>Cole o mesmo <i>prompt da grávida</i> do Passo 3 na barra de chat em baixo.</li>
             <li>Repare que o modelo lê a norma, fornece a citação clicável correta [1] indicando visualmente a origem da resposta para confirmação do utilizador.</li>
         </ul>
     </div>
@@ -224,15 +213,15 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     <div class="section-title">Bloco Prático 3: Fator Humano</div>
     
     <div class="card">
-        <h2><span class="step-badge">7</span> Simulação de Quebra de Confiança</h2>
+        <h2><span class="step-badge">6</span> Simulação de Quebra de Confiança</h2>
         <p>A falha de tecnológia médica traduz-se sempre em impacto ético e relacional para o doente. Este último exercício servirá como possível inspiração para as suas reflexões sobre este tema.</p>
         <ul class="instructions">
             <li>Usem a instrução abaixo para pedir a um LLM que crie um monólogo na primeira pessoa e uma imagem de um doente desiludido.</li>
             <li>Podem utilizar esse texto e imagem em plataformas de geração de vídeo (ex: Google Flow) para criar um desabafo visceral.</li>
         </ul>
         <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt7', this)">Copiar</button>
-            <div class="prompt-box" id="prompt7">Cenário: Um doente acaba de descobrir que o diagnóstico de uma doença crónica complexa, que o médico lhe comunicou há duas semanas, foi baseado integralmente numa resposta do ChatGPT (que afinal era mentira/alucinação). Escreve o desabafo pessoal deste doente, focando a quebra absoluta de confiança no médico e os perigos da inteligência artificial na medicina.</div>
+            <button class="btn-copy" onclick="copyToClipboard('prompt6', this)">Copiar</button>
+            <div class="prompt-box" id="prompt6">Cenário: Um doente acaba de descobrir que o diagnóstico de uma doença crónica complexa, que o médico lhe comunicou há duas semanas, foi baseado integralmente numa resposta do ChatGPT (que afinal era mentira/alucinação). Escreve o desabafo pessoal deste doente, focando a quebra absoluta de confiança no médico e os perigos da inteligência artificial na medicina.</div>
         </div>
     </div>
 
