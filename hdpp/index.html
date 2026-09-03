@@ -62,7 +62,7 @@
 
     <div class="header-section">
         <div class="event-title">Universidade do Minho - Mestrado Integrado em Medicina (HDPP4)</div>
-        <div class="event-theme">Guião Prático</div>
+        <div class="event-theme">Guião Prático </div>
         <h1>Inteligência Artificial na Prática Clínica</h1>
         <div class="event-meta">Sexta-feira | 4 de setembro 2026 | 15h00 - 17h30</div>
     </div>
@@ -150,7 +150,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <!-- BLOCO 2: AI Studio e NotebookLM -->
-    <div class="section-title">Bloco Prático 2: Parâmetros e Ancoragem</div>
+    <div class="section-title">Bloco Prático 2: Parametros e Ancoragem</div>
 
     <div class="card">
         <h2><span class="step-badge">3</span> Temperatura e Origem da Informação</h2>
@@ -179,23 +179,23 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <div class="card">
-        <h2><span class="step-badge">4</span> Outras definições (Permissão para usar Código)</h2>
-        <p>Vamos agora testar outro parâmetro. Os LLMs são motores linguísticos e probabilísticos; nativamente, não sabem fazer matemática ou contar palavras com exatidão.</p>
+        <h2><span class="step-badge">4</span> O Ponto Cego da IA (Tokens vs Código)</h2>
+        <p>Vamos testar outra limitação inerente. Os LLMs processam o texto em "tokens" (pedaços de palavras) e não em letras individuais, pelo que são péssimos a fazer contagens de caracteres exatas num texto gerado.</p>
         <ul class="instructions">
             <li>Desligue o acesso a ferramentas de código (<strong>"Code execution" DESLIGADO</strong>).</li>
-            <li>Corra o <strong>Prompt A</strong> abaixo. Copie o texto gerado para a ferramenta de contagem online abaixo e verifique o resultado (a IA vai muito provavelmente errar a contagem).</li>
+            <li>Corra o <strong>Prompt A</strong> abaixo. Copie o texto gerado e veja na ferramenta online abaixo, na secção do lado direito ("Frequência de Letras"), que a IA muito provavelmente errou o número exato da letra pedida.</li>
             <li>Agora, ligue a execução de código (<strong>"Code execution" LIGADO</strong>) no painel direito.</li>
-            <li>Corra o <strong>Prompt B</strong>, pedindo explicitamente para contar com código. O modelo vai escrever e executar um script para contar as palavras, acertando em cheio!</li>
+            <li>Corra o <strong>Prompt B</strong>, pedindo explicitamente para contar usando código. O modelo vai escrever um pequeno script (que pode ver) para contar as letras e, desta vez, não vai falhar!</li>
         </ul>
         <div class="prompt-container">
             <button class="btn-copy" onclick="copyToClipboard('prompt4a', this)">Copiar Prompt A</button>
-            <div class="prompt-box" id="prompt4a">Gera um texto com 10 parágrafos sobre a importância da vacinação na gravidez. Depois de o escreveres, diz-me exatamente quantas palavras tem o texto que acabaste de gerar.</div>
+            <div class="prompt-box" id="prompt4a">Gera um texto curto com 3 parágrafos sobre a importância da vacinação na gravidez. Depois de o escreveres, diz-me exatamente quantas vezes a vogal "a" (maiúscula ou minúscula) aparece em todo o texto que acabaste de gerar.</div>
         </div>
         <div class="prompt-container">
             <button class="btn-copy" onclick="copyToClipboard('prompt4b', this)">Copiar Prompt B</button>
-            <div class="prompt-box" id="prompt4b">Gera um texto com 10 parágrafos sobre a importância da vacinação na gravidez. Usando código, diz-me exatamente quantas palavras tem o texto que acabaste de gerar.</div>
-        <a href="https://wordcounter.net/" target="_blank" class="btn-action btn-secondary" style="margin-bottom: 10px;">Abrir Contador de Palavras para Verificar</a>
+            <div class="prompt-box" id="prompt4b">Gera um texto curto com 3 parágrafos sobre a importância da vacinação na gravidez. Usando código (Python), diz-me exatamente quantas vezes a vogal "a" (maiúscula ou minúscula) aparece em todo o texto que acabaste de gerar.</div>
         </div>
+        <a href="https://wordcounter.net/" target="_blank" class="btn-action btn-secondary" style="margin-bottom: 10px;">Abrir Contador (Ver em "Frequência de Letras")</a>
     </div>
 
     <div class="card">
