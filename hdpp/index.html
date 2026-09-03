@@ -160,7 +160,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
         
         <ul class="instructions">
             <li>No AI Studio, garanta que a ferramenta <strong>"Grounding with Google Search" está DESLIGADA</strong> (ou seja, o modelo está isolado e sem acesso à web).</li>
-            <li>No final da barra lateral direita, aumente a métrica <strong>Top P para 1.0</strong> para forçar a aleatoriedade/"criatividade".</li>
+            <li>No final da barra lateral direita, aumente a métrica <strong>Top P ou Temperature</strong> para forçar a aleatoriedade/"criatividade".</li>
             <li>Copie e corra o prompt abaixo sobre a norma clínica que descarregou.</li>
         </ul>
         <div class="prompt-container">
@@ -179,8 +179,8 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <div class="card">
-        <h2><span class="step-badge">4</span> O Ponto Cego da IA (Tokens vs Código)</h2>
-        <p>Vamos testar outra limitação inerente. Os LLMs processam o texto em "tokens" (pedaços de palavras) e não em letras individuais, pelo que são péssimos a fazer contagens de caracteres exatas num texto gerado.</p>
+        <h2><span class="step-badge">4</span> Tokens vs Código </h2>
+        <p>Vamos testar outra limitação inerente. Os LLMs processam o texto em "tokens" (pedaços de palavras) e não em letras individuais, pelo que são maus a fazer contagens de caracteres exatas num texto gerado.</p>
         <ul class="instructions">
             <li>Desligue o acesso a ferramentas de código (<strong>"Code execution" DESLIGADO</strong>).</li>
             <li>Corra o <strong>Prompt A</strong> abaixo. Copie o texto gerado e veja na ferramenta online abaixo, na secção do lado direito ("Frequência de Letras"), que a IA muito provavelmente errou o número exato da letra pedida.</li>
@@ -205,7 +205,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
         <ul class="instructions">
             <li>Crie um novo Notebook e faça upload do PDF da Norma 008/2025 que descarregou no início deste bloco.</li>
             <li>Cole o mesmo <i>prompt da grávida</i> do Passo 3 na barra de chat em baixo.</li>
-            <li>Repare que o modelo lê a norma, fornece a citação clicável correta [1] indicando visualmente a origem da resposta para confirmação do utilizador.</li>
+            <li>Repare que o modelo lê a norma, fornece a citação clicável correta indicando visualmente a origem da resposta para confirmação do utilizador.</li>
         </ul>
     </div>
 
@@ -217,7 +217,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
         <p>A falha de tecnológia médica traduz-se sempre em impacto ético e relacional para o doente. Este último exercício servirá como possível inspiração para as suas reflexões sobre este tema.</p>
         <ul class="instructions">
             <li>Usem a instrução abaixo para pedir a um LLM que crie um monólogo na primeira pessoa e uma imagem de um doente desiludido.</li>
-            <li>Podem utilizar esse texto e imagem em plataformas de geração de vídeo (ex: Google Flow) para criar um desabafo visceral.</li>
+            <li>Podem utilizar esse texto e imagem em plataformas de geração de vídeo (ex: Google Flow) para criar um desabafo marcante.</li>
         </ul>
         <div class="prompt-container">
             <button class="btn-copy" onclick="copyToClipboard('prompt6', this)">Copiar</button>
