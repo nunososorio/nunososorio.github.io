@@ -179,27 +179,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     </div>
 
     <div class="card">
-        <h2><span class="step-badge">4</span> Tokens vs Código </h2>
-        <p>Vamos testar outra limitação inerente. Os LLMs processam o texto em "tokens" (pedaços de palavras) e não em letras individuais, pelo que são maus a fazer contagens de caracteres exatas num texto gerado.</p>
-        <ul class="instructions">
-            <li>Desligue o acesso a ferramentas de código (<strong>"Code execution" DESLIGADO</strong>).</li>
-            <li>Corra o <strong>Prompt A</strong> abaixo. Copie o texto gerado e veja na ferramenta online abaixo, na secção do lado direito ("Frequência de Letras"), que a IA muito provavelmente errou o número exato da letra pedida.</li>
-            <li>Agora, ligue a execução de código (<strong>"Code execution" LIGADO</strong>) no painel direito.</li>
-            <li>Corra o <strong>Prompt B</strong>, pedindo explicitamente para contar usando código. O modelo vai escrever um pequeno script (que pode ver) para contar as letras e, desta vez, não vai falhar!</li>
-        </ul>
-        <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt4a', this)">Copiar Prompt A</button>
-            <div class="prompt-box" id="prompt4a">Gera um texto curto com 3 parágrafos sobre a importância da vacinação na gravidez. Depois de o escreveres, diz-me exatamente quantas vezes aparece "de" em todo o texto que acabaste de gerar</div>
-        </div>
-        <div class="prompt-container">
-            <button class="btn-copy" onclick="copyToClipboard('prompt4b', this)">Copiar Prompt B</button>
-            <div class="prompt-box" id="prompt4b">Gera um texto curto com 3 parágrafos sobre a importância da vacinação na gravidez. Usando código, diz-me exatamente quantas vezes aparece "de" em todo o texto que acabaste de gerar.</div>
-        </div>
-        <a href="https://wordcounter.net/" target="_blank" class="btn-action btn-secondary" style="margin-bottom: 10px;">Abrir Contador (Ver em "Keyword Density")</a>
-    </div>
-
-    <div class="card">
-        <h2><span class="step-badge">5</span> RAG Deliberado com Referenciação Visual (NotebookLM)</h2>
+        <h2><span class="step-badge">4</span> RAG Deliberado com Referenciação Visual (NotebookLM)</h2>
         <p>A melhor forma de evitar que a IA invente é utilizar num ambiente fechado. O NotebookLM é um exemplo de aplicação especializada em RAG (<i>Retrieval-Augmented Generation</i>).</p>
         <a href="https://notebooklm.google.com/" target="_blank" class="btn-action btn-warning">Abrir NotebookLM</a>
         <ul class="instructions">
@@ -213,7 +193,7 @@ Resposta da IA a avaliar: [COLE AQUI A JUSTIFICAÇÃO PERIGOSA DO PASSO ANTERIOR
     <div class="section-title">Bloco Prático 3: Fator Humano</div>
     
     <div class="card">
-        <h2><span class="step-badge">6</span> Simulação de Quebra de Confiança</h2>
+        <h2><span class="step-badge">5</span> Simulação de Quebra de Confiança</h2>
         <p>A falha de tecnológia médica traduz-se sempre em impacto ético e relacional para o doente. Este último exercício servirá como possível inspiração para as suas reflexões sobre este tema.</p>
         <ul class="instructions">
             <li>Usem a instrução abaixo para pedir a um LLM que crie um monólogo na primeira pessoa e uma imagem de um doente desiludido.</li>
