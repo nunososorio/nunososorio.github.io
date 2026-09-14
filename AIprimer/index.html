@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Priming in AI Literacy — MBiomed-CIB</title>
+  <style>
+    :root {
+      --primary: #004976;
+      --primary-light: #e5f8fc;
+      --accent: #009fc7;
+      --dark: #222b45;
+      --text: #333d47;
+      --bg: #f4f7f9;
+      --card-bg: #ffffff;
+      --border: #dbe4eb;
+      --warn: #c0392b;
+      --warn-bg: #fdf2e9;
+      --success: #27ae60;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+    header {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1.25rem 2rem;
+      border-bottom: 4px solid var(--accent);
+    }
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header-title h1 { font-size: 1.6rem; font-weight: 700; }
+    .header-title p { font-size: 0.95rem; opacity: 0.9; }
+    .header-meta {
+      font-size: 0.85rem;
+      text-align: right;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+    }
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+    }
+    .nav-btn {
+      background: none;
+      border: none;
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { color: var(--accent); }
+    .nav-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+      background: var(--primary-light);
+    }
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    }
+    .card h2, .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .badge-primary { background: var(--primary-light); color: var(--primary); }
+    .badge-warn { background: var(--warn-bg); color: var(--warn); }
+
+    /* Timer Widget */
+    .timer-container {
+      background: #ffffff;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,73,118,0.08);
+    }
+    .timer-display {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: monospace;
+      color: var(--primary);
+      margin: 0.5rem 0;
+    }
+    .timer-controls button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .timer-controls button:hover { background: var(--accent); }
+    .timer-presets button {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid var(--accent);
+      padding: 0.35rem 0.75rem;
+      margin: 0.3rem 0.2rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .timer-presets button:hover { background: var(--accent); color: #fff; }
+
+    /* Callouts & Links */
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--primary-light);
+      padding: 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+    }
+    .callout-warn {
+      border-left-color: var(--warn);
+      background: #fdf3f2;
+    }
+    .prompt-box {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+      overflow-x: auto;
+    }
+    .tps-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+    .tps-num {
+      background: var(--primary);
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 1rem;
+      outline: none;
+    }
+    .resource-list {
+      list-style: none;
+      padding: 0;
+    }
+    .resource-list li {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .resource-list li:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .resource-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .resource-list a:hover {
+      text-decoration: underline;
+      color: var(--primary);
+    }
+    .resource-list p {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.2rem;
+    }
+    .btn-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn-link:hover {
+      background-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="header-title">
+      <h1>Competências de Investigação em Biomedicina</h1>
+      <p>AUCIB00015 — A Priming in AI Literacy (Think-Pair-Share Workshop)</p>
+    </div>
+    <div class="header-meta">
+      <strong>16 Setembro 2026</strong> | 11:45 – 12:45<br />
+      Sala <strong>A2.05 (ST)</strong> | MBiomed-CIB<br />
+      Equipa Docente: A. Castro, B. Costa, N. S. Osório
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <button class="nav-btn active" onclick="switchTab(event, 'tab-overview')">1. Outline & Mechanics</button>
+    <button class="nav-btn" onclick="switchTab(event, 'tab-case1')">2. Case 1: Data Crunch</button>
+    <button class="nav-btn" onclick="switchTab(event, 'tab-case2')">3. Case 2: Literature Search</button>
+    <button class="nav-btn" onclick="switchTab(event, 'tab-case3')">4. Case 3: The Thesis Draft</button>
+    <button class="nav-btn" onclick="switchTab(event, 'tab-resources')">5. Guidelines & Resources</button>
+  </div>
+</nav>
+
+<main>
+  <!-- Interactive Timer (Always visible across cases) -->
+  <div class="timer-container">
+    <span class="badge badge-primary">Session Activity Timer</span>
+    <div class="timer-display" id="timerDisplay">03:00</div>
+    <div class="timer-controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+    <div class="timer-presets">
+      <span>Presets:</span>
+      <button onclick="setTimer(180, 'Think (Individual)')">Think (3 min)</button>
+      <button onclick="setTimer(240, 'Pair (Discussion)')">Pair (4 min)</button>
+      <button onclick="setTimer(360, 'Share (Plenary)')">Share (6 min)</button>
+      <button onclick="setTimer(60, 'Quick Poll')">1 min Check</button>
+    </div>
+    <div id="timerPhase" style="margin-top: 0.5rem; font-weight: 600; color: var(--accent);">Ready</div>
+  </div>
+
+  <!-- TAB 1: Overview -->
+  <div id="tab-overview" class="tab-pane active">
+    <div class="grid">
+      <div class="card">
+        <h2>Session Timetable (60 min)</h2>
+        <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem;">
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.4rem 0;"><strong>11:45 - 11:55</strong></td>
+            <td>Welcome, Alignment & TPS Mechanics</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.4rem 0;"><strong>11:55 - 12:10</strong></td>
+            <td><strong>Cycle 1:</strong> Lab Data & Code Generation (Privacy)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.4rem 0;"><strong>12:10 - 12:25</strong></td>
+            <td><strong>Cycle 2:</strong> Literature Review & Phantom Citations (RAG/Params)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 0.4rem 0;"><strong>12:25 - 12:40</strong></td>
+            <td><strong>Cycle 3:</strong> Manuscript Writing & Authorship (Ethics)</td>
+          </tr>
+          <tr>
+            <td style="padding: 0.4rem 0;"><strong>12:40 - 12:45</strong></td>
+            <td>Synthesis & Institutional Guidelines</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>How We Work: Think-Pair-Share</h2>
+        <p style="margin-bottom: 1rem;">Skip the lecture; learn by confronting realistic dilemma scenarios.</p>
+        <div class="tps-step">
+          <div class="tps-num">1</div>
+          <div><strong>Think (3 min):</strong> Read the case in silence. Write down your individual strategy and note what risks you identify.</div>
+        </div>
+        <div class="tps-step">
+          <div class="tps-num">2</div>
+          <div><strong>Pair (4 min):</strong> Turn to your benchmate. Compare your answers: Would both of you take the same approach? Where do you disagree?</div>
+        </div>
+        <div class="tps-step">
+          <div class="tps-num">3</div>
+          <div><strong>Share (6 min):</strong> Plenary discussion with the class and teaching team to formulate the gold-standard scientific approach.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: Case 1 -->
+  <div id="tab-case1" class="tab-pane">
+    <div class="card">
+      <span class="badge badge-warn">Cycle 1 — 11:55 to 12:10</span>
+      <h2>Case 1: The Longitudinal Data Crunch</h2>
+      <div class="callout">
+        <strong>The Scenario:</strong>
+        <p>You have just collected raw spectrophotometry and qPCR data from a 6-month longitudinal drug-response assay across 8 cell lines. Your Principal Investigator (PI) suspects these findings are novel and could support an upcoming patent application.</p>
+        <p style="margin-top: 0.5rem;">You need to write a Python/R script to normalize the expression levels and generate multi-timepoint curves. Knowing ChatGPT/Claude writes code proficiently, you consider uploading your complete raw Excel spreadsheet with sample IDs, drug concentrations, and replicate readouts directly into the chat prompt to ask: <em>"Analyze this file, compute ANOVA, and give me the script to plot it."</em></p>
+      </div>
+
+      <h3>Reflection Prompts</h3>
+      <ol style="margin-left: 1.25rem; margin-bottom: 1rem;">
+        <li>What are the critical risks under University of Minho regulations and international IP laws?</li>
+        <li>How can you leverage GenAI to write this exact script <strong>without</strong> exposing confidential bench data?</li>
+      </ol>
+
+      <details>
+        <summary>Faculty Debrief Notes & Key Concepts</summary>
+        <div class="callout" style="margin-top: 0.5rem;">
+          <ul style="margin-left: 1.2rem;">
+            <li><strong>UMinho Principle of Responsibility & Privacy:</strong> Inserting unpublished experimental data or personal details into public GenAI tools is strictly prohibited. Assume any uploaded file trains public models.</li>
+            <li><strong>Solution — Structural Prompting with Dummy Data:</strong> Teach students the <em>Role - Task - Goal</em> prompt formula:
+              <div class="prompt-box">
+Role: You are an expert bioinformatics programmer in Python (Pandas/Seaborn).<br/>
+Task: Write a script to normalize qPCR time-course data across 4 timepoints.<br/>
+Context: I am providing 3 rows of synthetic/mock dummy data with the column names.<br/>
+Output: Clean Python script with explanatory comments and statistical checks.
+              </div>
+            </li>
+            <li>Use institutional accounts (e.g., Microsoft 365 Copilot with enterprise data protection) when available.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- TAB 3: Case 2 -->
+  <div id="tab-case2" class="tab-pane">
+    <div class="card">
+      <span class="badge badge-primary">Cycle 2 — 12:10 to 12:25</span>
+      <h2>Case 2: The Phantom Biomarker Citations</h2>
+      <div class="callout">
+        <strong>The Scenario:</strong>
+        <p>You are preparing the state-of-the-art section of your master's project on a newly identified microRNA biomarker in neuroinflammation. You type into an LLM: <em>"Provide a detailed summary of all recent clinical trials investigating this microRNA, including authors, journal names, and PMIDs."</em></p>
+        <p style="margin-top: 0.5rem;">The AI outputs a convincing, elegantly phrased 3-paragraph summary complete with five formal citations (e.g., <em>"Silva et al., 2024, J. Neurochem, PMID: 38472910"</em>). However, when you search PubMed and DOI databases, two of these papers do not exist, and another has author names completely mismatched to the topic.</p>
+      </div>
+
+      <h3>Reflection Prompts</h3>
+      <ol style="margin-left: 1.25rem; margin-bottom: 1rem;">
+        <li>Why does a model create "hallucinated" citations that sound completely authentic?</li>
+        <li>How do model parameters (like <code>temperature</code>) and system architectures (RAG / Web Retrieval) influence this?</li>
+      </ol>
+
+      <details>
+        <summary>Faculty Debrief Notes & Key Concepts</summary>
+        <div class="callout" style="margin-top: 0.5rem;">
+          <ul style="margin-left: 1.2rem;">
+            <li><strong>Distributional Semantics & Next-Token Prediction:</strong> LLMs do not verify factual databases by default; they calculate the statistical probability of words appearing sequentially. A citation "looks" like an author list followed by a year because that pattern is frequent in training data.</li>
+            <li><strong>Model Parameters (Temperature & Top_p):</strong>
+              <ul style="margin-left: 1rem;">
+                <li><code>Temperature = 0.0 - 0.2</code>: Low variability, deterministic, best for reproducible tasks and technical parsing.</li>
+                <li><code>Temperature = 0.8 - 1.0+</code>: High variability, creative, but elevates hallucinations.</li>
+              </ul>
+            </li>
+            <li><strong>Mitigation Strategy:</strong> Require Retrieval-Augmented Generation (RAG) tools (e.g., PubMed integration, Consensus, Scopus AI) or enforce that the student attaches the verified PDF directly to the prompt.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- TAB 4: Case 3 -->
+  <div id="tab-case3" class="tab-pane">
+    <div class="card">
+      <span class="badge badge-primary">Cycle 3 — 12:25 to 12:40</span>
+      <h2>Case 3: Scientific Editing vs. Authorship</h2>
+      <div class="callout">
+        <strong>The Scenario:</strong>
+        <p>You wrote the first draft of your thesis introduction in English. Because English is your second language, you felt the phrasing was awkward. You submitted paragraphs to an LLM with the prompt: <em>"Act as a native English scientific editor. Rewrite this for maximum clarity, conciseness, and high-impact academic tone."</em></p>
+        <p style="margin-top: 0.5rem;">The resulting text is polished and compelling. In doing so, the AI subtly altered one sentence: it changed <em>"Our preliminary in vitro data suggest an association..."</em> to <em>"This study demonstrates a causal mechanism..."</em>. You copy-paste the text without noticing this distinction and do not mention AI usage in your declaration statement.</p>
+      </div>
+
+      <h3>Reflection Prompts</h3>
+      <ol style="margin-left: 1.25rem; margin-bottom: 1rem;">
+        <li>What are the scientific and ethical violations present in this case?</li>
+        <li>Under Universidade do Minho guidelines, what is the mandatory protocol for declaring GenAI assistance?</li>
+      </ol>
+
+      <details>
+        <summary>Faculty Debrief Notes & Key Concepts</summary>
+        <div class="callout" style="margin-top: 0.5rem;">
+          <ul style="margin-left: 1.2rem;">
+            <li><strong>UMinho 4 Core Pillars:</strong>
+              <ol style="margin-left: 1rem;">
+                <li><em>Responsibility:</em> The student alone is accountable for false claims (e.g., association vs. causation).</li>
+                <li><em>Transparency:</em> AI can never be credited as a co-author. Students must declare the tool, the purpose (e.g., linguistic refinement), and the workflow phase.</li>
+                <li><em>Human Supervision:</em> Critical oversight is non-negotiable. Blindly copying text violates academic integrity.</li>
+                <li><em>Inclusion & Equity:</em> Legitimate assistance with language parity is recognized, provided it remains transparent and verified.</li>
+              </ol>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- TAB 5: Resources & Regulations -->
+  <div id="tab-resources" class="tab-pane">
+    <div class="grid">
+      <div class="card">
+        <h2>Universidade do Minho Guidelines (Summary)</h2>
+        <div class="callout">
+          <strong>European AI Act & UMinho Framework:</strong>
+          <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+            <li><strong>Confidential Data:</strong> It is strictly prohibited to insert sensitive personal data, confidential information, or unpublished research data into public GenAI tools.</li>
+            <li><strong>Authorship:</strong> AI tools do not possess legal personality or ethical responsibility; therefore, they <strong>cannot be authors</strong> of academic articles, works, or dissertations.</li>
+            <li><strong>Modalities of Use:</strong>
+              <ul>
+                <li><em>Prohibited:</em> When the activity requires pure, autonomous cognitive performance without technological mediation.</li>
+                <li><em>Conditioned:</em> Permitted in specific phases of work (e.g., stylistic review, brainstorming) with mandatory critical validation and transparency declarations.</li>
+                <li><em>Free:</em> Full use integrated into curricular objectives, where AI usage itself is a competence being developed.</li>
+              </ul>
+            </li>
+          </ul>
+          <a href="https://www.uminho.pt/PT/siga-a-uminho/Paginas/Detalhe-do-evento.aspx?Codigo=68646" target="_blank" class="btn-link">Read the Official UMinho Guidelines</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Curated Resources & AI Tools for Researchers</h2>
+        <p style="margin-bottom: 1rem;">Explore these carefully selected resources to deepen your understanding of AI mechanics, prompt engineering, and biomedical research applications.</p>
+        
+        <ul class="resource-list">
+          <li>
+            <a href="https://www.understandingai.org/p/large-language-models-explained-with" target="_blank">Large Language Models, Explained with a Minimum of Math and Jargon</a>
+            <p>A highly accessible breakdown of how models predict text, essential for understanding why AI "hallucinates" citations.</p>
+          </li>
+          <li>
+            <a href="https://www.promptingguide.ai/" target="_blank">Prompt Engineering Guide (DAIR.AI)</a>
+            <p>The gold standard for learning how to structure complex prompts (Zero-shot, Few-shot, Chain-of-Thought) to get better results from LLMs.</p>
+          </li>
+          <li>
+            <a href="https://clinicalmindai.stanford.edu/" target="_blank">Clinical Mind AI (Stanford University)</a>
+            <p>An excellent resource showcasing how artificial intelligence is being applied specifically in clinical and biomedical research contexts.</p>
+          </li>
+          <li>
+            <a href="https://mededu.jmir.org/2023/1/e48291/" target="_blank">LLMs in Medical Education & Research: Opportunities and Challenges</a>
+            <p>A peer-reviewed journal article discussing the practical applications and ethical hurdles of using AI in the medical sciences.</p>
+          </li>
+          <li>
+            <a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank">How We Built a Multi-Agent Research System (Anthropic)</a>
+            <p>A fascinating engineering blog post for computationally-minded researchers on how "Agentic AI" can be used to synthesize massive amounts of literature.</p>
+          </li>
+          <li>
+            <a href="https://link.springer.com/article/10.1186/s13054-025-05479-4" target="_blank">Primer on Large Language Models: An Educational Overview</a>
+            <p>A focused overview tailored for medical professionals detailing the technical perspective of how ChatGPT and similar models function.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Navigation Tabs
+  function switchTab(evt, tabId) {
+    const panes = document.querySelectorAll('.tab-pane');
+    panes.forEach(pane => pane.classList.remove('active'));
+    const buttons = document.querySelectorAll('.nav-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    evt.currentTarget.classList.add('active');
+  }
+
+  // Synthesized Web Audio Beeper (No external audio file required)
+  function playAlertSound() {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.15); // A5
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.6);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.6);
+    } catch (e) {
+      console.log('Audio alert allowed after interaction.');
+    }
+  }
+
+  // Timer Implementation
+  let countdown;
+  let timeLeft = 180;
+  let isRunning = false;
+
+  function updateTimerDisplay() {
+    const mins = Math.floor(timeLeft / 60);
+    const secs = timeLeft % 60;
+    document.getElementById('timerDisplay').textContent = 
+      `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+
+  function startTimer() {
+    if (isRunning) return;
+    isRunning = true;
+    countdown = setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(countdown);
+        isRunning = false;
+        playAlertSound();
+        document.getElementById('timerPhase').textContent = "Time's up! Transition to next phase.";
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(countdown);
+    isRunning = false;
+  }
+
+  function resetTimer() {
+    pauseTimer();
+    timeLeft = 180;
+    updateTimerDisplay();
+    document.getElementById('timerPhase').textContent = "Timer Reset";
+  }
+
+  function setTimer(seconds, label) {
+    pauseTimer();
+    timeLeft = seconds;
+    updateTimerDisplay();
+    document.getElementById('timerPhase').textContent = "Phase: " + label;
+  }
+</script>
+
+</body>
+</html>
