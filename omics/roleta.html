@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERC Expert Review Panel - Pipeline Evaluation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        h1 {
+            color: #1a252f;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        .roulette-container {
+            position: relative;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            border: 8px solid #2c3e50;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+        /* 8 Slices using CSS conic-gradient */
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                #3498db 0deg 45deg,
+                #9b59b6 45deg 90deg,
+                #e74c3c 90deg 135deg,
+                #f1c40f 135deg 180deg,
+                #2ecc71 180deg 225deg,
+                #e67e22 225deg 270deg,
+                #34495e 270deg 315deg,
+                #1abc9c 315deg 360deg
+            );
+        }
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid #c0392b;
+            z-index: 10;
+        }
+        .btn-spin {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s;
+        }
+        .btn-spin:hover {
+            background-color: #c0392b;
+        }
+        .btn-spin:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .result-box {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border-left: 5px solid #e74c3c;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            text-align: left;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .result-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        /* Personalização Discreta Nuno S. Osório */
+        .footer-credit {
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            font-style: italic;
+        }
+    </style> </head>
+<body>
+
+    <h1>ERC Expert Review Panel</h1>
+    <p class="subtitle">Multi-Omics Pipeline Critical Evaluation</p>
+
+    <div style="position: relative;">
+        <div class="pointer"></div>
+        <div class="roulette-container" id="wheel-container">
+            <div class="wheel"></div>
+        </div>
+    </div>
+
+    <button class="btn-spin" id="spin-btn" onclick="spinWheel()">SPIN THE WHEEL</button>
+
+    <div class="result-box" id="result-box">
+        <div class="result-title" id="result-title">Reviewer Challenge:</div>
+        <div class="result-text" id="result-text">Question will appear here...</div>
+    </div>
+
+    <div class="footer-credit">by Nuno S. Osório</div>
+
+    <script>
+        const scenarios = [
+            {
+                title: "1. The Protein Gap Causality (Integration)",
+                text: "mRNA abundance does not equal active protein levels. How will your bioinformatics pipeline rigorously integrate scRNA-seq and DIA proteomics data at different spatial resolutions to prove biological causality in the granuloma, rather than mere correlation?"
+            },
+            {
+                title: "2. Long-Read Error Rates (Genomics)",
+                text: "Long-read technologies (like ONT) excel at spanning structural variants but can suffer from higher error rates in homopolymer regions. If your pipeline identifies a novel regulatory mutation in the 'Dark Genome', what orthogonal validation strategy will you use before making a clinical diagnosis?"
+            },
+            {
+                title: "3. Tissue Dissociation Bias (Transcriptomics)",
+                text: "Isolating macrophages from a fibrotic TB granuloma causes severe cellular stress. How does your pipeline guarantee that the transcriptional profile captured by droplet-based scRNA-seq represents the true in vivo state and not a stress artifact caused by the enzymatic dissociation process?"
+            },
+            {
+                title: "4. AI Hallucination Risk (Proteomics)",
+                text: "You propose using Prosit for in silico spectral libraries to handle ultra-low input samples. How does your pipeline mitigate the risk of the deep-learning model 'hallucinating' peptides that do not actually exist in this patient's specific mutant phenotype?"
+            },
+            {
+                title: "5. Host-Pathogen Deconvolution (Dual-Omics)",
+                text: "You aim to study permissive Alveolar Macrophages. In a droplet-based scRNA-seq setup, how will your bioinformatics pipeline confidently separate and align the Mycobacterium tuberculosis reads from the human host reads to determine the directionality of the infection control?"
+            },
+            {
+                title: "6. Spatial Resolution Limits (Spatial Transcriptomics)",
+                text: "Standard spatial transcriptomics often struggles with true single-cell resolution, capturing multiple cells per spot. In a dense granuloma core where macrophages and T cells interact closely, how will your pipeline deconvolve these mixed signals to assign transcripts to the correct cell types?"
+            },
+            {
+                title: "7. The DDA Compromise (Proteomics Contingency)",
+                text: "Due to a technical failure, the core facility can only process your samples using standard Data-Dependent Acquisition (DDA) instead of DIA. What specific biological insights regarding the host immune response will your pipeline likely lose, and why?"
+            },
+            {
+                title: "8. The Epigenetic Blind Spot (Pipeline Design)",
+                text: "Your pipeline assumed the WES was negative due to a non-coding structural variant. What if the defect isn't in the DNA sequence at all, but is an epigenetic silencing of a macrophage regulatory gene? Does your proposed pipeline account for methylomics or chromatin accessibility?"
+            }
+        ];
+
+        // Array para guardar quais perguntas ainda não foram feitas
+        let availableQuestions = [0, 1, 2, 3, 4, 5, 6, 7];
+        let currentRotation = 0;
+
+        function spinWheel() {
+            const btn = document.getElementById('spin-btn');
+            const wheelContainer = document.getElementById('wheel-container');
+            const resultBox = document.getElementById('result-box');
+            
+            // Se todas as perguntas já saíram, reseta a lista
+            if (availableQuestions.length === 0) {
+                availableQuestions = [0, 1, 2, 3, 4, 5, 6, 7];
+            }
+
+            btn.disabled = true;
+            resultBox.style.display = 'none';
+
+            // Escolhe uma pergunta aleatória DENTRO das disponíveis
+            const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+            const winningIndex = availableQuestions[randomIndex];
+            
+            // Remove a pergunta escolhida para não repetir
+            availableQuestions.splice(randomIndex, 1);
+
+            // Calcula o ângulo exato para cair no meio da fatia sorteada (cada fatia tem 45 graus)
+            const targetDegree = 360 - (winningIndex * 45 + 22.5);
+            
+            // Adiciona 5 voltas completas (1800 graus) + alinha a roleta
+            const spinSpins = 360 * 5;
+            const totalRotation = currentRotation + (360 - (currentRotation % 360)) + spinSpins + targetDegree;
+            currentRotation = totalRotation;
+
+            // Roda a animação
+            wheelContainer.style.transform = `rotate(${currentRotation}deg)`;
+
+            // Mostra a pergunta após 4 segundos (tempo do CSS)
+            setTimeout(() => {
+                const winner = scenarios[winningIndex];
+                document.getElementById('result-title').innerText = winner.title;
+                document.getElementById('result-text').innerText = winner.text;
+                resultBox.style.display = 'block';
+
+                btn.disabled = false;
+            }, 4000); 
+        }
+    </script>
+</body>
+</html>
