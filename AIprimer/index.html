@@ -402,8 +402,15 @@ Output: Clean Python script with explanatory comments and statistical checks.
                 <li><code>Temperature = 0.8 - 1.0+</code>: High variability, creative, but elevates hallucinations.</li>
               </ul>
             </li>
-            <li><strong>Mitigation Strategy:</strong> Require Retrieval-Augmented Generation (RAG) tools (e.g., PubMed integration, Consensus, Scopus AI) or enforce that the student attaches the verified PDF directly to the prompt.</li>
-          </ul>
+            <li><strong>Mitigation Strategy (Use RAG Tools):</strong> Instead of general chatbots, use AI search engines connected to verified academic databases. 
+  <ul>
+    <li><strong>For answering research questions:</strong> Consensus, Elicit</li>
+    <li><strong>For verifying citations and claims:</strong> Scite.ai</li>
+    <li><strong>For mapping literature visually:</strong> ResearchRabbit, Connected Papers</li>
+  </ul>
+  <br>
+  <strong>⚠️ Crucial Warning:</strong> Even these tools require strict human verification! While RAG tools solve the "fake paper" problem, they can still misinterpret data, miss nuances in the methodology, or cite low-quality/retracted journals. You must always read the underlying PDF.
+</li>          </ul>
         </div>
       </details>
     </div>
