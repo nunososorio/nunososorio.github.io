@@ -203,12 +203,12 @@
       list-style: none;
       padding: 0;
     }
-    .resource-list li {
+    .resource-list > li {
       margin-bottom: 0.75rem;
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
-    .resource-list li:last-child {
+    .resource-list > li:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
@@ -403,14 +403,16 @@ Output: Clean Python script with explanatory comments and statistical checks.
               </ul>
             </li>
             <li><strong>Mitigation Strategy (Use RAG Tools):</strong> Instead of general chatbots, use AI search engines connected to verified academic databases. 
-  <ul>
-    <li><strong>For answering research questions:</strong> Consensus, Elicit</li>
-    <li><strong>For verifying citations and claims:</strong> Scite.ai</li>
-    <li><strong>For mapping literature visually:</strong> ResearchRabbit, Connected Papers</li>
-  </ul>
-  <br>
-  <strong>⚠️ Crucial Warning:</strong> Even these tools require strict human verification! While RAG tools solve the "fake paper" problem, they can still misinterpret data, miss nuances in the methodology, or cite low-quality/retracted journals. You must always read the underlying PDF.
-</li>          </ul>
+              <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+                <li><strong>For answering research questions:</strong> Consensus, Elicit</li>
+                <li><strong>For verifying citations and claims:</strong> Scite.ai</li>
+                <li><strong>For mapping literature visually:</strong> ResearchRabbit, Connected Papers</li>
+              </ul>
+              <div class="callout-warn" style="margin-top: 1rem; padding: 0.75rem; border-radius: 4px;">
+                <strong>⚠️ Crucial Warning:</strong> Even these tools require strict human verification! While RAG tools solve the "fake paper" problem, they can still misinterpret data, miss nuances in the methodology, or cite low-quality/retracted journals. You must always read the underlying PDF.
+              </div>
+            </li>
+          </ul>
         </div>
       </details>
     </div>
@@ -478,6 +480,19 @@ Output: Clean Python script with explanatory comments and statistical checks.
         <p style="margin-bottom: 1rem;">Explore these carefully selected resources to deepen your understanding of AI mechanics, prompt engineering, and biomedical research applications.</p>
         
         <ul class="resource-list">
+          <!-- NEW: RAG Toolkit Section -->
+          <li>
+            <strong>The RAG-Based Literature Toolkit</strong>
+            <p>General LLMs (like ChatGPT) will hallucinate citations. For literature reviews, use these tools built on verified academic databases:</p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem;">
+              <li><a href="https://consensus.app/" target="_blank">Consensus:</a> Best for quick, synthesized answers to direct research questions.</li>
+              <li><a href="https://scite.ai/" target="_blank">Scite.ai:</a> Best for checking if a paper's claims are supported or contrasted.</li>
+              <li><a href="https://elicit.com/" target="_blank">Elicit:</a> Best for extracting specific variables from multiple papers into a single table.</li>
+              <li><a href="https://www.researchrabbit.ai/" target="_blank">ResearchRabbit:</a> Best for visually mapping citation networks.</li>
+            </ul>
+          </li>
+          
+          <!-- Existing Links -->
           <li>
             <a href="https://www.understandingai.org/p/large-language-models-explained-with" target="_blank">Large Language Models, Explained with a Minimum of Math and Jargon</a>
             <p>A highly accessible breakdown of how models predict text, essential for understanding why AI "hallucinates" citations.</p>
