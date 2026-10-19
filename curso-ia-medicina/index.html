@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curso online de microlearning para docentes da Escola de Medicina da Universidade do Minho: literacia em IA e pensamento crítico na educação médica.">
+  <meta name="color-scheme" content="light">
+  <title>Literacia em IA e Pensamento Crítico na Educação Médica — EMED-UMinho</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGRZJ8EP0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DGRZJ8EP0C');
+</script>
+</head>
+<body>
+  <a class="saltar" href="#conteudo">Saltar para o conteúdo</a>
+
+  <header class="topo">
+    <button type="button" id="btn-menu" class="btn-menu" aria-expanded="false" aria-controls="menu">
+      <span aria-hidden="true">☰</span> <span>Menu</span>
+    </button>
+    <a class="marca" href="#/inicio" aria-label="Início — Literacia em IA e Pensamento Crítico na Educação Médica">
+      <span class="logo" aria-hidden="true"><i></i><i></i></span>
+      <span class="marca-texto"><strong>Literacia em IA</strong><small>EMED-UMinho · Formação docente</small></span>
+    </a>
+    <div class="progresso-global" id="progresso-global">
+      <div class="barra" id="barra" role="progressbar" aria-label="Progresso global do curso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="barra-preenchida" id="barra-preenchida"></span>
+      </div>
+      <span class="progresso-texto" id="progresso-texto">0 sessões · 0 %</span>
+    </div>
+    <div class="ferramentas" role="group" aria-label="Opções de leitura">
+      <button type="button" id="btn-fonte-menos" aria-label="Diminuir o tamanho do texto">A−</button>
+      <button type="button" id="btn-fonte-mais" aria-label="Aumentar o tamanho do texto">A+</button>
+      <button type="button" id="btn-contraste" data-contraste aria-pressed="false">Alto contraste</button>
+    </div>
+  </header>
+
+  <aside class="faixa-validacao" aria-label="Estado do curso">
+    <span aria-hidden="true">🧪</span> <strong>Curso em fase de validação.</strong> Agradece-se feedback para <a href="mailto:nosorio@med.uminho.pt?subject=Feedback%20sobre%20o%20curso%20Literacia%20em%20IA%20(EMED-UMinho)">nosorio@med.uminho.pt</a>.
+  </aside>
+
+  <div class="layout">
+    <nav id="menu" class="menu" aria-label="Navegação do curso"></nav>
+    <div class="menu-fundo" id="menu-fundo" hidden></div>
+    <main id="conteudo" tabindex="-1"></main>
+  </div>
+
+  <footer class="rodape">
+    <p class="nota-local" id="nota-local">Nota: O seu progresso é guardado localmente neste browser.</p>
+    <p class="rodape-licenca">© 2026 Nuno S. Osório · Licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt" target="_blank" rel="noopener license">CC BY 4.0</a> · Curso em fase de validação: feedback para <a href="mailto:nosorio@med.uminho.pt">nosorio@med.uminho.pt</a> · <a href="#/sobre">Sobre e licença</a></p>
+    <p class="rodape-pequeno">Curso para docentes da EMED-UMinho · Conteúdos baseados nas Recomendações da Universidade do Minho para o uso da IA (2026) · Este curso é um recurso formativo e não constitui aconselhamento jurídico nem clínico. Confirme sempre as normas institucionais em vigor e consulte o Encarregado de Proteção de Dados.</p>
+    <p class="rodape-pequeno">Declaração de uso de IA: Utilizou-se inteligência artificial generativa (assistentes baseados em LLM) para o apoio na geração de código e estruturação de conteúdos nas fases de conceção e redação. O autor revisou, validou e assume a responsabilidade exclusiva por todo o conteúdo e código apresentados. <a href="#/sobre">Mais informação</a></p>
+  </footer>
+
+  <div id="anuncios" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+
+  <noscript><p class="sem-js">Este curso necessita de JavaScript ativo no browser.</p></noscript>
+
+  <script src="js/dados/base.js"></script>
+  <script src="js/dados/m1.js"></script>
+  <script src="js/dados/m2.js"></script>
+  <script src="js/dados/m3.js"></script>
+  <script src="js/dados/m4.js"></script>
+  <script src="js/dados/m5.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
