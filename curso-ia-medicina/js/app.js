@@ -980,7 +980,7 @@
     var art = h("article", { class: "inicio" });
     art.appendChild(h("h1", { tabindex: "-1", id: "titulo-vista" }, C.titulo, " ", h("span", { class: "sub", text: C.subtitulo })));
     art.appendChild(h("p", { class: "lead" }, "Curso de ", h("strong", { text: "microlearning" }), " para docentes da Escola de Medicina da Universidade do Minho: " + C.modulos.length + " módulos, " + TOTAL + " micro-sessões de 10 a 15 minutos, que pode fazer pela ordem que preferir, no telemóvel ou no computador."));
-    art.appendChild(h("blockquote", { class: "citacao" }, "«A IA já não é uma especialidade — é uma literacia esperada de qualquer profissional.»", h("cite", { text: " — World Economic Forum, Future of Jobs Report 2025" })));
+    art.appendChild(h("blockquote", { class: "citacao" }, "«A IA já não é uma especialidade — é uma literacia esperada de qualquer profissional.»", h("cite", { text: " — Síntese baseada no World Economic Forum, Future of Jobs Report 2025" })));
 
     art.appendChild(h("div", { class: "cartao-destaque" },
       h("h2", { text: n === 0 ? "Comece quando quiser" : n === TOTAL ? "Concluiu o curso! 🏅" : "O seu progresso" }),
